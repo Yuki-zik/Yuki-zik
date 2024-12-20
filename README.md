@@ -39,6 +39,5 @@
 ---
 
 ## 贡献图
-如果想要显示 GitHub 贡献图的蛇形动画，可在项目中启用相关 GitHub Action：
 
 ![snake svg](https://github.com/Yuki-zik/Yuki-zik/blob/output/github-contribution-grid-snake.svg)
