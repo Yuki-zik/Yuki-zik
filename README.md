@@ -5,6 +5,8 @@
 [![Blog Badge](https://img.shields.io/badge/Blog-我的博客lightgrey?style=flat&logo=rss)](#)
 [![Twitter Badge](https://img.shields.io/badge/Twitter-我的推特-blue?style=flat&logo=twitter)](#)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-我的领英0A66C2?style=flat&logo=linkedin&logoColor=white)](#)
+[![Telegram Badge](https://img.shields.io/badge/Telegram-联系我-26A5E4?style=flat&logo=telegram&logoColor=white)](https://t.me/A_Znkv)
+
 
 ## 关于我
 - 一个对各种技术充满热情的开发者，喜欢构建有趣又有挑战性的项目。  
