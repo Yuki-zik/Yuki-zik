@@ -1,0 +1,15 @@
+﻿{
+  "status": "pending_first_run",
+  "message": "Set GH_STATS_TOKEN and run node scripts/year-report/generate-report.mjs to generate live report data.",
+  "generatedAt": null,
+  "year": null,
+  "timezone": "Asia/Shanghai",
+  "username": "Yuki-zik",
+  "aiMode": null,
+  "aiReason": null,
+  "stats": null,
+  "issuesCount": null,
+  "topRepos": [],
+  "topLanguages": [],
+  "aiSummary": null
+}

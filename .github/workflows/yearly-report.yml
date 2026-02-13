@@ -1,0 +1,74 @@
+﻿name: yearly report
+
+on:
+  schedule:
+    - cron: "15 2 * * 1"
+  workflow_dispatch:
+    inputs:
+      year:
+        description: "Override report year (YYYY)"
+        required: false
+        type: string
+      no_ai:
+        description: "Disable AI summary for this run"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate yearly report assets
+        env:
+          GH_USERNAME: Yuki-zik
+          GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          REPORT_TZ: Asia/Shanghai
+          REPORT_YEAR_MODE: current
+        run: |
+          set -euo pipefail
+          args=()
+
+          if [ -n "${{ github.event.inputs.year }}" ]; then
+            args+=(--year "${{ github.event.inputs.year }}")
+          fi
+
+          if [ "${{ github.event.inputs.no_ai }}" = "true" ]; then
+            args+=(--no-ai)
+          fi
+
+          node scripts/year-report/generate-report.mjs "${args[@]}"
+
+      - name: Commit and push if changed
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- assets/github-annual-report.svg assets/github-annual-report.json README.md; then
+            echo "No report changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets/github-annual-report.svg assets/github-annual-report.json README.md
+          git commit -m "chore: refresh github annual report"
+          git push
