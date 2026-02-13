@@ -101,6 +101,66 @@ export function truncate(input, maxLength) {
   return `${value.slice(0, maxLength - 1)}…`
 }
 
+export function wrapLines(input, maxChars, maxLines) {
+  const text = String(input ?? "").replace(/\s+/g, " ").trim()
+
+  if (!text) {
+    return [""]
+  }
+
+  const hardMaxChars = Math.max(1, maxChars)
+  const hardMaxLines = Math.max(1, maxLines)
+  const lines = []
+  let cursor = 0
+
+  while (cursor < text.length && lines.length < hardMaxLines) {
+    const remaining = text.slice(cursor)
+
+    if (remaining.length <= hardMaxChars) {
+      lines.push(remaining)
+      cursor = text.length
+      break
+    }
+
+    let cut = hardMaxChars
+    const lastSpace = remaining.slice(0, hardMaxChars + 1).lastIndexOf(" ")
+
+    if (lastSpace >= Math.floor(hardMaxChars * 0.5)) {
+      cut = lastSpace
+    }
+
+    lines.push(remaining.slice(0, cut).trim())
+    cursor += cut
+
+    while (text[cursor] === " ") {
+      cursor += 1
+    }
+  }
+
+  if (cursor < text.length && lines.length > 0) {
+    const last = lines[lines.length - 1]
+    lines[lines.length - 1] = truncate(last, Math.max(1, hardMaxChars - 1))
+  }
+
+  return lines
+}
+
+export function estimateTextWidth(input, fontSize = 16) {
+  const text = String(input ?? "")
+  let units = 0
+
+  for (const char of text) {
+    if (/[ -~]/.test(char)) {
+      units += 0.56
+      continue
+    }
+
+    units += 1
+  }
+
+  return units * fontSize
+}
+
 export function parseCliArgs(argv) {
   const args = {
     year: null,
