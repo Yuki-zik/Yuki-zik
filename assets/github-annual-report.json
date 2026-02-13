@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-02-13T15:45:22.951Z",
+  "generatedAt": "2026-02-13T16:19:02.849Z",
   "year": 2025,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
-  "aiMode": "fallback",
-  "aiReason": "OpenAI request failed (429): [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 37.100165552s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"20\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"37s\"\n      }\n    ]\n  }\n}\n]",
+  "aiMode": "ai",
+  "aiReason": null,
   "rateLimit": {
-    "remaining": 4995,
+    "remaining": 4984,
     "resetAt": "2026-02-13T16:41:59Z"
   },
   "stats": {
@@ -2848,46 +2848,45 @@
     {
       "language": "Python",
       "bytes": 207656,
-      "ratio": 0.5670949682528845
+      "ratio": 0.5542947593765599
     },
     {
       "language": "TypeScript",
       "bytes": 53529,
-      "ratio": 0.1461842015429781
+      "ratio": 0.14288459844486975
     },
     {
       "language": "JavaScript",
-      "bytes": 37758,
-      "ratio": 0.10311463098245374
+      "bytes": 46214,
+      "ratio": 0.12335871831215249
     },
     {
       "language": "C",
       "bytes": 34285,
-      "ratio": 0.09363009489997952
+      "ratio": 0.09151671911827905
     },
     {
       "language": "Monkey C",
       "bytes": 15334,
-      "ratio": 0.04187615211306069
+      "ratio": 0.040930942714297536
     }
   ],
   "aiSummary": {
-    "mode": "fallback",
-    "intro": "你在 2025 年保持了稳定的 GitHub 活跃度，全年贡献 72 次，日均 0 次。",
+    "mode": "ai",
+    "intro": "尊敬的 Yuki-zik，以下是您 2025 年度 GitHub 活动的总结报告。本年度您共计贡献 72 次。",
     "sections": [
       {
-        "heading": "活跃节奏",
-        "content": "贡献峰值集中在 12月，最长连续打卡 5 天。"
+        "heading": "贡献概览",
+        "content": "2025 年，您的 GitHub 总贡献数为 72 次。尽管平均每日贡献数较低，但您在 12 月份表现出显著的活跃度，其中 2025 年 12 月是您最活跃的月份。特别是在 12 月 22 日，您单日贡献达到 17 次，显示出集中的开发投入。您的最长连续贡献天数为 5 天，而最长中断天数为 117 天，表明活动存在较长的间隔期。"
       },
       {
-        "heading": "高光时刻",
-        "content": "12 月 22 日 达到 17 次贡献"
+        "heading": "技术栈与项目",
+        "content": "在技术栈方面，Python、TypeScript 和 JavaScript 是您贡献最多的三种语言，这表明您主要活跃于脚本开发、前端或全栈项目。您的主要贡献集中在几个特定仓库，其中 Yuki-zik/yuki-zik.github.io 获得了 19 次贡献，可能与您的个人主页或作品集相关。此外，您还参与了 Yuki-zik/---- 和 Yuki-zik/Information-Hiding-Practive 等项目。本年度您共创建或参与了 2 个 Issue。"
       },
       {
-        "heading": "协作信号",
-        "content": "你在 2025 年共参与 2 个 Issues，最长休息间隔 117 天（8 月 3 日 - 11 月 27 日）。"
+        "heading": "总结与展望",
+        "content": "总体而言，Yuki-zik 在 2025 年的 GitHub 活动呈现出集中爆发的特点，尤其是在年末。这表明您在特定时期内有较强的项目投入。未来，可以考虑保持更稳定的贡献频率，以进一步提升项目可见性和社区参与度。继续在您擅长的语言和项目上深耕，或探索新的技术领域，都将是积极的发展方向。"
       }
-    ],
-    "reason": "OpenAI request failed (429): [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 37.100165552s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"20\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"37s\"\n      }\n    ]\n  }\n}\n]"
+    ]
   }
 }
