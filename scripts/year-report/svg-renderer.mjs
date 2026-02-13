@@ -228,7 +228,8 @@ export function renderYearlyReportSvg(data) {
   const weeklyBars = renderWeeklyBars(stats.weekdayContributions)
   const aiSections = renderAiSections(aiSummary.sections)
 
-  return `<svg width="1400" height="980" viewBox="0 0 1400 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="980" viewBox="0 0 1400 980" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="980" gradientUnits="userSpaceOnUse">
       <stop stop-color="#F6F7FB"/>

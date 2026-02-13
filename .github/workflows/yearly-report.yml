@@ -61,7 +61,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- assets/github-annual-report.svg assets/github-annual-report.json README.md; then
+          if git diff --quiet -- assets/github-annual-report.svg assets/github-annual-report.json; then
             echo "No report changes."
             exit 0
           fi
@@ -69,6 +69,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/github-annual-report.svg assets/github-annual-report.json README.md
+          git add assets/github-annual-report.svg assets/github-annual-report.json
           git commit -m "chore: refresh github annual report"
           git push

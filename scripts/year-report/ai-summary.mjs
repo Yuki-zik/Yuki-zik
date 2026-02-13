@@ -1,4 +1,4 @@
-﻿import { formatDateCN, formatDateRangeCN, monthLabel } from "./utils.mjs"
+﻿import { formatDateCN, formatDateRangeCN } from "./utils.mjs"
 
 function getFallbackSummary({ stats, year, issuesCount }) {
   const hottestMonth = stats.maxContributionsMonth
@@ -153,3 +153,4 @@ export async function generateAiSummary(options) {
     clearTimeout(timeout)
   }
 }
+
