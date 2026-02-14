@@ -1,13 +1,21 @@
 {
-  "generatedAt": "2026-02-14T08:31:32.040Z",
+  "generatedAt": "2026-02-14T10:51:27.782Z",
   "year": 2025,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
+  "profile": {
+    "name": "Qianli Ma",
+    "login": "Yuki-zik",
+    "bio": "",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
+    "followers": 0,
+    "following": 5
+  },
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4991,
-    "resetAt": "2026-02-14T09:20:27Z"
+    "remaining": 4997,
+    "resetAt": "2026-02-14T11:47:50Z"
   },
   "stats": {
     "totalContributions": 72,
@@ -2848,57 +2856,49 @@
     {
       "language": "Python",
       "bytes": 207656,
-      "ratio": 0.5256435245069624
+      "ratio": 0.5073628400747645
     },
     {
       "language": "JavaScript",
-      "bytes": 66634,
-      "ratio": 0.16867189299609417
+      "bytes": 80868,
+      "ratio": 0.1975835908963192
     },
     {
       "language": "TypeScript",
       "bytes": 53529,
-      "ratio": 0.13549896089365676
+      "ratio": 0.13078661568344796
     },
     {
       "language": "C",
       "bytes": 34285,
-      "ratio": 0.08678626303945566
+      "ratio": 0.08376803449918761
     },
     {
       "language": "Monkey C",
       "bytes": 15334,
-      "ratio": 0.03881524157640406
+      "ratio": 0.03746533589063855
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik，您在2025年的GitHub活动报告已生成。本年度您共计贡献72次，主要集中在年末，展现了特定的活跃模式。",
+    "intro": "Yuki-zik在2025年度共计完成了72项贡献。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "2025年，Yuki-zik共完成了72次贡献。您的活跃高峰出现在12月，其中12月22日单日贡献高达17次。最长连续贡献天数为5天，但期间也存在长达117天的活跃间隔，表明您的贡献模式较为集中而非持续。"
+        "content": "2025年Yuki-zik的总贡献为72项，其中包含2个issues。贡献主要集中在12月，峰值发生在12月22日，单日贡献达17项。"
       },
       {
-        "heading": "技术栈与项目",
-        "content": "在技术栈方面，Python是您的首要语言，其次是JavaScript和TypeScript。您的主要贡献集中在Yuki-zik/yuki-zik.github.io项目，贡献19次。此外，您还参与了Yuki-zik/----和Yuki-zik/Information-Hiding-Practive等项目，并创建了2个issue。"
+        "heading": "节奏与稳定性",
+        "content": "年度日均贡献为0项，最长连续贡献天数为5天。期间最长贡献间隔为117天，显示出贡献节奏的波动性。"
       },
       {
-        "heading": "总结与展望",
-        "content": "总体而言，Yuki-zik在2025年的GitHub活动呈现出年末集中发力的特点，尤其在个人主页项目上投入较多。未来，您可以考虑保持更规律的贡献频率，或继续深化在Python、JavaScript和TypeScript领域的项目实践，以进一步提升社区影响力。"
+        "heading": "技术与项目",
+        "content": "主要贡献集中在Python、JavaScript和TypeScript项目。最活跃的仓库是Yuki-zik/yuki-zik.github.io (19项贡献)，其次是Yuki-zik/---- (4项) 和Yuki-zik/Information-Hiding-Practive (2项)。"
       }
     ]
   },
   "render": {
     "mode": "playwright",
     "reason": null
-  },
-  "profile": {
-    "name": "Qianli Ma",
-    "login": "Yuki-zik",
-    "bio": "",
-    "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?v=4",
-    "followers": 0,
-    "following": 5
   }
 }
