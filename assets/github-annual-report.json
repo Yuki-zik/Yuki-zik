@@ -2892,5 +2892,13 @@
   "render": {
     "mode": "playwright",
     "reason": null
+  },
+  "profile": {
+    "name": "Qianli Ma",
+    "login": "Yuki-zik",
+    "bio": "",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?v=4",
+    "followers": 0,
+    "following": 5
   }
 }

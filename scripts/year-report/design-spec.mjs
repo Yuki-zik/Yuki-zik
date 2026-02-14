@@ -22,8 +22,29 @@ function sectionRect(id, x, y, w, h) {
   return { id, x, y, w, h }
 }
 
+function buildGrid() {
+  const contentWidth = REPORT_DIMENSIONS.width - REPORT_TOKENS.margin * 2
+  const columns = 12
+  const columnWidth = (contentWidth - REPORT_TOKENS.gap * (columns - 1)) / columns
+
+  function x(colStart) {
+    return Math.round(
+      REPORT_TOKENS.margin + (colStart - 1) * (columnWidth + REPORT_TOKENS.gap),
+    )
+  }
+
+  function w(colSpan) {
+    return Math.round(
+      colSpan * columnWidth + (colSpan - 1) * REPORT_TOKENS.gap,
+    )
+  }
+
+  return { x, w }
+}
+
 export function buildReportLayout() {
   const t = REPORT_TOKENS
+  const grid = buildGrid()
   const topY = t.margin
   const statY = topY + t.topHeight + t.gap
   const kpiY = statY + t.statHeight + t.gap
@@ -33,30 +54,30 @@ export function buildReportLayout() {
   const layout = {
     canvas: { ...REPORT_DIMENSIONS },
     top: {
-      left: sectionRect("top-left", t.margin, topY, 804, t.topHeight),
-      right: sectionRect("top-right", 844, topY, 532, t.topHeight),
+      left: sectionRect("top-left", grid.x(1), topY, grid.w(7), t.topHeight),
+      right: sectionRect("top-right", grid.x(8), topY, grid.w(5), t.topHeight),
     },
     stat: {
       cards: [
-        sectionRect("stat-0", 24, statY, 440, t.statHeight),
-        sectionRect("stat-1", 480, statY, 440, t.statHeight),
-        sectionRect("stat-2", 936, statY, 440, t.statHeight),
+        sectionRect("stat-0", grid.x(1), statY, grid.w(4), t.statHeight),
+        sectionRect("stat-1", grid.x(5), statY, grid.w(4), t.statHeight),
+        sectionRect("stat-2", grid.x(9), statY, grid.w(4), t.statHeight),
       ],
     },
     kpi: {
       cards: [
-        sectionRect("kpi-0", 24, kpiY, 440, t.kpiHeight),
-        sectionRect("kpi-1", 480, kpiY, 440, t.kpiHeight),
-        sectionRect("kpi-2", 936, kpiY, 440, t.kpiHeight),
+        sectionRect("kpi-0", grid.x(1), kpiY, grid.w(4), t.kpiHeight),
+        sectionRect("kpi-1", grid.x(5), kpiY, grid.w(4), t.kpiHeight),
+        sectionRect("kpi-2", grid.x(9), kpiY, grid.w(4), t.kpiHeight),
       ],
     },
     mid: {
-      left: sectionRect("mid-left", 24, midY, 580, t.midHeight),
-      right: sectionRect("mid-right", 620, midY, 756, t.midHeight),
+      left: sectionRect("mid-left", grid.x(1), midY, grid.w(5), t.midHeight),
+      right: sectionRect("mid-right", grid.x(6), midY, grid.w(7), t.midHeight),
     },
     chart: {
-      left: sectionRect("chart-left", 24, chartY, 668, t.chartHeight),
-      right: sectionRect("chart-right", 708, chartY, 668, t.chartHeight),
+      left: sectionRect("chart-left", grid.x(1), chartY, grid.w(6), t.chartHeight),
+      right: sectionRect("chart-right", grid.x(7), chartY, grid.w(6), t.chartHeight),
     },
   }
 

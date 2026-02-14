@@ -55,9 +55,9 @@ function withRepoPlaceholders(repos) {
 
   while (result.length < 3) {
     result.push({
-      nameWithOwner: "暂无仓库数据",
+      nameWithOwner: "\u6682\u65e0\u4ed3\u5e93\u6570\u636e",
       url: "",
-      description: "本年度暂无可展示的提交仓库。",
+      description: "\u672c\u5e74\u5ea6\u6682\u65e0\u53ef\u5c55\u793a\u7684\u63d0\u4ea4\u4ed3\u5e93\u3002",
       stars: 0,
       forks: 0,
       commits: 0,
@@ -130,6 +130,14 @@ async function main() {
     baseUrl: DEFAULT_CONFIG.openAiBaseUrl,
     model: DEFAULT_CONFIG.openAiModel,
     username: user.login,
+    profile: {
+      name: user.name || user.login,
+      login: user.login,
+      bio: user.bio || "",
+      avatarUrl: user.avatarUrl,
+      followers: user.followers?.totalCount ?? 0,
+      following: user.following?.totalCount ?? 0,
+    },
     year,
     stats,
     issuesCount,
@@ -159,6 +167,7 @@ async function main() {
     year,
     timezone: DEFAULT_CONFIG.timeZone,
     username: user.login,
+    profile: reportModel.profile,
     aiMode: aiSummary.mode,
     aiReason: aiSummary.reason || null,
     rateLimit: profileData.rateLimit,
