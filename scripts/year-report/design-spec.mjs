@@ -1,6 +1,6 @@
 export const REPORT_DIMENSIONS = Object.freeze({
   width: 1400,
-  height: 1220,
+  height: 1240,
   deviceScaleFactor: 2,
 })
 
@@ -8,7 +8,7 @@ export const REPORT_TOKENS = Object.freeze({
   margin: 24,
   gap: 16,
   radius: 14,
-  topHeight: 360,
+  topHeight: 380,
   statHeight: 58,
   kpiHeight: 140,
   midHeight: 300,

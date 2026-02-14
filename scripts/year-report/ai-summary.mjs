@@ -104,11 +104,25 @@ export async function generateAiSummary(options) {
           {
             role: "system",
             content:
-              "你是 GitHub 年报分析助手。请基于输入数据生成克制专业、简洁的中文总结。输出 JSON，格式必须是 {\"intro\":string,\"sections\":[{\"heading\":string,\"content\":string}] }。sections 固定 3 项。",
+              [
+                "你是 GitHub 年报分析助手。",
+                "目标：输出高信息密度、可复核的中文总结，避免空话、夸张和模板化修辞。",
+                "要求：",
+                "1) 所有判断必须基于输入数据，优先写具体数字、日期、排名、仓库名。",
+                "2) 先讲结论，再讲证据；不要写与数据无关的鼓励语。",
+                "3) 语言简洁专业，每段不超过2句。",
+                "4) 若某项数据缺失，直接略过，不要臆测。",
+                "输出 JSON，格式必须是 {\"intro\":string,\"sections\":[{\"heading\":string,\"content\":string}]}。",
+                "sections 固定 3 项，建议主题：贡献概览、节奏与稳定性、技术与项目。",
+              ].join("\\n"),
           },
           {
             role: "user",
-            content: `请分析以下数据并输出 JSON: ${JSON.stringify(promptData)}`,
+            content: [
+              "请基于以下数据输出 JSON 年报摘要。",
+              "请尽量包含：总贡献、日均、峰值月份、峰值日期、最长连续/最长间隔、issues、Top 语言与Top仓库。",
+              `数据：${JSON.stringify(promptData)}`,
+            ].join("\\n"),
           },
         ],
       }),
