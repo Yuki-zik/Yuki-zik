@@ -1,4 +1,5 @@
-﻿const NUMBER_FORMATTER = new Intl.NumberFormat("en-US")
+const NUMBER_FORMATTER = new Intl.NumberFormat("en-US")
+const CONTROL_CHAR_REGEX = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g
 
 export const CONTRIBUTION_LEVEL_COLORS = {
   NONE: "#E6EDF3",
@@ -9,18 +10,20 @@ export const CONTRIBUTION_LEVEL_COLORS = {
   NULL: "#F3F4F6",
 }
 
-export function escapeXml(input) {
-  if (input === null || input === undefined) {
-    return ""
-  }
+function sanitizeText(input) {
+  return String(input ?? "").replace(CONTROL_CHAR_REGEX, "")
+}
 
-  return String(input)
+export function escapeXml(input) {
+  return sanitizeText(input)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&apos;")
 }
+
+export const escapeHtml = escapeXml
 
 export function formatNumber(value) {
   if (!Number.isFinite(value)) {
@@ -92,7 +95,7 @@ export function formatDateRangeCN(startDate, endDate) {
 }
 
 export function truncate(input, maxLength) {
-  const value = String(input ?? "")
+  const value = sanitizeText(input)
 
   if (value.length <= maxLength) {
     return value
@@ -102,7 +105,7 @@ export function truncate(input, maxLength) {
 }
 
 export function wrapLines(input, maxChars, maxLines) {
-  const text = String(input ?? "").replace(/\s+/g, " ").trim()
+  const text = sanitizeText(input).replace(/\s+/g, " ").trim()
 
   if (!text) {
     return [""]
@@ -110,47 +113,63 @@ export function wrapLines(input, maxChars, maxLines) {
 
   const hardMaxChars = Math.max(1, maxChars)
   const hardMaxLines = Math.max(1, maxLines)
+  const maxWidth = hardMaxChars
   const lines = []
-  let cursor = 0
 
-  while (cursor < text.length && lines.length < hardMaxLines) {
-    const remaining = text.slice(cursor)
+  let current = ""
+  let currentWidth = 0
+  let consumed = 0
 
-    if (remaining.length <= hardMaxChars) {
-      lines.push(remaining)
-      cursor = text.length
+  const tokens = text.includes(" ")
+    ? text
+      .split(" ")
+      .filter(Boolean)
+      .map((token, idx, arr) => (idx < arr.length - 1 ? `${token} ` : token))
+    : [...text]
+
+  for (const token of tokens) {
+    const tokenWidth = estimateTextWidth(token, 1)
+    consumed += token.length
+
+    if (currentWidth + tokenWidth <= maxWidth || currentWidth === 0) {
+      current += token
+      currentWidth += tokenWidth
+      continue
+    }
+
+    lines.push(current.trimEnd())
+
+    if (lines.length >= hardMaxLines) {
       break
     }
 
-    let cut = hardMaxChars
-    const lastSpace = remaining.slice(0, hardMaxChars + 1).lastIndexOf(" ")
-
-    if (lastSpace >= Math.floor(hardMaxChars * 0.5)) {
-      cut = lastSpace
-    }
-
-    lines.push(remaining.slice(0, cut).trim())
-    cursor += cut
-
-    while (text[cursor] === " ") {
-      cursor += 1
-    }
+    current = token
+    currentWidth = tokenWidth
   }
 
-  if (cursor < text.length && lines.length > 0) {
+  if (lines.length < hardMaxLines && current) {
+    lines.push(current.trimEnd())
+  }
+
+  if (consumed < text.length && lines.length > 0) {
     const last = lines[lines.length - 1]
     lines[lines.length - 1] = truncate(last, Math.max(1, hardMaxChars - 1))
   }
 
-  return lines
+  return lines.slice(0, hardMaxLines)
 }
 
 export function estimateTextWidth(input, fontSize = 16) {
-  const text = String(input ?? "")
+  const text = sanitizeText(input)
   let units = 0
 
   for (const char of text) {
-    if (/[ -~]/.test(char)) {
+    if (char === " ") {
+      units += 0.33
+      continue
+    }
+
+    if (/[\u0000-\u00ff]/.test(char)) {
       units += 0.56
       continue
     }

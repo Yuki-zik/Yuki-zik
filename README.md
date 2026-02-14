@@ -1,7 +1,7 @@
 # Yuki-zik
 
 <p align="center">
-  <img src="./assets/github-annual-report.svg" alt="Yuki-zik GitHub Annual Report" width="100%" />
+  <img src="./assets/github-annual-report.png" alt="Yuki-zik GitHub Annual Report" width="100%" />
 </p>
 
 ## About Me
@@ -25,3 +25,7 @@
 
 - GitHub: https://github.com/Yuki-zik
 - Telegram: https://t.me/A_Znkv
+
+## Attribution
+
+- Design inspired by Green-Wall: https://github.com/Codennnn/Green-Wall

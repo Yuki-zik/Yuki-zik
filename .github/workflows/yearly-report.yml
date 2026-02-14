@@ -34,6 +34,12 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Install Playwright Chromium
+        run: |
+          set -euo pipefail
+          npm install --no-save --package-lock=false playwright@1.51.1
+          npx playwright install --with-deps chromium
+
       - name: Generate yearly report assets
         env:
           GH_USERNAME: Yuki-zik
@@ -61,7 +67,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- assets/github-annual-report.svg assets/github-annual-report.json; then
+          if git diff --quiet -- assets/github-annual-report.png assets/github-annual-report.svg assets/github-annual-report.json README.md; then
             echo "No report changes."
             exit 0
           fi
@@ -69,6 +75,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/github-annual-report.svg assets/github-annual-report.json
+          git add assets/github-annual-report.png assets/github-annual-report.svg assets/github-annual-report.json README.md
           git commit -m "chore: refresh github annual report"
           git push
