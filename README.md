@@ -1,5 +1,6 @@
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2196F3&center=true&vCenter=true&width=435&lines=Hi+there,+I'm+Yuki-zik+%F0%9F%91%8B;Automation+Enthusiast;Frontend%2FBackend+Engineer;Tool+Maker" alt="Typing SVG" />
+  
   <p>
     <a href="https://t.me/A_Znkv">
       <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
@@ -7,18 +8,13 @@
     <a href="https://github.com/Yuki-zik">
       <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
     </a>
+    <img src="https://skillicons.dev/icons?i=js,nodejs,github,graphql,vite,react,vscode" />
   </p>
 </div>
 
-<div align="center"> 
-  <h3>🛠 Tech Stack</h3>
-  <img src="https://skillicons.dev/icons?i=js,nodejs,github,graphql,vite,react,vscode" />
-</div>
-
-### 📊 GitHub Stats
-
 <div align="center">
   <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/0-profile-details.svg?raw=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=radical&hide_border=true" alt="streak stats" />
 </div>
 
 <table align="center">
@@ -39,10 +35,6 @@
     </td>
   </tr>
 </table>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=radical&hide_border=true" alt="streak stats" />
-</div>
 
 ---
 
