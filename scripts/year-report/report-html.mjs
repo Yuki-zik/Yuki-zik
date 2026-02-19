@@ -360,15 +360,15 @@ function renderHeatmap(stats) {
 }
 
 function renderAi(aiSummary) {
-  const introLines = wrapLines(aiSummary?.intro || "", 50, 3).filter(Boolean)
+  const intro = aiSummary?.intro || ""
   const sections = (aiSummary?.sections || []).slice(0, 3)
   const modeLabel = aiSummary?.mode === "ai" ? "AI \u751f\u6210" : "\u89c4\u5219\u964d\u7ea7"
 
-  return `<div class="ai-card"><div class="ai-head"><span class="icon-slot icon-ai">${svgIcon("sparkles", 20)}</span><h3>${L.aiTitle}</h3><span class="ai-mode-chip">${modeLabel}</span></div><div class="ai-body"><div class="ai-intro-box">${introLines.map((line) => `<p class="ai-intro">${escapeXml(line)}</p>`).join("")}</div>${sections.map((section, index) => {
+  return `<div class="ai-card"><div class="ai-head"><span class="icon-slot icon-ai">${svgIcon("sparkles", 20)}</span><h3>${L.aiTitle}</h3><span class="ai-mode-chip">${modeLabel}</span></div><div class="ai-body"><div class="ai-intro-box"><p class="ai-intro">${escapeXml(intro)}</p></div>${sections.map((section, index) => {
     const heading = escapeXml(section?.heading || L.analysis)
     const toneTag = escapeXml(getAiToneTag(section, index))
-    const lines = wrapLines(section?.content || "", 50, 3).filter(Boolean)
-    return `<div class="ai-sec-card"><div class="ai-sec-head"><h4>${heading}</h4><span class="ai-tag">${toneTag}</span></div>${lines.map((line) => `<p>${escapeXml(line)}</p>`).join("")}</div>`
+    const content = section?.content || ""
+    return `<div class="ai-sec-card"><div class="ai-sec-head"><h4>${heading}</h4><span class="ai-tag">${toneTag}</span></div><p class="ai-sec-text">${escapeXml(content)}</p></div>`
   }).join("")}</div></div>`
 }
 
@@ -570,8 +570,9 @@ body {
   border-radius: 12px;
 }
 .ai-intro-box { padding: 10px 12px; }
-.ai-intro { margin: 0; font-size: 13px; line-height: 1.4; color: #334155; }
+.ai-intro { margin: 0; font-size: 13px; line-height: 1.4; color: #334155; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .ai-sec-card { padding: 8px 12px 10px; }
+.ai-sec-text { margin: 0; font-size: 13px; line-height: 1.4; color: #334155; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .ai-sec-head { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
 .ai-sec-head h4 { margin: 0; font-size: 15px; line-height: 1.2; color: #1e293b; }
 .ai-tag {
