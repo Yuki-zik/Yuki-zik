@@ -117,4 +117,21 @@ export class GitHubClient {
 
     return data?.search?.issueCount ?? 0
   }
+
+  async fetchPrCount({ username, year }) {
+    const createdRange = `${year}-01-01..${year}-12-31`
+    const queryString = `author:${username} is:pr created:${createdRange}`
+
+    const query = `
+      query PrCount($queryString: String!) {
+        search(type: ISSUE, query: $queryString, first: 1) {
+          issueCount
+        }
+      }
+    `
+
+    const data = await this.graphql(query, { queryString })
+
+    return data?.search?.issueCount ?? 0
+  }
 }

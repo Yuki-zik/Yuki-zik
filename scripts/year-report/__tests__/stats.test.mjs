@@ -137,3 +137,24 @@ test("future days in current year are ignored", () => {
   assert.equal(stats.maxContributionsInADay, 1)
   assert.equal(stats.maxContributionsDate, "2026-01-01")
 })
+
+test("decimal precision and active days", () => {
+  const year = 2025
+  const dayCounts = {}
+  let cursor = new Date(Date.UTC(year, 0, 1))
+  for (let i = 0; i < 100; i++) {
+    dayCounts[toIsoDate(cursor)] = 1
+    cursor = new Date(cursor.getTime() + 24 * 60 * 60 * 1000)
+  }
+
+  const calendar = buildCalendar(year, dayCounts)
+  const stats = deriveYearlyStatistics(calendar, {
+    year,
+    timeZone: "UTC",
+    now: new Date("2026-01-01T00:00:00Z"),
+  })
+
+  assert.equal(stats.totalContributions, 100)
+  assert.equal(stats.activeDays, 100)
+  assert.equal(stats.averageContributionsPerDay, 0.3)
+})

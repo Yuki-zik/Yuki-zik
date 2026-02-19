@@ -114,7 +114,7 @@ export async function generateAiSummary(options) {
                 "4) 若某项数据缺失，直接略过，不要臆测。",
                 "输出 JSON，格式必须是 {\"intro\":string,\"sections\":[{\"heading\":string,\"content\":string}]}。",
                 "sections 固定 3 项，建议主题：贡献概览、节奏与稳定性、技术与项目。",
-              ].join("\\n"),
+              ].join("\n"),
           },
           {
             role: "user",
@@ -122,7 +122,7 @@ export async function generateAiSummary(options) {
               "请基于以下数据输出 JSON 年报摘要。",
               "请尽量包含：总贡献、日均、峰值月份、峰值日期、最长连续/最长间隔、issues、Top 语言与Top仓库。",
               `数据：${JSON.stringify(promptData)}`,
-            ].join("\\n"),
+            ].join("\n"),
           },
         ],
       }),

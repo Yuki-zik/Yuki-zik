@@ -48,6 +48,7 @@ export function deriveYearlyStatistics(calendar, options) {
 
   let totalContributions = 0
   let totalDaysConsidered = 0
+  let activeDays = 0
 
   let longestStreak = 0
   let currentStreak = 0
@@ -79,6 +80,9 @@ export function deriveYearlyStatistics(calendar, options) {
       const hasContribution = count > 0
 
       totalContributions += count
+      if (hasContribution) {
+        activeDays += 1
+      }
       weekdayContributions[day.weekday] += count
 
       const monthIndex = Number(day.date.slice(5, 7)) - 1
@@ -137,7 +141,9 @@ export function deriveYearlyStatistics(calendar, options) {
   })
 
   const averageContributionsPerDay =
-    totalDaysConsidered > 0 ? Math.round(totalContributions / totalDaysConsidered) : 0
+    totalDaysConsidered > 0
+      ? Math.round((totalContributions / totalDaysConsidered) * 10) / 10
+      : 0
 
   let busiestWeekday = 0
   let busiestWeekdayValue = -1
@@ -152,6 +158,7 @@ export function deriveYearlyStatistics(calendar, options) {
   return {
     totalContributions,
     totalDaysConsidered,
+    activeDays,
     averageContributionsPerDay,
     maxContributionsInADay,
     maxContributionsDate,

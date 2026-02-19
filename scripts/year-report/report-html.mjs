@@ -35,7 +35,9 @@ const L = {
   contributions: "\u6b21\u8d21\u732e",
   activeMonth: "\u8fd9\u4e00\u5e74\u7684\u9ad8\u5149\u6708\u4efd",
   avgPerDay: "\u65e5\u5747\u8d21\u732e",
+  activeDays: "\u6d3b\u8dc3\u5929\u6570",
   issuesInYearSuffix: "\u5e74\u78b0\u8fc7\u7684 Issues",
+  prInYearSuffix: "\u5e74\u53c2\u4e0e\u7684 PR",
   maxDay: "\u4f60\u6700\u6d3b\u8dc3\u7684\u4e00\u5929",
   longestStreak: "\u6700\u957f\u8fde\u7eed\u6253\u5361",
   longestGap: "\u4f11\u606f\u6700\u4e45\u7684\u4e00\u6bb5\u65f6\u95f4",
@@ -359,15 +361,15 @@ function renderHeatmap(stats) {
 
 function renderAi(aiSummary) {
   const introLines = wrapLines(aiSummary?.intro || "", 36, 3).filter(Boolean)
-  const sections = (aiSummary?.sections || []).slice(0, 2)
+  const sections = (aiSummary?.sections || []).slice(0, 3)
   const modeLabel = aiSummary?.mode === "ai" ? "AI \u751f\u6210" : "\u89c4\u5219\u964d\u7ea7"
 
   return `<div class="ai-card"><div class="ai-head"><span class="icon-slot icon-ai">${svgIcon("sparkles", 20)}</span><h3>${L.aiTitle}</h3><span class="ai-mode-chip">${modeLabel}</span></div><div class="ai-body"><div class="ai-intro-box">${introLines.map((line) => `<p class="ai-intro">${escapeXml(line)}</p>`).join("")}</div>${sections.map((section, index) => {
-      const heading = escapeXml(section?.heading || L.analysis)
-      const toneTag = escapeXml(getAiToneTag(section, index))
-      const lines = wrapLines(section?.content || "", 36, 3).filter(Boolean)
-      return `<div class="ai-sec-card"><div class="ai-sec-head"><h4>${heading}</h4><span class="ai-tag">${toneTag}</span></div>${lines.map((line) => `<p>${escapeXml(line)}</p>`).join("")}</div>`
-    }).join("")}</div></div>`
+    const heading = escapeXml(section?.heading || L.analysis)
+    const toneTag = escapeXml(getAiToneTag(section, index))
+    const lines = wrapLines(section?.content || "", 36, 3).filter(Boolean)
+    return `<div class="ai-sec-card"><div class="ai-sec-head"><h4>${heading}</h4><span class="ai-tag">${toneTag}</span></div>${lines.map((line) => `<p>${escapeXml(line)}</p>`).join("")}</div>`
+  }).join("")}</div></div>`
 }
 
 function renderInlineStat(iconName, title, value) {
@@ -388,7 +390,11 @@ function renderRepos(repos) {
     const commits = formatNumber(repo.commits || 0)
     const description = escapeXml(truncate(repo.description || L.noRepoDesc, 40))
 
-    return `<li class="repo-item"><div class="repo-title-row"><p class="repo-name">${name}</p><span class="repo-star">${starIcon(12)}${starValue}</span></div><p class="repo-desc">${description}</p><div class="repo-badges"><span class="repo-badge repo-badge-stars">${L.stars} ${starValue}</span><span class="repo-badge repo-badge-forks">${L.forks} ${forks}</span><span class="repo-badge repo-badge-commits">${L.commits} ${commits}</span></div></li>`
+    const starsClass = (repo.stars || 0) > 0 ? "repo-badge repo-badge-stars" : "repo-badge repo-badge-zero"
+    const forksClass = (repo.forks || 0) > 0 ? "repo-badge repo-badge-forks" : "repo-badge repo-badge-zero"
+    const commitsClass = (repo.commits || 0) > 0 ? "repo-badge repo-badge-commits" : "repo-badge repo-badge-zero"
+
+    return `<li class="repo-item"><div class="repo-title-row"><p class="repo-name">${name}</p><span class="repo-star">${starIcon(12)}${starValue}</span></div><p class="repo-desc">${description}</p><div class="repo-badges"><span class="${starsClass}">${L.stars} ${starValue}</span><span class="${forksClass}">${L.forks} ${forks}</span><span class="${commitsClass}">${L.commits} ${commits}</span></div></li>`
   }).join("")
 }
 
@@ -608,6 +614,7 @@ body {
 .repo-badge-stars { background: linear-gradient(135deg, #334155, #475569); }
 .repo-badge-forks { background: linear-gradient(135deg, #4b5563, #64748b); }
 .repo-badge-commits { background: linear-gradient(135deg, #1e293b, #334155); }
+.repo-badge-zero { background: #e2e8f0; color: #94a3b8; }
 
 .lang-card { height: 100%; display: flex; flex-direction: column; }
 .lang-head { padding: 14px 16px 8px; display: flex; align-items: center; gap: 10px; }
@@ -652,7 +659,7 @@ body {
 }
 
 export function renderReportHtml(model) {
-  const { profile, year, stats, issuesCount, topRepos, topLanguages, aiSummary } = model
+  const { profile, year, stats, issuesCount, prCount, topRepos, topLanguages, aiSummary } = model
   const layout = buildReportLayout()
 
   const maxMonthText = stats.maxContributionsMonth
@@ -678,9 +685,11 @@ export function renderReportHtml(model) {
 
   const weeklyChartCard = `<div class="chart-card"><div class="chart-head"><div class="chart-title"><span class="icon-slot">${svgIcon("calendarDays", 20)}</span><h3>${year} ${L.weeklyTitleSuffix}</h3></div><div class="chart-summary"><span class="chart-summary-item">${L.busiestMoment}<strong>${L.weekdayPrefix}${escapeXml(busiestWeekday)}</strong></span><span class="chart-badge">${formatNumber(busiestValue)} ${L.contributions}</span></div></div>${weeklyPlot}</div>`
 
+  const activeDaysText = `${stats.activeDays ?? 0} / ${stats.totalDaysConsidered} ${L.dayUnit}`
   const issuesTitle = `${year} ${L.issuesInYearSuffix}`
+  const prTitle = `${year} ${L.prInYearSuffix}`
   const reposTitle = `${year} ${L.reposTitleSuffix}`
   const langsTitle = `${year} ${L.langsTitleSuffix}`
 
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>${escapeXml(profile.login)} ${year} GitHub Annual Report</title><style>${styles()}</style></head><body><div class="canvas">${staticCard(layout.top.left, topLeftContent)}${staticCard(layout.top.right, renderAi(aiSummary))}${staticCard(layout.stat.cards[0], renderInlineStat("calendarArrowUp", L.activeMonth, maxMonthText))}${staticCard(layout.stat.cards[1], renderInlineStat("scale", L.avgPerDay, formatNumber(stats.averageContributionsPerDay)))}${staticCard(layout.stat.cards[2], renderInlineStat("messageSquareQuote", issuesTitle, formatNumber(issuesCount)))}${staticCard(layout.kpi.cards[0], renderKpi("arrowBigUpDash", L.maxDay, stats.maxContributionsInADay, L.contributions, activeDayText))}${staticCard(layout.kpi.cards[1], renderKpi("calendarDays", L.longestStreak, stats.longestStreak, L.dayUnit, streakRangeText))}${staticCard(layout.kpi.cards[2], renderKpi("calendarMinus2", L.longestGap, stats.longestGap, L.dayUnit, gapRangeText))}${staticCard(layout.mid.left, `<div class="repo-card"><div class="repo-head"><span class="icon-slot">${svgIcon("folderGit2", 20)}</span><h3>${escapeXml(reposTitle)}</h3><div class="repo-tabs"><span class="repo-tab">${L.tabHot}</span><span class="repo-tab">${L.tabNew}</span></div></div><ul class="repo-list">${renderRepos(topRepos)}</ul></div>`)}${staticCard(layout.mid.right, `<div class="lang-card"><div class="lang-head"><span class="icon-slot">${svgIcon("squareCode", 20)}</span><h3>${escapeXml(langsTitle)}</h3></div><ul class="lang-list">${renderLanguages(topLanguages)}</ul></div>`)}${staticCard(layout.chart.left, monthlyChartCard)}${staticCard(layout.chart.right, weeklyChartCard)}</div></body></html>`
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>${escapeXml(profile.login)} ${year} GitHub Annual Report</title><style>${styles()}</style></head><body><div class="canvas">${staticCard(layout.top.left, topLeftContent)}${staticCard(layout.top.right, renderAi(aiSummary))}${staticCard(layout.stat.cards[0], renderInlineStat("calendarArrowUp", L.activeMonth, maxMonthText))}${staticCard(layout.stat.cards[1], renderInlineStat("scale", L.activeDays, activeDaysText))}${staticCard(layout.stat.cards[2], renderInlineStat("messageSquareQuote", issuesTitle, `${formatNumber(issuesCount)} / PR ${formatNumber(prCount ?? 0)}`))}${staticCard(layout.kpi.cards[0], renderKpi("arrowBigUpDash", L.maxDay, stats.maxContributionsInADay, L.contributions, activeDayText))}${staticCard(layout.kpi.cards[1], renderKpi("calendarDays", L.longestStreak, stats.longestStreak, L.dayUnit, streakRangeText))}${staticCard(layout.kpi.cards[2], renderKpi("calendarMinus2", L.longestGap, stats.longestGap, L.dayUnit, gapRangeText))}${staticCard(layout.mid.left, `<div class="repo-card"><div class="repo-head"><span class="icon-slot">${svgIcon("folderGit2", 20)}</span><h3>${escapeXml(reposTitle)}</h3><div class="repo-tabs"><span class="repo-tab">${L.tabHot}</span><span class="repo-tab">${L.tabNew}</span></div></div><ul class="repo-list">${renderRepos(topRepos)}</ul></div>`)}${staticCard(layout.mid.right, `<div class="lang-card"><div class="lang-head"><span class="icon-slot">${svgIcon("squareCode", 20)}</span><h3>${escapeXml(langsTitle)}</h3></div><ul class="lang-list">${renderLanguages(topLanguages)}</ul></div>`)}${staticCard(layout.chart.left, monthlyChartCard)}${staticCard(layout.chart.right, weeklyChartCard)}</div></body></html>`
 }

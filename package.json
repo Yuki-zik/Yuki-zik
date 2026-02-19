@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "yuki-zik",
+  "version": "1.0.0",
+  "description": "GitHub homepage automation — annual report generator",
+  "type": "module",
+  "scripts": {
+    "report": "node scripts/year-report/generate-report.mjs",
+    "test": "vitest run",
+    "test:node": "node --test scripts/year-report/__tests__/stats.test.mjs scripts/year-report/__tests__/layout.test.mjs scripts/year-report/__tests__/artifact.test.mjs",
+    "test:watch": "vitest",
+    "test:all": "npm run test && npm run test:node"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.0",
+    "playwright": "1.51.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

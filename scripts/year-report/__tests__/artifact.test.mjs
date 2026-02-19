@@ -49,6 +49,7 @@ function createMockReportModel() {
     stats: {
       totalContributions: 120,
       totalDaysConsidered: 45,
+      activeDays: 20,
       averageContributionsPerDay: 3,
       maxContributionsInADay: 12,
       maxContributionsDate: `${year}-01-18`,
@@ -65,7 +66,8 @@ function createMockReportModel() {
       busiestWeekday: 5,
       heatmapWeeks: buildHeatmapWeeks(year),
     },
-    issuesCount: 6,
+    issuesCount: 5,
+    prCount: 3,
     topRepos: [
       {
         nameWithOwner: "Yuki-zik/sample-a",

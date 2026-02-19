@@ -101,9 +101,10 @@ async function main() {
 
   const client = new GitHubClient({ token })
 
-  const [profileData, issuesCount] = await Promise.all([
+  const [profileData, issuesCount, prCount] = await Promise.all([
     client.fetchYearlyProfileData({ username: DEFAULT_CONFIG.username, year }),
     client.fetchIssueCount({ username: DEFAULT_CONFIG.username, year }),
+    client.fetchPrCount({ username: DEFAULT_CONFIG.username, year }),
   ])
 
   const user = profileData.user
@@ -141,6 +142,7 @@ async function main() {
     year,
     stats,
     issuesCount,
+    prCount,
     topLanguages,
     topRepos,
   })
@@ -157,6 +159,7 @@ async function main() {
     year,
     stats,
     issuesCount,
+    prCount,
     topRepos,
     topLanguages,
     aiSummary,
@@ -171,8 +174,9 @@ async function main() {
     aiMode: aiSummary.mode,
     aiReason: aiSummary.reason || null,
     rateLimit: profileData.rateLimit,
-    stats,
+    stats: (() => { const { heatmapWeeks, ...rest } = stats; return rest })(),
     issuesCount,
+    prCount,
     topRepos,
     topLanguages,
     aiSummary,
@@ -192,6 +196,7 @@ async function main() {
       maxContributionsMonth: stats.maxContributionsMonth,
       aiMode: aiSummary.mode,
       issuesCount,
+      prCount,
     }
 
     console.log(JSON.stringify(summary, null, 2))
