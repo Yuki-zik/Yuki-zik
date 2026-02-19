@@ -13,25 +13,32 @@
 </div>
 
 <div align="center">
-  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/0-profile-details.svg?raw=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=radical&hide_border=true" alt="streak stats" />
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/0-profile-details.svg?raw=true" />
 </div>
+
+
 
 <table align="center">
   <tr>
     <td align="center" width="50%">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/1-repos-per-language.svg?raw=true" />
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/4-productive-time.svg?raw=true" width="100%" />
     </td>
     <td align="center" width="50%">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/2-most-commit-language.svg?raw=true" />
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=default&hide_border=true" alt="streak stats" width="100%" />
     </td>
   </tr>
+</table>
+
+<table align="center">
   <tr>
-    <td align="center" width="50%">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/3-stats.svg?raw=true" />
+    <td align="center" width="33%">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/3-stats.svg?raw=true" width="100%" />
     </td>
-    <td align="center" width="50%">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/4-productive-time.svg?raw=true" />
+    <td align="center" width="33%">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/1-repos-per-language.svg?raw=true" width="100%" />
+    </td>
+    <td align="center" width="33%">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/2-most-commit-language.svg?raw=true" width="100%" />
     </td>
   </tr>
 </table>
