@@ -26,10 +26,13 @@
 ### 📊 GitHub Stats
 
 <div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/Yuki-zik/Yuki-zik@profile-summary-cards/profile-summary-card-output/radical/0-profile-details.svg" />
+</div>
 
-| [![Stats](https://stats.justsong.cn/api?username=Yuki-zik&show_icons=true&theme=radical&hide_border=true)](https://github.com/Yuki-zik) | [![Top Langs](https://stats.justsong.cn/api/top-langs/?username=Yuki-zik&layout=compact&theme=radical&hide_border=true)](https://github.com/Yuki-zik) |
-|:---:|:---:|
-
+<div align="center"> 
+  <img src="https://cdn.jsdelivr.net/gh/Yuki-zik/Yuki-zik@profile-summary-cards/profile-summary-card-output/radical/1-repos-per-language.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/Yuki-zik/Yuki-zik@profile-summary-cards/profile-summary-card-output/radical/2-most-commit-language.svg" />
+  <img src="https://cdn.jsdelivr.net/gh/Yuki-zik/Yuki-zik@profile-summary-cards/profile-summary-card-output/radical/3-commit-stats.svg" />
 </div>
 
 <br/>
