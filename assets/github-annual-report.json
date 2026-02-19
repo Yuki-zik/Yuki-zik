@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-02-19T06:37:21.610Z",
-  "year": 2025,
+  "generatedAt": "2026-02-19T06:58:45.718Z",
+  "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
   "profile": {
@@ -14,13 +14,13 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4978,
+    "remaining": 4947,
     "resetAt": "2026-02-19T07:33:47Z"
   },
   "stats": {
-    "totalContributions": 72,
+    "totalContributions": 90,
     "totalDaysConsidered": 365,
-    "activeDays": 19,
+    "activeDays": 23,
     "averageContributionsPerDay": 0.2,
     "maxContributionsInADay": 17,
     "maxContributionsDate": "2025-12-22",
@@ -30,11 +30,11 @@
     "longestGap": 117,
     "longestGapStartDate": "2025-08-03",
     "longestGapEndDate": "2025-11-27",
-    "maxContributionsMonth": "2025-12",
+    "maxContributionsMonth": "2026-12",
     "maxMonthlyContributions": 37,
     "monthlyContributions": [
       0,
-      2,
+      20,
       2,
       13,
       7,
@@ -48,16 +48,16 @@
     ],
     "weekdayContributions": [
       6,
-      31,
+      30,
       9,
-      0,
-      6,
-      14,
-      6
+      2,
+      13,
+      16,
+      14
     ],
     "busiestWeekday": 1
   },
-  "issuesCount": 2,
+  "issuesCount": 3,
   "prCount": 43,
   "topRepos": [
     {
@@ -69,64 +69,64 @@
       "commits": 19
     },
     {
+      "nameWithOwner": "Yuki-zik/Yuki-zik",
+      "url": "https://github.com/Yuki-zik/Yuki-zik",
+      "description": "Config files for my GitHub profile.",
+      "stars": 0,
+      "forks": 0,
+      "commits": 12
+    },
+    {
       "nameWithOwner": "Yuki-zik/----",
       "url": "https://github.com/Yuki-zik/----",
       "description": "",
       "stars": 0,
       "forks": 0,
       "commits": 4
-    },
-    {
-      "nameWithOwner": "Yuki-zik/Information-Hiding-Practive",
-      "url": "https://github.com/Yuki-zik/Information-Hiding-Practive",
-      "description": "信息隐藏实践",
-      "stars": 0,
-      "forks": 0,
-      "commits": 2
     }
   ],
   "topLanguages": [
     {
-      "language": "Python",
-      "bytes": 207656,
-      "ratio": 0.49036767657685315
+      "language": "JavaScript",
+      "bytes": 352062,
+      "ratio": 0.49403543238028413
     },
     {
-      "language": "JavaScript",
-      "bytes": 95053,
-      "ratio": 0.2244621815004605
+      "language": "Python",
+      "bytes": 207656,
+      "ratio": 0.2913958954569374
     },
     {
       "language": "TypeScript",
-      "bytes": 53529,
-      "ratio": 0.12640564857014663
+      "bytes": 83657,
+      "ratio": 0.11739273811611999
     },
     {
       "language": "C",
       "bytes": 34285,
-      "ratio": 0.08096205162113018
+      "ratio": 0.04811085774425539
     },
     {
       "language": "Monkey C",
       "bytes": 15334,
-      "ratio": 0.03621035728623043
+      "ratio": 0.021517628486230487
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik 在 2025 自然年共完成 72 项贡献，日均贡献 0.2 项，并提交了 2 个 issue。",
+    "intro": "Yuki-zik在过去365天内共计贡献90次，日均贡献0.2次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik 在 2025 自然年共完成 72 项贡献，平均每日贡献 0.2 项。期间共提交 2 个 issue。"
+        "content": "Yuki-zik在过去365天内总计贡献90次，日均0.2次。单日最高贡献为17次，发生在2025年12月22日；期间共提交3个issue。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "2025 年的贡献高峰出现在 12 月，其中 12 月 22 日单日贡献达 17 项。最长连续贡献天数为 5 天，最长贡献间隔为 117 天。"
+        "content": "贡献节奏显示出波动性，最长连续贡献为5天，最长间隔达117天。2026年12月是贡献最活跃的月份。"
       },
       {
         "heading": "技术与项目",
-        "content": "年度主要使用语言为 Python、JavaScript 和 TypeScript。贡献最活跃的仓库是 Yuki-zik/yuki-zik.github.io，有 19 项贡献；其次是 Yuki-zik/---- (4项) 和 Yuki-zik/Information-Hiding-Practive (2项)。"
+        "content": "主要技术栈为JavaScript、Python和TypeScript。贡献集中于Yuki-zik/yuki-zik.github.io（19次）和Yuki-zik/Yuki-zik（12次）等仓库。"
       }
     ]
   },
