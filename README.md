@@ -26,13 +26,13 @@
 ### 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Yuki-zik/Yuki-zik/profile-summary-cards/profile-summary-card-output/radical/0-profile-details.svg" />
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/profile-summary-cards/profile-summary-card-output/radical/0-profile-details.svg?raw=true" />
 </div>
 
 <div align="center"> 
-  <img src="https://raw.githubusercontent.com/Yuki-zik/Yuki-zik/profile-summary-cards/profile-summary-card-output/radical/1-repos-per-language.svg" />
-  <img src="https://raw.githubusercontent.com/Yuki-zik/Yuki-zik/profile-summary-cards/profile-summary-card-output/radical/2-most-commit-language.svg" />
-  <img src="https://raw.githubusercontent.com/Yuki-zik/Yuki-zik/profile-summary-cards/profile-summary-card-output/radical/3-commit-stats.svg" />
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/profile-summary-cards/profile-summary-card-output/radical/1-repos-per-language.svg?raw=true" />
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/profile-summary-cards/profile-summary-card-output/radical/2-most-commit-language.svg?raw=true" />
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/profile-summary-cards/profile-summary-card-output/radical/3-commit-stats.svg?raw=true" />
 </div>
 
 <br/>
