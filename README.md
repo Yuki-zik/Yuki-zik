@@ -12,33 +12,29 @@
   </p>
 </div>
 
-<div align="center">
-  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/0-profile-details.svg?raw=true" />
-</div>
-
-
-
 <table align="center">
   <tr>
-    <td align="center" width="50%">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/4-productive-time.svg?raw=true" width="100%" />
-    </td>
-    <td align="center" width="50%">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=default&hide_border=true" alt="streak stats" width="100%" />
+    <td align="center" colspan="6">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/transparent/0-profile-details.svg?raw=true" width="100%" />
     </td>
   </tr>
-</table>
-
-<table align="center">
   <tr>
-    <td align="center" width="33%">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/3-stats.svg?raw=true" width="100%" />
+    <td align="center" colspan="3">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/transparent/4-productive-time.svg?raw=true" width="100%" />
     </td>
-    <td align="center" width="33%">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/1-repos-per-language.svg?raw=true" width="100%" />
+    <td align="center" colspan="3">
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=transparent&hide_border=true" alt="streak stats" width="100%" />
     </td>
-    <td align="center" width="33%">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/github/2-most-commit-language.svg?raw=true" width="100%" />
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/transparent/3-stats.svg?raw=true" width="100%" />
+    </td>
+    <td align="center" colspan="2">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/transparent/1-repos-per-language.svg?raw=true" width="100%" />
+    </td>
+    <td align="center" colspan="2">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/transparent/2-most-commit-language.svg?raw=true" width="100%" />
     </td>
   </tr>
 </table>
