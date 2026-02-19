@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-19T05:59:10.353Z",
+  "generatedAt": "2026-02-19T06:37:21.610Z",
   "year": 2025,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -14,8 +14,8 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4949,
-    "resetAt": "2026-02-19T06:32:40Z"
+    "remaining": 4978,
+    "resetAt": "2026-02-19T07:33:47Z"
   },
   "stats": {
     "totalContributions": 72,
@@ -89,44 +89,44 @@
     {
       "language": "Python",
       "bytes": 207656,
-      "ratio": 0.4945733073887332
+      "ratio": 0.49036767657685315
     },
     {
       "language": "JavaScript",
-      "bytes": 91452,
-      "ratio": 0.21781079336650241
+      "bytes": 95053,
+      "ratio": 0.2244621815004605
     },
     {
       "language": "TypeScript",
       "bytes": 53529,
-      "ratio": 0.12748976466469303
+      "ratio": 0.12640564857014663
     },
     {
       "language": "C",
       "bytes": 34285,
-      "ratio": 0.08165642140762952
+      "ratio": 0.08096205162113018
     },
     {
       "language": "Monkey C",
       "bytes": 15334,
-      "ratio": 0.036520914856776755
+      "ratio": 0.03621035728623043
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在2025年度共计贡献72次，日均贡献0.2次。",
+    "intro": "Yuki-zik 在 2025 自然年共完成 72 项贡献，日均贡献 0.2 项，并提交了 2 个 issue。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在2025年共完成72次贡献，日均贡献0.2次。期间共创建或参与了2个issue。"
+        "content": "Yuki-zik 在 2025 自然年共完成 72 项贡献，平均每日贡献 0.2 项。期间共提交 2 个 issue。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "2025年12月是Yuki-zik最活跃的月份，峰值贡献发生在12月22日，单日贡献达17次。最长连续贡献天数为5天，最长间隔天数为117天。"
+        "content": "2025 年的贡献高峰出现在 12 月，其中 12 月 22 日单日贡献达 17 项。最长连续贡献天数为 5 天，最长贡献间隔为 117 天。"
       },
       {
         "heading": "技术与项目",
-        "content": "Yuki-zik在2025年主要使用Python、JavaScript和TypeScript进行开发。贡献最多的仓库是Yuki-zik/yuki-zik.github.io，贡献19次；其次是Yuki-zik/----，贡献4次，以及Yuki-zik/Information-Hiding-Practive，贡献2次。"
+        "content": "年度主要使用语言为 Python、JavaScript 和 TypeScript。贡献最活跃的仓库是 Yuki-zik/yuki-zik.github.io，有 19 项贡献；其次是 Yuki-zik/---- (4项) 和 Yuki-zik/Information-Hiding-Practive (2项)。"
       }
     ]
   },
