@@ -21,4 +21,4 @@ jobs:
         with:
           USERNAME: ${{ github.repository_owner }}
           # OPTIONS: default, 2077, algolia, atomic, aurora, dracula, for-the-badge, github, gruvbox, material, monokai, nord, onedark, radical, solarized, tokyo-night
-          THEME: transparent
+          THEME: material
