@@ -1,6 +1,5 @@
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2196F3&center=true&vCenter=true&width=435&lines=Hi+there,+I'm+Yuki-zik+%F0%9F%91%8B;Automation+Enthusiast;Frontend%2FBackend+Engineer;Tool+Maker" alt="Typing SVG" />
-  
   <p>
     <a href="https://t.me/A_Znkv">
       <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
@@ -11,17 +10,10 @@
   </p>
 </div>
 
----
-
 <div align="center"> 
-
-### 🛠 Tech Stack
-
-<img src="https://skillicons.dev/icons?i=js,nodejs,github,graphql,vite,react,vscode" />
-
+  <h3>🛠 Tech Stack</h3>
+  <img src="https://skillicons.dev/icons?i=js,nodejs,github,graphql,vite,react,vscode" />
 </div>
-
----
 
 ### 📊 GitHub Stats
 
@@ -29,13 +21,24 @@
   <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/0-profile-details.svg?raw=true" />
 </div>
 
-<div align="center"> 
-  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/1-repos-per-language.svg?raw=true" />
-  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/2-most-commit-language.svg?raw=true" />
-  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/3-commit-stats.svg?raw=true" />
-</div>
-
-<br/>
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/1-repos-per-language.svg?raw=true" />
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/2-most-commit-language.svg?raw=true" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/3-stats.svg?raw=true" />
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/radical/4-productive-time.svg?raw=true" />
+    </td>
+  </tr>
+</table>
 
 <div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=radical&hide_border=true" alt="streak stats" />
