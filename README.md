@@ -15,26 +15,26 @@
 <table align="center">
   <tr>
     <td align="center" colspan="6">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/default/0-profile-details.svg?raw=true" width="100%" />
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/nord_bright/0-profile-details.svg?raw=true" width="100%" />
     </td>
   </tr>
   <tr>
     <td align="center" colspan="3">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/default/4-productive-time.svg?raw=true" width="100%" />
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/nord_bright/4-productive-time.svg?raw=true" width="100%" />
     </td>
     <td align="center" colspan="3">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=default&hide_border=true" alt="streak stats" width="100%" />
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=nord&hide_border=true" alt="streak stats" width="100%" />
     </td>
   </tr>
   <tr>
     <td align="center" colspan="2">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/default/3-stats.svg?raw=true" width="100%" />
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/nord_bright/3-stats.svg?raw=true" width="100%" />
     </td>
     <td align="center" colspan="2">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/default/1-repos-per-language.svg?raw=true" width="100%" />
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/nord_bright/1-repos-per-language.svg?raw=true" width="100%" />
     </td>
     <td align="center" colspan="2">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/default/2-most-commit-language.svg?raw=true" width="100%" />
+      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/nord_bright/2-most-commit-language.svg?raw=true" width="100%" />
     </td>
   </tr>
 </table>
