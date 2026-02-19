@@ -26,8 +26,10 @@
 ### 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Yuki-zik&show_icons=true&theme=radical&hide_border=true" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yuki-zik&layout=compact&theme=radical&hide_border=true" height="150" alt="languages graph" />
+
+| [![Stats](https://github-readme-stats.vercel.app/api?username=Yuki-zik&show_icons=true&theme=radical&hide_border=true)](https://github.com/Yuki-zik) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Yuki-zik&layout=compact&theme=radical&hide_border=true)](https://github.com/Yuki-zik) |
+|:---:|:---:|
+
 </div>
 
 <br/>
