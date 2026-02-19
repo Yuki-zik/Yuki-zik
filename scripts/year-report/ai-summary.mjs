@@ -1,6 +1,7 @@
 ﻿import { formatDateCN, formatDateRangeCN } from "./utils.mjs"
 
-function getFallbackSummary({ stats, year, issuesCount }) {
+function getFallbackSummary({ stats, year, issuesCount, isRolling }) {
+  const yearText = isRolling ? "过去一年" : `${year} 年`
   const hottestMonth = stats.maxContributionsMonth
     ? `${Number(stats.maxContributionsMonth.slice(5, 7))}月`
     : "暂无峰值"
@@ -10,7 +11,7 @@ function getFallbackSummary({ stats, year, issuesCount }) {
     : "本年度暂无有效贡献记录"
 
   return {
-    intro: `你在 ${year} 年保持了稳定的 GitHub 活跃度，全年贡献 ${stats.totalContributions} 次，日均 ${stats.averageContributionsPerDay} 次。`,
+    intro: `你在 ${yearText} 保持了稳定的 GitHub 活跃度，全年贡献 ${stats.totalContributions} 次，日均 ${stats.averageContributionsPerDay} 次。`,
     sections: [
       {
         heading: "活跃节奏",
@@ -22,7 +23,7 @@ function getFallbackSummary({ stats, year, issuesCount }) {
       },
       {
         heading: "协作信号",
-        content: `你在 ${year} 年共参与 ${issuesCount} 个 Issues，最长休息间隔 ${stats.longestGap} 天（${formatDateRangeCN(stats.longestGapStartDate, stats.longestGapEndDate)}）。`,
+        content: `你在 ${yearText} 共参与 ${issuesCount} 个 Issues，最长休息间隔 ${stats.longestGap} 天（${formatDateRangeCN(stats.longestGapStartDate, stats.longestGapEndDate)}）。`,
       },
     ],
   }
@@ -48,9 +49,10 @@ export async function generateAiSummary(options) {
     issuesCount,
     topLanguages,
     topRepos,
+    isRolling,
   } = options
 
-  const fallback = getFallbackSummary({ stats, year, issuesCount })
+  const fallback = getFallbackSummary({ stats, year, issuesCount, isRolling })
 
   if (!enabled || !apiKey) {
     return {
@@ -74,6 +76,7 @@ export async function generateAiSummary(options) {
   const promptData = {
     username,
     year,
+    mode: isRolling ? "Rolling 365 Days" : "Calendar Year",
     totalContributions: stats.totalContributions,
     averagePerDay: stats.averageContributionsPerDay,
     longestStreak: stats.longestStreak,
@@ -120,6 +123,7 @@ export async function generateAiSummary(options) {
             role: "user",
             content: [
               "请基于以下数据输出 JSON 年报摘要。",
+              `模式：${isRolling ? "过去365天滚动统计" : `${year} 自然年统计`}。`,
               "请尽量包含：总贡献、日均、峰值月份、峰值日期、最长连续/最长间隔、issues、Top 语言与Top仓库。",
               `数据：${JSON.stringify(promptData)}`,
             ].join("\n"),

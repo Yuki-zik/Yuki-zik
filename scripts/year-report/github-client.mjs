@@ -34,9 +34,9 @@ export class GitHubClient {
     return payload.data
   }
 
-  async fetchYearlyProfileData({ username, year }) {
-    const from = `${year}-01-01T00:00:00Z`
-    const to = `${year}-12-31T23:59:59Z`
+  async fetchYearlyProfileData({ username, year, from, to }) {
+    const fromDate = from || `${year}-01-01T00:00:00Z`
+    const toDate = to || `${year}-12-31T23:59:59Z`
 
     const query = `
       query YearlyProfileData($username: String!, $from: DateTime!, $to: DateTime!) {
@@ -92,7 +92,7 @@ export class GitHubClient {
       }
     `
 
-    const data = await this.graphql(query, { username, from, to })
+    const data = await this.graphql(query, { username, from: fromDate, to: toDate })
 
     if (!data?.user) {
       throw new Error(`GitHub user not found: ${username}`)
@@ -101,9 +101,9 @@ export class GitHubClient {
     return data
   }
 
-  async fetchIssueCount({ username, year }) {
-    const createdRange = `${year}-01-01..${year}-12-31`
-    const queryString = `involves:${username} is:issue created:${createdRange}`
+  async fetchIssueCount({ username, year, createdRange }) {
+    const range = createdRange || `${year}-01-01..${year}-12-31`
+    const queryString = `involves:${username} is:issue created:${range}`
 
     const query = `
       query IssueCount($queryString: String!) {
@@ -118,9 +118,9 @@ export class GitHubClient {
     return data?.search?.issueCount ?? 0
   }
 
-  async fetchPrCount({ username, year }) {
-    const createdRange = `${year}-01-01..${year}-12-31`
-    const queryString = `author:${username} is:pr created:${createdRange}`
+  async fetchPrCount({ username, year, createdRange }) {
+    const range = createdRange || `${year}-01-01..${year}-12-31`
+    const queryString = `author:${username} is:pr created:${range}`
 
     const query = `
       query PrCount($queryString: String!) {

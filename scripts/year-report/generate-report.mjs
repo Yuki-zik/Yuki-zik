@@ -34,16 +34,30 @@ function validateYear(value) {
   }
 }
 
-function resolveReportYear({ argYear, timeZone }) {
+function resolveDateRange({ argYear, timeZone }) {
   if (argYear) {
     validateYear(argYear)
-    return argYear
+    return {
+      year: argYear,
+      from: null,
+      to: null,
+      isRolling: false,
+    }
   }
 
-  const { year } = getDatePartsInTimeZone(new Date(), timeZone)
-  validateYear(year)
+  const now = new Date()
+  const { year } = getDatePartsInTimeZone(now, timeZone)
+  const to = now.toISOString()
+  const fromDate = new Date(now)
+  fromDate.setFullYear(fromDate.getFullYear() - 1)
+  const from = fromDate.toISOString()
 
-  return year
+  return {
+    year,
+    from,
+    to,
+    isRolling: true,
+  }
 }
 
 function withRepoPlaceholders(repos) {
@@ -92,7 +106,7 @@ async function main() {
     console.warn(`REPORT_YEAR_MODE=${DEFAULT_CONFIG.reportYearMode} is ignored. Only 'current' mode is supported.`)
   }
 
-  const year = resolveReportYear({ argYear: cli.year, timeZone: DEFAULT_CONFIG.timeZone })
+  const { year, from, to, isRolling } = resolveDateRange({ argYear: cli.year, timeZone: DEFAULT_CONFIG.timeZone })
   const token = process.env.GH_STATS_TOKEN
 
   if (!token) {
@@ -102,9 +116,17 @@ async function main() {
   const client = new GitHubClient({ token })
 
   const [profileData, issuesCount, prCount] = await Promise.all([
-    client.fetchYearlyProfileData({ username: DEFAULT_CONFIG.username, year }),
-    client.fetchIssueCount({ username: DEFAULT_CONFIG.username, year }),
-    client.fetchPrCount({ username: DEFAULT_CONFIG.username, year }),
+    client.fetchYearlyProfileData({ username: DEFAULT_CONFIG.username, year, from, to }),
+    client.fetchIssueCount({
+      username: DEFAULT_CONFIG.username,
+      year,
+      createdRange: isRolling ? `${from.slice(0, 10)}..${to.slice(0, 10)}` : null,
+    }),
+    client.fetchPrCount({
+      username: DEFAULT_CONFIG.username,
+      year,
+      createdRange: isRolling ? `${from.slice(0, 10)}..${to.slice(0, 10)}` : null,
+    }),
   ])
 
   const user = profileData.user
@@ -115,6 +137,7 @@ async function main() {
   const stats = deriveYearlyStatistics(calendar, {
     year,
     timeZone: DEFAULT_CONFIG.timeZone,
+    dateRange: isRolling ? { start: from, end: to } : null,
   })
 
   const topRepos = withRepoPlaceholders(
@@ -145,6 +168,7 @@ async function main() {
     prCount,
     topLanguages,
     topRepos,
+    isRolling,
   })
 
   const reportModel = {
@@ -162,7 +186,10 @@ async function main() {
     prCount,
     topRepos,
     topLanguages,
+    topLanguages,
     aiSummary,
+    isRolling,
+    dateRangeLabel: isRolling ? "过去一年" : null,
   }
 
   const snapshot = {

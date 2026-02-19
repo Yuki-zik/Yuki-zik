@@ -4,7 +4,11 @@ function isSameYear(dateString, year) {
   return typeof dateString === "string" && dateString.startsWith(`${year}-`)
 }
 
-function shouldIncludeDay(day, { year, currentYear, todayIso }) {
+function shouldIncludeDay(day, { year, currentYear, todayIso, dateRange }) {
+  if (dateRange) {
+    return day.date >= dateRange.start && day.date <= dateRange.end
+  }
+
   if (!isSameYear(day.date, year)) {
     return false
   }
@@ -17,7 +21,7 @@ function shouldIncludeDay(day, { year, currentYear, todayIso }) {
 }
 
 export function buildHeatmapWeeks(calendar, options) {
-  const { year, timeZone, now = new Date() } = options
+  const { year, timeZone, now = new Date(), dateRange } = options
   const { year: currentYear } = getDatePartsInTimeZone(now, timeZone)
   const todayIso = getTodayIsoInTimeZone(timeZone, now)
 
@@ -28,7 +32,7 @@ export function buildHeatmapWeeks(calendar, options) {
 
     return {
       days: days.map((day) => {
-        const included = shouldIncludeDay(day, { year, currentYear, todayIso })
+        const included = shouldIncludeDay(day, { year, currentYear, todayIso, dateRange })
 
         return {
           date: day.date,
@@ -43,8 +47,8 @@ export function buildHeatmapWeeks(calendar, options) {
 }
 
 export function deriveYearlyStatistics(calendar, options) {
-  const { year, timeZone, now = new Date() } = options
-  const heatmapWeeks = buildHeatmapWeeks(calendar, { year, timeZone, now })
+  const { year, timeZone, now = new Date(), dateRange } = options
+  const heatmapWeeks = buildHeatmapWeeks(calendar, { year, timeZone, now, dateRange })
 
   let totalContributions = 0
   let totalDaysConsidered = 0

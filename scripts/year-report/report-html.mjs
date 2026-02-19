@@ -360,14 +360,14 @@ function renderHeatmap(stats) {
 }
 
 function renderAi(aiSummary) {
-  const introLines = wrapLines(aiSummary?.intro || "", 36, 3).filter(Boolean)
+  const introLines = wrapLines(aiSummary?.intro || "", 50, 3).filter(Boolean)
   const sections = (aiSummary?.sections || []).slice(0, 3)
   const modeLabel = aiSummary?.mode === "ai" ? "AI \u751f\u6210" : "\u89c4\u5219\u964d\u7ea7"
 
   return `<div class="ai-card"><div class="ai-head"><span class="icon-slot icon-ai">${svgIcon("sparkles", 20)}</span><h3>${L.aiTitle}</h3><span class="ai-mode-chip">${modeLabel}</span></div><div class="ai-body"><div class="ai-intro-box">${introLines.map((line) => `<p class="ai-intro">${escapeXml(line)}</p>`).join("")}</div>${sections.map((section, index) => {
     const heading = escapeXml(section?.heading || L.analysis)
     const toneTag = escapeXml(getAiToneTag(section, index))
-    const lines = wrapLines(section?.content || "", 36, 3).filter(Boolean)
+    const lines = wrapLines(section?.content || "", 50, 3).filter(Boolean)
     return `<div class="ai-sec-card"><div class="ai-sec-head"><h4>${heading}</h4><span class="ai-tag">${toneTag}</span></div>${lines.map((line) => `<p>${escapeXml(line)}</p>`).join("")}</div>`
   }).join("")}</div></div>`
 }
@@ -532,7 +532,7 @@ body {
 .profile-account { margin: 8px 0 0; display: flex; align-items: center; gap: 6px; font-size: 14px; color: #1f2937; }
 .profile-account .mini { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; }
 .profile-account .dot { opacity: .5; }
-.profile-bio { margin: 8px 0 0; font-size: 14px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.profile-bio { margin: 8px 0 0; font-size: 14px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: normal; }
 .profile-total { width: 184px; padding-top: 6px; text-align: right; font-size: 14px; }
 .profile-total p { margin: 0; }
 .profile-total .sub { color: var(--muted); margin-top: 4px; }
@@ -659,12 +659,16 @@ body {
 }
 
 export function renderReportHtml(model) {
-  const { profile, year, stats, issuesCount, prCount, topRepos, topLanguages, aiSummary } = model
+  const { profile, year, stats, issuesCount, prCount, topRepos, topLanguages, aiSummary, isRolling } = model
   const layout = buildReportLayout()
 
+  const yearText = isRolling ? "过去一年" : `${year} ${L.year}`
+  const shortYearText = isRolling ? "过去" : `${year}`
+  const suffixYearText = isRolling ? "过去一" : `${year}`
+
   const maxMonthText = stats.maxContributionsMonth
-    ? `${year} ${L.year} ${Number(stats.maxContributionsMonth.slice(5, 7))} ${L.month}`
-    : `${year} ${L.year} -- ${L.month}`
+    ? `${yearText} ${Number(stats.maxContributionsMonth.slice(5, 7))} ${L.month}`
+    : `${yearText} -- ${L.month}`
 
   const activeDayText = stats.maxContributionsDate ? formatDateCN(stats.maxContributionsDate) : "--"
   const streakRangeText = formatDateRangeCN(stats.longestStreakStartDate, stats.longestStreakEndDate)
@@ -679,17 +683,17 @@ export function renderReportHtml(model) {
   const monthlyPlot = renderChartPlot(layout.chart.left, monthlyValues, MONTH_LABELS)
   const weeklyPlot = renderChartPlot(layout.chart.right, weeklyValues, WEEKDAY_LABELS)
 
-  const topLeftContent = `<div class="top-left-wrap"><span class="mockup-bg"></span><div class="mockup-wrap"><div class="mockup"><div class="safari-head"><div class="lights"><span class="light red"></span><span class="light yellow"></span><span class="light green"></span></div><div class="nav-btns">${svgIcon("chevronLeft", 16)}${svgIcon("chevronRight", 16)}</div><div class="url"><span>${svgIcon("lock", 13)}</span><span>github.com/${escapeXml(profile.login)}</span><span>${svgIcon("rotateCw", 13)}</span></div><div class="safari-actions">${svgIcon("share", 15)}${svgIcon("plus", 15)}${svgIcon("copy", 15)}</div></div><div class="profile-row"><div class="avatar">${profile.avatarUrl ? `<img src="${escapeXml(profile.avatarUrl)}" alt="${escapeXml(profile.login)} avatar"/>` : `<span class="avatar-fallback">${escapeXml(String(profile.login || "Y").slice(0, 1).toUpperCase())}</span>`}</div><div class="profile-meta"><h2>${escapeXml(profile.name || profile.login)}</h2><p class="profile-account"><span class="mini">${svgIcon("atSign", 13)}</span><span>@${escapeXml(profile.login)}</span><span class="dot">${L.dot}</span><span class="mini">${svgIcon("user", 14)}</span><span>${formatNumber(profile.followers)} ${L.followers}</span><span class="dot">${L.dot}</span><span>${formatNumber(profile.following)} ${L.following}</span></p><p class="profile-bio">${escapeXml(truncate(profile.bio || "Building useful software with stable cadence.", 70))}</p></div><div class="profile-total"><span class="mark">${githubIcon(34)}</span><p>${L.total} ${formatNumber(stats.totalContributions)} ${L.contributions}</p><p class="sub">${L.only} ${year} ${L.year}</p></div></div><div class="heatmap-shell">${renderHeatmap(stats)}</div></div></div></div>`
+  const topLeftContent = `<div class="top-left-wrap"><span class="mockup-bg"></span><div class="mockup-wrap"><div class="mockup"><div class="safari-head"><div class="lights"><span class="light red"></span><span class="light yellow"></span><span class="light green"></span></div><div class="nav-btns">${svgIcon("chevronLeft", 16)}${svgIcon("chevronRight", 16)}</div><div class="url"><span>${svgIcon("lock", 13)}</span><span>github.com/${escapeXml(profile.login)}</span><span>${svgIcon("rotateCw", 13)}</span></div><div class="safari-actions">${svgIcon("share", 15)}${svgIcon("plus", 15)}${svgIcon("copy", 15)}</div></div><div class="profile-row"><div class="avatar">${profile.avatarUrl ? `<img src="${escapeXml(profile.avatarUrl)}" alt="${escapeXml(profile.login)} avatar"/>` : `<span class="avatar-fallback">${escapeXml(String(profile.login || "Y").slice(0, 1).toUpperCase())}</span>`}</div><div class="profile-meta"><h2>${escapeXml(profile.name || profile.login)}</h2><p class="profile-account"><span class="mini">${svgIcon("atSign", 13)}</span><span>@${escapeXml(profile.login)}</span><span class="dot">${L.dot}</span><span class="mini">${svgIcon("user", 14)}</span><span>${formatNumber(profile.followers)} ${L.followers}</span><span class="dot">${L.dot}</span><span>${formatNumber(profile.following)} ${L.following}</span></p><p class="profile-bio">${escapeXml(truncate(profile.bio || "Building useful software with stable cadence.", 120))}</p></div><div class="profile-total"><span class="mark">${githubIcon(34)}</span><p>${L.total} ${formatNumber(stats.totalContributions)} ${L.contributions}</p><p class="sub">${L.only} ${yearText}</p></div></div><div class="heatmap-shell">${renderHeatmap(stats)}</div></div></div></div>`
 
-  const monthlyChartCard = `<div class="chart-card"><div class="chart-head"><div class="chart-title"><span class="icon-slot">${svgIcon("calendarRange", 20)}</span><h3>${year} ${L.monthlyTitleSuffix}</h3></div><div class="chart-summary"><span class="chart-summary-item">${L.yearlyTotal}<strong>${formatNumber(stats.totalContributions)}</strong></span><span class="chart-badge">${L.peakMoment}${escapeXml(peakMonth)}</span></div></div>${monthlyPlot}</div>`
+  const monthlyChartCard = `<div class="chart-card"><div class="chart-head"><div class="chart-title"><span class="icon-slot">${svgIcon("calendarRange", 20)}</span><h3>${shortYearText} ${L.monthlyTitleSuffix}</h3></div><div class="chart-summary"><span class="chart-summary-item">${L.yearlyTotal}<strong>${formatNumber(stats.totalContributions)}</strong></span><span class="chart-badge">${L.peakMoment}${escapeXml(peakMonth)}</span></div></div>${monthlyPlot}</div>`
 
-  const weeklyChartCard = `<div class="chart-card"><div class="chart-head"><div class="chart-title"><span class="icon-slot">${svgIcon("calendarDays", 20)}</span><h3>${year} ${L.weeklyTitleSuffix}</h3></div><div class="chart-summary"><span class="chart-summary-item">${L.busiestMoment}<strong>${L.weekdayPrefix}${escapeXml(busiestWeekday)}</strong></span><span class="chart-badge">${formatNumber(busiestValue)} ${L.contributions}</span></div></div>${weeklyPlot}</div>`
+  const weeklyChartCard = `<div class="chart-card"><div class="chart-head"><div class="chart-title"><span class="icon-slot">${svgIcon("calendarDays", 20)}</span><h3>${yearText} ${L.weeklyTitleSuffix}</h3></div><div class="chart-summary"><span class="chart-summary-item">${L.busiestMoment}<strong>${L.weekdayPrefix}${escapeXml(busiestWeekday)}</strong></span><span class="chart-badge">${formatNumber(busiestValue)} ${L.contributions}</span></div></div>${weeklyPlot}</div>`
 
   const activeDaysText = `${stats.activeDays ?? 0} / ${stats.totalDaysConsidered} ${L.dayUnit}`
-  const issuesTitle = `${year} ${L.issuesInYearSuffix}`
-  const prTitle = `${year} ${L.prInYearSuffix}`
-  const reposTitle = `${year} ${L.reposTitleSuffix}`
-  const langsTitle = `${year} ${L.langsTitleSuffix}`
+  const issuesTitle = `${suffixYearText} ${L.issuesInYearSuffix}`
+  const prTitle = `${suffixYearText} ${L.prInYearSuffix}`
+  const reposTitle = `${suffixYearText} ${L.reposTitleSuffix}`
+  const langsTitle = `${suffixYearText} ${L.langsTitleSuffix}`
 
   return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>${escapeXml(profile.login)} ${year} GitHub Annual Report</title><style>${styles()}</style></head><body><div class="canvas">${staticCard(layout.top.left, topLeftContent)}${staticCard(layout.top.right, renderAi(aiSummary))}${staticCard(layout.stat.cards[0], renderInlineStat("calendarArrowUp", L.activeMonth, maxMonthText))}${staticCard(layout.stat.cards[1], renderInlineStat("scale", L.activeDays, activeDaysText))}${staticCard(layout.stat.cards[2], renderInlineStat("messageSquareQuote", issuesTitle, `${formatNumber(issuesCount)} / PR ${formatNumber(prCount ?? 0)}`))}${staticCard(layout.kpi.cards[0], renderKpi("arrowBigUpDash", L.maxDay, stats.maxContributionsInADay, L.contributions, activeDayText))}${staticCard(layout.kpi.cards[1], renderKpi("calendarDays", L.longestStreak, stats.longestStreak, L.dayUnit, streakRangeText))}${staticCard(layout.kpi.cards[2], renderKpi("calendarMinus2", L.longestGap, stats.longestGap, L.dayUnit, gapRangeText))}${staticCard(layout.mid.left, `<div class="repo-card"><div class="repo-head"><span class="icon-slot">${svgIcon("folderGit2", 20)}</span><h3>${escapeXml(reposTitle)}</h3><div class="repo-tabs"><span class="repo-tab">${L.tabHot}</span><span class="repo-tab">${L.tabNew}</span></div></div><ul class="repo-list">${renderRepos(topRepos)}</ul></div>`)}${staticCard(layout.mid.right, `<div class="lang-card"><div class="lang-head"><span class="icon-slot">${svgIcon("squareCode", 20)}</span><h3>${escapeXml(langsTitle)}</h3></div><ul class="lang-list">${renderLanguages(topLanguages)}</ul></div>`)}${staticCard(layout.chart.left, monthlyChartCard)}${staticCard(layout.chart.right, weeklyChartCard)}</div></body></html>`
 }
