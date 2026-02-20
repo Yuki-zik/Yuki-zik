@@ -21,4 +21,13 @@ jobs:
         with:
           USERNAME: ${{ github.repository_owner }}
           # OPTIONS: default, 2077, algolia, atomic, aurora, dracula, for-the-badge, github, gruvbox, material, monokai, nord, onedark, radical, solarized, tokyo-night
-          THEME: nord_bright
+          THEME: buefy
+
+      - name: Remove Background and Borders
+        run: |
+          sed -i -E 's/<rect x="1" y="1" rx="5" ry="5" height="99%" width="99.71428571428571%"[^>]*>/<rect x="1" y="1" rx="5" ry="5" height="99%" width="99.71428571428571%" fill="none" stroke="none"><\/rect>/g' profile-summary-card-output/buefy/*.svg || true
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add profile-summary-card-output/buefy/*.svg
+          git commit -m "style: remove backgrounds from summary cards" || echo "No changes to commit"
+          git push
