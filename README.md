@@ -12,32 +12,21 @@
   </p>
 </div>
 
-<table align="center">
-  <tr>
-    <td align="center" colspan="6">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/0-profile-details.svg?raw=true" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="3">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/4-productive-time.svg?raw=true" width="100%" />
-    </td>
-    <td align="center" colspan="3">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=buefy&hide_border=true" alt="streak stats" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/3-stats.svg?raw=true" width="100%" />
-    </td>
-    <td align="center" colspan="2">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/1-repos-per-language.svg?raw=true" width="100%" />
-    </td>
-    <td align="center" colspan="2">
-      <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/2-most-commit-language.svg?raw=true" width="100%" />
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/0-profile-details.svg?raw=true" width="700" alt="Profile Details" />
+  <br/>
+  <br/>
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/4-productive-time.svg?raw=true" height="165" alt="Productive Time" />
+  &nbsp;&nbsp;
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yuki-zik&theme=buefy&hide_border=true" height="165" alt="Streak Stats" />
+  <br/>
+  <br/>
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/3-stats.svg?raw=true" height="135" alt="Stats" />
+  &nbsp;&nbsp;
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/1-repos-per-language.svg?raw=true" height="135" alt="Repos Per Language" />
+  &nbsp;&nbsp;
+  <img src="https://github.com/Yuki-zik/Yuki-zik/blob/main/profile-summary-card-output/buefy/2-most-commit-language.svg?raw=true" height="135" alt="Most Commits Language" />
+</div>
 
 ---
 
