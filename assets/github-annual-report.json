@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-20T08:06:37.208Z",
+  "generatedAt": "2026-02-20T17:31:31.938Z",
   "year": 2025,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -14,8 +14,8 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4992,
-    "resetAt": "2026-02-20T08:59:24Z"
+    "remaining": 4945,
+    "resetAt": "2026-02-20T17:51:23Z"
   },
   "stats": {
     "totalContributions": 72,
@@ -114,19 +114,19 @@
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在2025自然年共完成了72项GitHub贡献，日均贡献0.2项，主要活跃于年末。",
+    "intro": "Yuki-zik 在 2025 自然年共完成 72 项贡献，日均贡献 0.2 项。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在2025自然年共计贡献72项，平均每日贡献0.2项。期间共创建或处理了2个Issue。"
+        "content": "Yuki-zik 在 2025 自然年共计贡献 72 项，平均每日贡献 0.2 项。期间共创建 2 个 Issue。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "贡献高峰期集中在2025年12月，其中2025年12月22日单日贡献达17项。最长连续贡献天数为5天，最长间隔期为117天。"
+        "content": "年度贡献高峰出现在 2025 年 12 月，单日最高贡献为 17 项，发生于 2025 年 12 月 22 日。最长连续贡献天数为 5 天，最长贡献间隔为 117 天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为Python、JavaScript和TypeScript。贡献最多的仓库是Yuki-zik/yuki-zik.github.io，有19项贡献；其次是Yuki-zik/----，有4项；Yuki-zik/Information-Hiding-Practive有2项。"
+        "content": "主要贡献语言为 Python、JavaScript 和 TypeScript。贡献最多的仓库是 Yuki-zik/yuki-zik.github.io (19 项)，其次是 Yuki-zik/---- (4 项) 和 Yuki-zik/Information-Hiding-Practive (2 项)。"
       }
     ]
   },
