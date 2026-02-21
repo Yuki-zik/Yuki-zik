@@ -3,3 +3,4 @@ node_modules/
 *.log
 test-output.txt
 report-screenshot.png
+.claude/
