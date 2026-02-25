@@ -1,0 +1,4 @@
+﻿Error in ./test.svg : [xmldom error]	invalid doc source
+@#[line:undefined,col:undefined]
+Error in ./typing.svg : [xmldom error]	invalid doc source
+@#[line:undefined,col:undefined]
