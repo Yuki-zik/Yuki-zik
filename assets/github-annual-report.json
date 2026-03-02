@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-23T04:33:45.465Z",
+  "generatedAt": "2026-03-02T04:24:02.354Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -14,13 +14,13 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4998,
-    "resetAt": "2026-02-23T05:33:39Z"
+    "remaining": 4997,
+    "resetAt": "2026-03-02T05:23:56Z"
   },
   "stats": {
-    "totalContributions": 139,
+    "totalContributions": 143,
     "totalDaysConsidered": 365,
-    "activeDays": 25,
+    "activeDays": 27,
     "averageContributionsPerDay": 0.4,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
@@ -31,10 +31,10 @@
     "longestGapStartDate": "2025-08-03",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
-    "maxMonthlyContributions": 69,
+    "maxMonthlyContributions": 73,
     "monthlyContributions": [
       0,
-      69,
+      73,
       2,
       13,
       7,
@@ -49,8 +49,8 @@
     "weekdayContributions": [
       12,
       30,
-      9,
-      2,
+      10,
+      5,
       36,
       21,
       29
@@ -66,7 +66,7 @@
       "description": "Config files for my GitHub profile.",
       "stars": 0,
       "forks": 0,
-      "commits": 34
+      "commits": 38
     },
     {
       "nameWithOwner": "Yuki-zik/yuki-zik.github.io",
@@ -88,45 +88,45 @@
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 582704,
-      "ratio": 0.5192986708825789
+      "bytes": 589227,
+      "ratio": 0.5186829999137329
     },
     {
       "language": "Python",
-      "bytes": 207656,
-      "ratio": 0.18506048491308247
+      "bytes": 211948,
+      "ratio": 0.18657295824141773
     },
     {
       "language": "TypeScript",
       "bytes": 183112,
-      "ratio": 0.16318717259989768
+      "ratio": 0.1611892894931893
     },
     {
       "language": "CSS",
       "bytes": 43119,
-      "ratio": 0.038427124903528925
+      "ratio": 0.037956665721835973
     },
     {
       "language": "Astro",
       "bytes": 36257,
-      "ratio": 0.03231179451349169
+      "ratio": 0.031916204667933094
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献139次，日均贡献0.4次，并在2026年2月19日达到单日贡献峰值29次。",
+    "intro": "以下是Yuki-zik在过去365天内的GitHub活动年报摘要。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内共完成139次贡献，平均每日0.4次。活动峰值出现在2026年2月，其中2月19日单日贡献达29次。期间共创建2个Issue。"
+        "content": "在过去365天内，Yuki-zik共完成143项贡献，日均贡献0.4项。期间创建了2个issue。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "贡献节奏显示最长连续活跃天数为5天，最长间隔为117天，表明贡献存在周期性波动。"
+        "content": "贡献峰值出现在2026年2月，其中2026年2月19日单日贡献达29项。最长连续贡献天数为5天，最长贡献间隔为117天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要技术栈为JavaScript、Python和TypeScript。贡献集中在Yuki-zik/Yuki-zik（34次）、Yuki-zik/yuki-zik.github.io（19次）和Yuki-zik/myblog（14次）等仓库。"
+        "content": "主要贡献语言为JavaScript、Python和TypeScript。贡献最多的仓库包括Yuki-zik/Yuki-zik（38项）、Yuki-zik/yuki-zik.github.io（19项）和Yuki-zik/myblog（14项）。"
       }
     ]
   },
