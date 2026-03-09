@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T04:24:02.354Z",
+  "generatedAt": "2026-03-09T04:26:50.426Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -9,16 +9,16 @@
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
     "followers": 0,
-    "following": 5
+    "following": 6
   },
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4997,
-    "resetAt": "2026-03-02T05:23:56Z"
+    "remaining": 4998,
+    "resetAt": "2026-03-09T05:26:44Z"
   },
   "stats": {
-    "totalContributions": 143,
+    "totalContributions": 142,
     "totalDaysConsidered": 365,
     "activeDays": 27,
     "averageContributionsPerDay": 0.4,
@@ -35,7 +35,7 @@
     "monthlyContributions": [
       0,
       73,
-      2,
+      1,
       13,
       7,
       1,
@@ -47,7 +47,7 @@
       37
     ],
     "weekdayContributions": [
-      12,
+      11,
       30,
       10,
       5,
@@ -88,45 +88,45 @@
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 589227,
-      "ratio": 0.5186829999137329
+      "bytes": 646252,
+      "ratio": 0.5416891933235599
     },
     {
       "language": "Python",
       "bytes": 211948,
-      "ratio": 0.18657295824141773
+      "ratio": 0.1776550651240412
     },
     {
       "language": "TypeScript",
       "bytes": 183112,
-      "ratio": 0.1611892894931893
+      "ratio": 0.15348469570363218
     },
     {
       "language": "CSS",
       "bytes": 43119,
-      "ratio": 0.037956665721835973
+      "ratio": 0.03614239697040563
     },
     {
       "language": "Astro",
       "bytes": 36257,
-      "ratio": 0.031916204667933094
+      "ratio": 0.03039066042709703
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "以下是Yuki-zik在过去365天内的GitHub活动年报摘要。",
+    "intro": "Yuki-zik在过去365天内的GitHub活动概览如下。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "在过去365天内，Yuki-zik共完成143项贡献，日均贡献0.4项。期间创建了2个issue。"
+        "content": "期间共提交142次贡献，平均每日0.4次。此外，创建了2个issue。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "贡献峰值出现在2026年2月，其中2026年2月19日单日贡献达29项。最长连续贡献天数为5天，最长贡献间隔为117天。"
+        "content": "2026年2月是贡献最活跃的月份，单日最高贡献达29次，发生在2026年2月19日。最长连续贡献天数为5天，最长贡献间隔为117天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为JavaScript、Python和TypeScript。贡献最多的仓库包括Yuki-zik/Yuki-zik（38项）、Yuki-zik/yuki-zik.github.io（19项）和Yuki-zik/myblog（14项）。"
+        "content": "贡献主要集中在JavaScript、Python和TypeScript。贡献最多的三个仓库是Yuki-zik/Yuki-zik (38次)、Yuki-zik/yuki-zik.github.io (19次) 和Yuki-zik/myblog (14次)。"
       }
     ]
   },
