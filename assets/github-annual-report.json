@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T04:26:50.426Z",
+  "generatedAt": "2026-03-16T04:48:26.558Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -15,13 +15,13 @@
   "aiReason": null,
   "rateLimit": {
     "remaining": 4998,
-    "resetAt": "2026-03-09T05:26:44Z"
+    "resetAt": "2026-03-16T05:48:20Z"
   },
   "stats": {
-    "totalContributions": 142,
+    "totalContributions": 170,
     "totalDaysConsidered": 365,
-    "activeDays": 27,
-    "averageContributionsPerDay": 0.4,
+    "activeDays": 33,
+    "averageContributionsPerDay": 0.5,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
     "longestStreak": 5,
@@ -31,11 +31,11 @@
     "longestGapStartDate": "2025-08-03",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
-    "maxMonthlyContributions": 73,
+    "maxMonthlyContributions": 81,
     "monthlyContributions": [
       0,
-      73,
-      1,
+      81,
+      21,
       13,
       7,
       1,
@@ -47,17 +47,17 @@
       37
     ],
     "weekdayContributions": [
-      11,
+      13,
       30,
       10,
-      5,
-      36,
-      21,
-      29
+      13,
+      43,
+      22,
+      39
     ],
     "busiestWeekday": 4
   },
-  "issuesCount": 2,
+  "issuesCount": 4,
   "prCount": 43,
   "topRepos": [
     {
@@ -69,64 +69,64 @@
       "commits": 38
     },
     {
-      "nameWithOwner": "Yuki-zik/yuki-zik.github.io",
-      "url": "https://github.com/Yuki-zik/yuki-zik.github.io",
-      "description": "Personal website / demo site",
-      "stars": 0,
-      "forks": 0,
-      "commits": 19
-    },
-    {
       "nameWithOwner": "Yuki-zik/myblog",
       "url": "https://github.com/Yuki-zik/myblog",
       "description": "Theme-first Astro blog with paragraph-level comments powered by Supabase RLS and anonymous auth.",
       "stars": 0,
       "forks": 0,
-      "commits": 14
+      "commits": 31
+    },
+    {
+      "nameWithOwner": "Yuki-zik/taskvision",
+      "url": "https://github.com/Yuki-zik/taskvision",
+      "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
+      "stars": 15,
+      "forks": 1,
+      "commits": 24
     }
   ],
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 646252,
-      "ratio": 0.5416891933235599
+      "bytes": 739041,
+      "ratio": 0.5135695761305548
+    },
+    {
+      "language": "CSS",
+      "bytes": 212260,
+      "ratio": 0.14750234185853228
     },
     {
       "language": "Python",
       "bytes": 211948,
-      "ratio": 0.1776550651240412
+      "ratio": 0.1472855288430802
     },
     {
       "language": "TypeScript",
-      "bytes": 183112,
-      "ratio": 0.15348469570363218
-    },
-    {
-      "language": "CSS",
-      "bytes": 43119,
-      "ratio": 0.03614239697040563
+      "bytes": 159373,
+      "ratio": 0.11075045099886868
     },
     {
       "language": "Astro",
-      "bytes": 36257,
-      "ratio": 0.03039066042709703
+      "bytes": 89396,
+      "ratio": 0.06212248823511426
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内的GitHub活动概览如下。",
+    "intro": "在过去365天内，Yuki-zik共完成了170项贡献，日均贡献0.5次，主要活跃于2026年2月。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "期间共提交142次贡献，平均每日0.4次。此外，创建了2个issue。"
+        "content": "Yuki-zik在过去365天内总计贡献170次，日均0.5次，并创建了4个issues。贡献峰值出现在2026年2月，其中2026年2月19日单日贡献达29次。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "2026年2月是贡献最活跃的月份，单日最高贡献达29次，发生在2026年2月19日。最长连续贡献天数为5天，最长贡献间隔为117天。"
+        "content": "贡献节奏显示最长连续活跃天数为5天，而最长间隔期为117天。这表明贡献存在一定周期性，有较长的非活跃时段。"
       },
       {
         "heading": "技术与项目",
-        "content": "贡献主要集中在JavaScript、Python和TypeScript。贡献最多的三个仓库是Yuki-zik/Yuki-zik (38次)、Yuki-zik/yuki-zik.github.io (19次) 和Yuki-zik/myblog (14次)。"
+        "content": "Yuki-zik的主要开发语言为JavaScript、CSS和Python。贡献最活跃的三个仓库是Yuki-zik/Yuki-zik（38次）、Yuki-zik/myblog（31次）和Yuki-zik/taskvision（24次）。"
       }
     ]
   },
