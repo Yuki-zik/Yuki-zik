@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-16T04:48:26.558Z",
+  "generatedAt": "2026-03-23T04:38:31.606Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -8,19 +8,19 @@
     "login": "Yuki-zik",
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
-    "followers": 0,
+    "followers": 1,
     "following": 6
   },
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4998,
-    "resetAt": "2026-03-16T05:48:20Z"
+    "remaining": 4997,
+    "resetAt": "2026-03-23T05:38:26Z"
   },
   "stats": {
-    "totalContributions": 170,
+    "totalContributions": 194,
     "totalDaysConsidered": 365,
-    "activeDays": 33,
+    "activeDays": 38,
     "averageContributionsPerDay": 0.5,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
@@ -35,7 +35,7 @@
     "monthlyContributions": [
       0,
       81,
-      21,
+      45,
       13,
       7,
       1,
@@ -47,19 +47,27 @@
       37
     ],
     "weekdayContributions": [
-      13,
+      20,
       30,
       10,
-      13,
-      43,
-      22,
-      39
+      14,
+      50,
+      24,
+      46
     ],
     "busiestWeekday": 4
   },
   "issuesCount": 4,
   "prCount": 43,
   "topRepos": [
+    {
+      "nameWithOwner": "Yuki-zik/myblog",
+      "url": "https://github.com/Yuki-zik/myblog",
+      "description": "Theme-first Astro blog with paragraph-level comments powered by Supabase RLS and anonymous auth.",
+      "stars": 0,
+      "forks": 0,
+      "commits": 49
+    },
     {
       "nameWithOwner": "Yuki-zik/Yuki-zik",
       "url": "https://github.com/Yuki-zik/Yuki-zik",
@@ -69,18 +77,10 @@
       "commits": 38
     },
     {
-      "nameWithOwner": "Yuki-zik/myblog",
-      "url": "https://github.com/Yuki-zik/myblog",
-      "description": "Theme-first Astro blog with paragraph-level comments powered by Supabase RLS and anonymous auth.",
-      "stars": 0,
-      "forks": 0,
-      "commits": 31
-    },
-    {
       "nameWithOwner": "Yuki-zik/taskvision",
       "url": "https://github.com/Yuki-zik/taskvision",
       "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
-      "stars": 15,
+      "stars": 17,
       "forks": 1,
       "commits": 24
     }
@@ -88,45 +88,45 @@
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 739041,
-      "ratio": 0.5135695761305548
+      "bytes": 740624,
+      "ratio": 0.48934296306525177
     },
     {
-      "language": "CSS",
-      "bytes": 212260,
-      "ratio": 0.14750234185853228
+      "language": "TypeScript",
+      "bytes": 228929,
+      "ratio": 0.15125731166093054
     },
     {
       "language": "Python",
       "bytes": 211948,
-      "ratio": 0.1472855288430802
+      "ratio": 0.14003767409070456
     },
     {
-      "language": "TypeScript",
-      "bytes": 159373,
-      "ratio": 0.11075045099886868
+      "language": "CSS",
+      "bytes": 189209,
+      "ratio": 0.12501362729078888
     },
     {
       "language": "Astro",
-      "bytes": 89396,
-      "ratio": 0.06212248823511426
+      "bytes": 108145,
+      "ratio": 0.07145325393275354
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "在过去365天内，Yuki-zik共完成了170项贡献，日均贡献0.5次，主要活跃于2026年2月。",
+    "intro": "Yuki-zik在过去365天内总计贡献194次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内总计贡献170次，日均0.5次，并创建了4个issues。贡献峰值出现在2026年2月，其中2026年2月19日单日贡献达29次。"
+        "content": "Yuki-zik在过去365天内共计贡献194次，日均贡献0.5次，并提交了4个issues。2026年2月是贡献最活跃的月份，单日峰值贡献29次，发生在2026年2月19日。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "贡献节奏显示最长连续活跃天数为5天，而最长间隔期为117天。这表明贡献存在一定周期性，有较长的非活跃时段。"
+        "content": "贡献节奏方面，最长连续贡献天数为5天，最长贡献间隔为117天。"
       },
       {
         "heading": "技术与项目",
-        "content": "Yuki-zik的主要开发语言为JavaScript、CSS和Python。贡献最活跃的三个仓库是Yuki-zik/Yuki-zik（38次）、Yuki-zik/myblog（31次）和Yuki-zik/taskvision（24次）。"
+        "content": "主要贡献语言为JavaScript、TypeScript和Python。贡献最多的项目包括Yuki-zik/myblog（49次）、Yuki-zik/Yuki-zik（38次）和Yuki-zik/taskvision（24次）。"
       }
     ]
   },
