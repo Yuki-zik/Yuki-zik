@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T04:38:31.606Z",
+  "generatedAt": "2026-03-30T05:07:26.732Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -9,24 +9,24 @@
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
     "followers": 1,
-    "following": 6
+    "following": 5
   },
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4997,
-    "resetAt": "2026-03-23T05:38:26Z"
+    "remaining": 4999,
+    "resetAt": "2026-03-30T06:07:20Z"
   },
   "stats": {
-    "totalContributions": 194,
+    "totalContributions": 201,
     "totalDaysConsidered": 365,
-    "activeDays": 38,
-    "averageContributionsPerDay": 0.5,
+    "activeDays": 40,
+    "averageContributionsPerDay": 0.6,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
-    "longestStreak": 5,
-    "longestStreakStartDate": "2025-12-18",
-    "longestStreakEndDate": "2025-12-22",
+    "longestStreak": 7,
+    "longestStreakStartDate": "2026-03-18",
+    "longestStreakEndDate": "2026-03-24",
     "longestGap": 117,
     "longestGapStartDate": "2025-08-03",
     "longestGapEndDate": "2025-11-27",
@@ -35,7 +35,7 @@
     "monthlyContributions": [
       0,
       81,
-      45,
+      52,
       13,
       7,
       1,
@@ -48,8 +48,8 @@
     ],
     "weekdayContributions": [
       20,
-      30,
-      10,
+      36,
+      11,
       14,
       50,
       24,
@@ -66,7 +66,7 @@
       "description": "Theme-first Astro blog with paragraph-level comments powered by Supabase RLS and anonymous auth.",
       "stars": 0,
       "forks": 0,
-      "commits": 49
+      "commits": 50
     },
     {
       "nameWithOwner": "Yuki-zik/Yuki-zik",
@@ -80,7 +80,7 @@
       "nameWithOwner": "Yuki-zik/taskvision",
       "url": "https://github.com/Yuki-zik/taskvision",
       "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
-      "stars": 17,
+      "stars": 19,
       "forks": 1,
       "commits": 24
     }
@@ -89,44 +89,44 @@
     {
       "language": "JavaScript",
       "bytes": 740624,
-      "ratio": 0.48934296306525177
+      "ratio": 0.442386227814954
     },
     {
       "language": "TypeScript",
-      "bytes": 228929,
-      "ratio": 0.15125731166093054
+      "bytes": 373609,
+      "ratio": 0.22316246325762756
     },
     {
       "language": "Python",
       "bytes": 211948,
-      "ratio": 0.14003767409070456
+      "ratio": 0.12659983502144662
     },
     {
       "language": "CSS",
-      "bytes": 189209,
-      "ratio": 0.12501362729078888
+      "bytes": 203568,
+      "ratio": 0.12159433075870422
     },
     {
       "language": "Astro",
-      "bytes": 108145,
-      "ratio": 0.07145325393275354
+      "bytes": 109756,
+      "ratio": 0.06555896489994666
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内总计贡献194次。",
+    "intro": "Yuki-zik在过去365天内共计贡献201次，日均贡献0.6次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内共计贡献194次，日均贡献0.5次，并提交了4个issues。2026年2月是贡献最活跃的月份，单日峰值贡献29次，发生在2026年2月19日。"
+        "content": "Yuki-zik在过去365天内共完成201次贡献，日均0.6次，并创建了4个issue。2026年2月是其最活跃的月份，其中2026年2月19日达到单日峰值29次贡献。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "贡献节奏方面，最长连续贡献天数为5天，最长贡献间隔为117天。"
+        "content": "贡献节奏方面，Yuki-zik的最长连续贡献天数为7天。期间最长间隔为117天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为JavaScript、TypeScript和Python。贡献最多的项目包括Yuki-zik/myblog（49次）、Yuki-zik/Yuki-zik（38次）和Yuki-zik/taskvision（24次）。"
+        "content": "主要贡献集中在JavaScript、TypeScript和Python项目。贡献最多的三个仓库是Yuki-zik/myblog（50次）、Yuki-zik/Yuki-zik（38次）和Yuki-zik/taskvision（24次）。"
       }
     ]
   },
