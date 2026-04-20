@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T05:24:12.198Z",
+  "generatedAt": "2026-04-20T05:22:55.698Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -11,22 +11,22 @@
     "followers": 1,
     "following": 5
   },
-  "aiMode": "ai",
-  "aiReason": null,
+  "aiMode": "fallback",
+  "aiReason": "Expected double-quoted property name in JSON at position 197 (line 8 column 5)",
   "rateLimit": {
-    "remaining": 4997,
-    "resetAt": "2026-04-13T06:23:48Z"
+    "remaining": 4999,
+    "resetAt": "2026-04-20T06:22:47Z"
   },
   "stats": {
-    "totalContributions": 192,
+    "totalContributions": 203,
     "totalDaysConsidered": 365,
-    "activeDays": 40,
-    "averageContributionsPerDay": 0.5,
+    "activeDays": 44,
+    "averageContributionsPerDay": 0.6,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
-    "longestStreak": 7,
+    "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
-    "longestStreakEndDate": "2026-03-24",
+    "longestStreakEndDate": "2026-03-25",
     "longestGap": 117,
     "longestGapStartDate": "2025-08-03",
     "longestGapEndDate": "2025-11-27",
@@ -35,8 +35,8 @@
     "monthlyContributions": [
       0,
       81,
-      52,
-      4,
+      55,
+      12,
       7,
       1,
       3,
@@ -47,18 +47,18 @@
       37
     ],
     "weekdayContributions": [
-      20,
       25,
-      10,
-      14,
-      50,
+      25,
+      11,
+      15,
+      53,
       26,
-      47
+      48
     ],
     "busiestWeekday": 4
   },
-  "issuesCount": 7,
-  "prCount": 44,
+  "issuesCount": 8,
+  "prCount": 45,
   "topRepos": [
     {
       "nameWithOwner": "Yuki-zik/myblog",
@@ -66,7 +66,7 @@
       "description": "Theme-first Astro blog with paragraph-level comments powered by Supabase RLS and anonymous auth.",
       "stars": 0,
       "forks": 0,
-      "commits": 50
+      "commits": 54
     },
     {
       "nameWithOwner": "Yuki-zik/Yuki-zik",
@@ -82,53 +82,54 @@
       "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
       "stars": 20,
       "forks": 1,
-      "commits": 24
+      "commits": 25
     }
   ],
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 740624,
-      "ratio": 0.442386227814954
+      "bytes": 740838,
+      "ratio": 0.3892540293449277
     },
     {
       "language": "TypeScript",
-      "bytes": 373609,
-      "ratio": 0.22316246325762756
+      "bytes": 486637,
+      "ratio": 0.255690735462176
+    },
+    {
+      "language": "CSS",
+      "bytes": 269178,
+      "ratio": 0.1414325684036307
     },
     {
       "language": "Python",
       "bytes": 211948,
-      "ratio": 0.12659983502144662
-    },
-    {
-      "language": "CSS",
-      "bytes": 203568,
-      "ratio": 0.12159433075870422
+      "ratio": 0.11136255566209986
     },
     {
       "language": "Astro",
-      "bytes": 109756,
-      "ratio": 0.06555896489994666
+      "bytes": 156979,
+      "ratio": 0.08248052647479935
     }
   ],
   "aiSummary": {
-    "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献192次，日均贡献0.5次，主要活跃于2026年2月。",
+    "mode": "fallback",
+    "intro": "你在 过去一年 保持了稳定的 GitHub 活跃度，全年贡献 203 次，日均 0.6 次。",
     "sections": [
       {
-        "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内共完成192次贡献，日均贡献0.5次。2026年2月是其最活跃的月份，其中2月19日达到单日峰值29次贡献。期间共提交了7个issue。"
+        "heading": "活跃节奏",
+        "content": "贡献峰值集中在 2月，最长连续打卡 8 天。"
       },
       {
-        "heading": "节奏与稳定性",
-        "content": "最长连续贡献天数为7天，显示出阶段性持续投入。同时，最长贡献间隔为117天，表明存在较长的非活跃期。"
+        "heading": "高光时刻",
+        "content": "2 月 19 日 达到 29 次贡献"
       },
       {
-        "heading": "技术与项目",
-        "content": "主要贡献语言为JavaScript、TypeScript和Python。贡献最多的仓库是Yuki-zik/myblog（50次）、Yuki-zik/Yuki-zik（38次）和Yuki-zik/taskvision（24次）。"
+        "heading": "协作信号",
+        "content": "你在 过去一年 共参与 8 个 Issues，最长休息间隔 117 天（8 月 3 日 - 11 月 27 日）。"
       }
-    ]
+    ],
+    "reason": "Expected double-quoted property name in JSON at position 197 (line 8 column 5)"
   },
   "render": {
     "mode": "playwright",
