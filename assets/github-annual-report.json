@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-20T05:22:55.698Z",
+  "generatedAt": "2026-04-27T05:34:13.025Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -8,19 +8,19 @@
     "login": "Yuki-zik",
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
-    "followers": 1,
+    "followers": 2,
     "following": 5
   },
   "aiMode": "fallback",
-  "aiReason": "Expected double-quoted property name in JSON at position 197 (line 8 column 5)",
+  "aiReason": "Expected double-quoted property name in JSON at position 177 (line 8 column 5)",
   "rateLimit": {
-    "remaining": 4999,
-    "resetAt": "2026-04-20T06:22:47Z"
+    "remaining": 4997,
+    "resetAt": "2026-04-27T06:34:05Z"
   },
   "stats": {
-    "totalContributions": 203,
+    "totalContributions": 202,
     "totalDaysConsidered": 365,
-    "activeDays": 44,
+    "activeDays": 43,
     "averageContributionsPerDay": 0.6,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
@@ -36,7 +36,7 @@
       0,
       81,
       55,
-      12,
+      11,
       7,
       1,
       3,
@@ -48,7 +48,7 @@
     ],
     "weekdayContributions": [
       25,
-      25,
+      24,
       11,
       15,
       53,
@@ -57,7 +57,7 @@
     ],
     "busiestWeekday": 4
   },
-  "issuesCount": 8,
+  "issuesCount": 7,
   "prCount": 45,
   "topRepos": [
     {
@@ -114,7 +114,7 @@
   ],
   "aiSummary": {
     "mode": "fallback",
-    "intro": "你在 过去一年 保持了稳定的 GitHub 活跃度，全年贡献 203 次，日均 0.6 次。",
+    "intro": "你在 过去一年 保持了稳定的 GitHub 活跃度，全年贡献 202 次，日均 0.6 次。",
     "sections": [
       {
         "heading": "活跃节奏",
@@ -126,10 +126,10 @@
       },
       {
         "heading": "协作信号",
-        "content": "你在 过去一年 共参与 8 个 Issues，最长休息间隔 117 天（8 月 3 日 - 11 月 27 日）。"
+        "content": "你在 过去一年 共参与 7 个 Issues，最长休息间隔 117 天（8 月 3 日 - 11 月 27 日）。"
       }
     ],
-    "reason": "Expected double-quoted property name in JSON at position 197 (line 8 column 5)"
+    "reason": "Expected double-quoted property name in JSON at position 177 (line 8 column 5)"
   },
   "render": {
     "mode": "playwright",
