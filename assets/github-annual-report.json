@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-27T05:34:13.025Z",
+  "generatedAt": "2026-05-04T05:45:45.042Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -11,16 +11,16 @@
     "followers": 2,
     "following": 5
   },
-  "aiMode": "fallback",
-  "aiReason": "Expected double-quoted property name in JSON at position 177 (line 8 column 5)",
+  "aiMode": "ai",
+  "aiReason": null,
   "rateLimit": {
     "remaining": 4997,
-    "resetAt": "2026-04-27T06:34:05Z"
+    "resetAt": "2026-05-04T06:45:37Z"
   },
   "stats": {
-    "totalContributions": 202,
+    "totalContributions": 208,
     "totalDaysConsidered": 365,
-    "activeDays": 43,
+    "activeDays": 45,
     "averageContributionsPerDay": 0.6,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
@@ -36,7 +36,7 @@
       0,
       81,
       55,
-      11,
+      17,
       7,
       1,
       3,
@@ -49,9 +49,9 @@
     "weekdayContributions": [
       25,
       24,
-      11,
+      16,
       15,
-      53,
+      54,
       26,
       48
     ],
@@ -82,54 +82,53 @@
       "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
       "stars": 20,
       "forks": 1,
-      "commits": 25
+      "commits": 26
     }
   ],
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 740838,
-      "ratio": 0.3892540293449277
+      "bytes": 757481,
+      "ratio": 0.388807304319796
     },
     {
       "language": "TypeScript",
       "bytes": 486637,
-      "ratio": 0.255690735462176
+      "ratio": 0.24978582981259276
     },
     {
       "language": "CSS",
       "bytes": 269178,
-      "ratio": 0.1414325684036307
+      "ratio": 0.13816633362710623
     },
     {
       "language": "Python",
       "bytes": 211948,
-      "ratio": 0.11136255566209986
+      "ratio": 0.10879075585522557
     },
     {
       "language": "Astro",
       "bytes": 156979,
-      "ratio": 0.08248052647479935
+      "ratio": 0.08057572642061947
     }
   ],
   "aiSummary": {
-    "mode": "fallback",
-    "intro": "你在 过去一年 保持了稳定的 GitHub 活跃度，全年贡献 202 次，日均 0.6 次。",
+    "mode": "ai",
+    "intro": "Yuki-zik在过去365天内共计贡献208次。",
     "sections": [
       {
-        "heading": "活跃节奏",
-        "content": "贡献峰值集中在 2月，最长连续打卡 8 天。"
+        "heading": "贡献概览",
+        "content": "Yuki-zik在过去365天内共完成208次贡献，日均0.6次，其中包含7个issues。2026年2月是其最活跃的月份，单日最高贡献达29次，发生在2026年2月19日。"
       },
       {
-        "heading": "高光时刻",
-        "content": "2 月 19 日 达到 29 次贡献"
+        "heading": "节奏与稳定性",
+        "content": "最长连续贡献天数为8天。同时，最长贡献间隔为117天。"
       },
       {
-        "heading": "协作信号",
-        "content": "你在 过去一年 共参与 7 个 Issues，最长休息间隔 117 天（8 月 3 日 - 11 月 27 日）。"
+        "heading": "技术与项目",
+        "content": "主要贡献语言为JavaScript、TypeScript和CSS。贡献最多的仓库是Yuki-zik/myblog（54次）、Yuki-zik/Yuki-zik（38次）和Yuki-zik/taskvision（26次）。"
       }
-    ],
-    "reason": "Expected double-quoted property name in JSON at position 177 (line 8 column 5)"
+    ]
   },
   "render": {
     "mode": "playwright",
