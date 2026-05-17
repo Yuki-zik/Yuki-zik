@@ -72,6 +72,80 @@ export function getTodayIsoInTimeZone(timeZone, now = new Date()) {
   return getDatePartsInTimeZone(now, timeZone).isoDate
 }
 
+function getDateTimePartsInTimeZone(date, timeZone) {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  })
+
+  const parts = formatter.formatToParts(date)
+  const get = (type) => parts.find((item) => item.type === type)?.value
+
+  return {
+    year: Number(get("year")),
+    month: Number(get("month")),
+    day: Number(get("day")),
+    hour: Number(get("hour")),
+    minute: Number(get("minute")),
+    second: Number(get("second")),
+  }
+}
+
+export function getUtcIsoForTimeZoneDateStart(isoDate, timeZone) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate)
+
+  if (!match) {
+    throw new Error(`Invalid ISO date: ${isoDate}`)
+  }
+
+  const [, yearText, monthText, dayText] = match
+  const target = Date.UTC(Number(yearText), Number(monthText) - 1, Number(dayText), 0, 0, 0)
+  let instant = new Date(target)
+
+  for (let idx = 0; idx < 4; idx += 1) {
+    const parts = getDateTimePartsInTimeZone(instant, timeZone)
+    const localAsUtc = Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour, parts.minute, parts.second)
+    const delta = localAsUtc - target
+
+    if (delta === 0) {
+      break
+    }
+
+    instant = new Date(instant.getTime() - delta)
+  }
+
+  return instant.toISOString()
+}
+
+export function addDaysToIsoDate(isoDate, days) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate)
+
+  if (!match) {
+    throw new Error(`Invalid ISO date: ${isoDate}`)
+  }
+
+  const [, yearText, monthText, dayText] = match
+  const date = new Date(Date.UTC(Number(yearText), Number(monthText) - 1, Number(dayText)))
+  date.setUTCDate(date.getUTCDate() + days)
+
+  return date.toISOString().slice(0, 10)
+}
+
+export function getTimeZoneDateRangeIso({ startDate, endDate, timeZone }) {
+  const nextEndDate = addDaysToIsoDate(endDate, 1)
+  const from = getUtcIsoForTimeZoneDateStart(startDate, timeZone)
+  const nextEndStart = getUtcIsoForTimeZoneDateStart(nextEndDate, timeZone)
+  const to = new Date(new Date(nextEndStart).getTime() - 1).toISOString()
+
+  return { from, to }
+}
+
 export function monthLabel(monthIndex) {
   return `${monthIndex + 1}月`
 }

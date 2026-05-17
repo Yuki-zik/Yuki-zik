@@ -2,6 +2,7 @@
 import assert from "node:assert/strict"
 
 import { deriveYearlyStatistics } from "../stats.mjs"
+import { getTimeZoneDateRangeIso } from "../utils.mjs"
 
 function toIsoDate(date) {
   return date.toISOString().slice(0, 10)
@@ -157,4 +158,45 @@ test("decimal precision and active days", () => {
   assert.equal(stats.totalContributions, 100)
   assert.equal(stats.activeDays, 100)
   assert.equal(stats.averageContributionsPerDay, 0.3)
+})
+
+test("rolling month buckets do not merge same month across different years", () => {
+  const calendar = {
+    weeks: [
+      {
+        contributionDays: [
+          { contributionCount: 5, contributionLevel: "SECOND_QUARTILE", date: "2025-05-20", weekday: 2 },
+          { contributionCount: 3, contributionLevel: "FIRST_QUARTILE", date: "2025-06-01", weekday: 0 },
+          { contributionCount: 10, contributionLevel: "FOURTH_QUARTILE", date: "2026-05-01", weekday: 5 },
+        ],
+      },
+    ],
+  }
+
+  const stats = deriveYearlyStatistics(calendar, {
+    year: 2026,
+    timeZone: "UTC",
+    now: new Date("2026-05-17T00:00:00Z"),
+    dateRange: { start: "2025-05-18", end: "2026-05-17" },
+  })
+
+  assert.equal(stats.totalContributions, 18)
+  assert.equal(stats.monthlyContributions.length, 13)
+  assert.equal(stats.monthlyLabels[0], "25/5月")
+  assert.equal(stats.monthlyLabels[12], "26/5月")
+  assert.equal(stats.monthlyContributions[0], 5)
+  assert.equal(stats.monthlyContributions[1], 3)
+  assert.equal(stats.monthlyContributions[12], 10)
+  assert.equal(stats.maxContributionsMonth, "2026-05")
+})
+
+test("time zone date range uses local day boundaries", () => {
+  const range = getTimeZoneDateRangeIso({
+    startDate: "2026-01-01",
+    endDate: "2026-12-31",
+    timeZone: "Asia/Shanghai",
+  })
+
+  assert.equal(range.from, "2025-12-31T16:00:00.000Z")
+  assert.equal(range.to, "2026-12-31T15:59:59.999Z")
 })

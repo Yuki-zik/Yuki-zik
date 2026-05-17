@@ -101,9 +101,9 @@ export class GitHubClient {
     return data
   }
 
-  async fetchIssueCount({ username, year, createdRange }) {
-    const range = createdRange || `${year}-01-01..${year}-12-31`
-    const queryString = `involves:${username} is:issue created:${range}`
+  async fetchIssueCount({ username, year, activityRange }) {
+    const range = activityRange || `${year}-01-01..${year}-12-31`
+    const queryString = `involves:${username} is:issue updated:${range}`
 
     const query = `
       query IssueCount($queryString: String!) {
@@ -118,9 +118,9 @@ export class GitHubClient {
     return data?.search?.issueCount ?? 0
   }
 
-  async fetchPrCount({ username, year, createdRange }) {
-    const range = createdRange || `${year}-01-01..${year}-12-31`
-    const queryString = `author:${username} is:pr created:${range}`
+  async fetchPrCount({ username, year, activityRange }) {
+    const range = activityRange || `${year}-01-01..${year}-12-31`
+    const queryString = `involves:${username} is:pr updated:${range}`
 
     const query = `
       query PrCount($queryString: String!) {

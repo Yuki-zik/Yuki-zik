@@ -20,6 +20,36 @@ function shouldIncludeDay(day, { year, currentYear, todayIso, dateRange }) {
   return day.date <= todayIso
 }
 
+function buildMonthBuckets(year, dateRange) {
+  if (!dateRange) {
+    return Array.from({ length: 12 }, (_, index) => {
+      const month = String(index + 1).padStart(2, "0")
+      return {
+        key: `${year}-${month}`,
+        label: `${index + 1}月`,
+      }
+    })
+  }
+
+  const buckets = []
+  const endMonthKey = dateRange.end.slice(0, 7)
+  const cursor = new Date(`${dateRange.start.slice(0, 7)}-01T00:00:00Z`)
+
+  while (cursor.toISOString().slice(0, 7) <= endMonthKey) {
+    const key = cursor.toISOString().slice(0, 7)
+    const [bucketYear, bucketMonth] = key.split("-")
+
+    buckets.push({
+      key,
+      label: `${bucketYear.slice(2)}/${Number(bucketMonth)}月`,
+    })
+
+    cursor.setUTCMonth(cursor.getUTCMonth() + 1)
+  }
+
+  return buckets
+}
+
 export function buildHeatmapWeeks(calendar, options) {
   const { year, timeZone, now = new Date(), dateRange } = options
   const { year: currentYear } = getDatePartsInTimeZone(now, timeZone)
@@ -69,7 +99,9 @@ export function deriveYearlyStatistics(calendar, options) {
   let maxContributionsInADay = 0
   let maxContributionsDate = null
 
-  const monthlyContributions = Array.from({ length: 12 }, () => 0)
+  const monthBuckets = buildMonthBuckets(year, dateRange)
+  const monthBucketIndex = new Map(monthBuckets.map((bucket, index) => [bucket.key, index]))
+  const monthlyContributions = Array.from({ length: monthBuckets.length }, () => 0)
   const weekdayContributions = Array.from({ length: 7 }, () => 0)
 
   for (const week of heatmapWeeks) {
@@ -89,8 +121,8 @@ export function deriveYearlyStatistics(calendar, options) {
       }
       weekdayContributions[day.weekday] += count
 
-      const monthIndex = Number(day.date.slice(5, 7)) - 1
-      if (monthIndex >= 0 && monthIndex < 12) {
+      const monthIndex = monthBucketIndex.get(day.date.slice(0, 7))
+      if (monthIndex !== undefined) {
         monthlyContributions[monthIndex] += count
       }
 
@@ -140,7 +172,7 @@ export function deriveYearlyStatistics(calendar, options) {
   monthlyContributions.forEach((value, index) => {
     if (value > maxMonthlyContributions) {
       maxMonthlyContributions = value
-      maxContributionsMonth = `${year}-${String(index + 1).padStart(2, "0")}`
+      maxContributionsMonth = monthBuckets[index]?.key ?? null
     }
   })
 
@@ -175,6 +207,7 @@ export function deriveYearlyStatistics(calendar, options) {
     maxContributionsMonth,
     maxMonthlyContributions,
     monthlyContributions,
+    monthlyLabels: monthBuckets.map((bucket) => bucket.label),
     weekdayContributions,
     busiestWeekday,
     heatmapWeeks,

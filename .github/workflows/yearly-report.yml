@@ -37,7 +37,7 @@ jobs:
       - name: Install Playwright Chromium
         run: |
           set -euo pipefail
-          npm install --no-save --package-lock=false playwright@1.51.1
+          npm install --no-save --package-lock=false playwright@1.60.0
           npx playwright install --with-deps chromium
 
       - name: Generate yearly report assets
@@ -49,15 +49,21 @@ jobs:
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           REPORT_TZ: Asia/Shanghai
           REPORT_YEAR_MODE: current
+          REPORT_YEAR_INPUT: ${{ github.event.inputs.year || '' }}
+          REPORT_NO_AI_INPUT: ${{ github.event.inputs.no_ai || 'false' }}
         run: |
           set -euo pipefail
           args=()
 
-          if [ -n "${{ github.event.inputs.year }}" ]; then
-            args+=(--year "${{ github.event.inputs.year }}")
+          if [ -n "$REPORT_YEAR_INPUT" ]; then
+            if [[ ! "$REPORT_YEAR_INPUT" =~ ^[0-9]{4}$ ]]; then
+              echo "Invalid year input: $REPORT_YEAR_INPUT" >&2
+              exit 1
+            fi
+            args+=(--year "$REPORT_YEAR_INPUT")
           fi
 
-          if [ "${{ github.event.inputs.no_ai }}" = "true" ]; then
+          if [ "$REPORT_NO_AI_INPUT" = "true" ]; then
             args+=(--no-ai)
           fi
 
