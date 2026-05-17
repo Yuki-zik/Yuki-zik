@@ -14,7 +14,12 @@ import { renderYearlyReportSvg } from "./svg-renderer.mjs"
 import { renderReportHtml } from "./report-html.mjs"
 import { renderReportPng } from "./png-renderer.mjs"
 import { REPORT_DIMENSIONS } from "./design-spec.mjs"
-import { getDatePartsInTimeZone, parseCliArgs } from "./utils.mjs"
+import {
+  addDaysToIsoDate,
+  getDatePartsInTimeZone,
+  getTimeZoneDateRangeIso,
+  parseCliArgs,
+} from "./utils.mjs"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -37,25 +42,31 @@ function validateYear(value) {
 function resolveDateRange({ argYear, timeZone }) {
   if (argYear) {
     validateYear(argYear)
+    const startDate = `${argYear}-01-01`
+    const endDate = `${argYear}-12-31`
+    const { from, to } = getTimeZoneDateRangeIso({ startDate, endDate, timeZone })
+
     return {
       year: argYear,
-      from: null,
-      to: null,
+      from,
+      to,
+      searchRange: `${startDate}..${endDate}`,
+      dateRange: { start: startDate, end: endDate },
       isRolling: false,
     }
   }
 
   const now = new Date()
-  const { year } = getDatePartsInTimeZone(now, timeZone)
-  const to = now.toISOString()
-  const fromDate = new Date(now)
-  fromDate.setFullYear(fromDate.getFullYear() - 1)
-  const from = fromDate.toISOString()
+  const { year, isoDate: endDate } = getDatePartsInTimeZone(now, timeZone)
+  const startDate = addDaysToIsoDate(endDate, -364)
+  const { from, to } = getTimeZoneDateRangeIso({ startDate, endDate, timeZone })
 
   return {
     year,
     from,
     to,
+    searchRange: `${startDate}..${endDate}`,
+    dateRange: { start: startDate, end: endDate },
     isRolling: true,
   }
 }
@@ -106,7 +117,10 @@ async function main() {
     console.warn(`REPORT_YEAR_MODE=${DEFAULT_CONFIG.reportYearMode} is ignored. Only 'current' mode is supported.`)
   }
 
-  const { year, from, to, isRolling } = resolveDateRange({ argYear: cli.year, timeZone: DEFAULT_CONFIG.timeZone })
+  const { year, from, to, searchRange, dateRange, isRolling } = resolveDateRange({
+    argYear: cli.year,
+    timeZone: DEFAULT_CONFIG.timeZone,
+  })
   const token = process.env.GH_STATS_TOKEN
 
   if (!token) {
@@ -119,13 +133,11 @@ async function main() {
     client.fetchYearlyProfileData({ username: DEFAULT_CONFIG.username, year, from, to }),
     client.fetchIssueCount({
       username: DEFAULT_CONFIG.username,
-      year,
-      createdRange: isRolling ? `${from.slice(0, 10)}..${to.slice(0, 10)}` : null,
+      activityRange: searchRange,
     }),
     client.fetchPrCount({
       username: DEFAULT_CONFIG.username,
-      year,
-      createdRange: isRolling ? `${from.slice(0, 10)}..${to.slice(0, 10)}` : null,
+      activityRange: searchRange,
     }),
   ])
 
@@ -137,7 +149,7 @@ async function main() {
   const stats = deriveYearlyStatistics(calendar, {
     year,
     timeZone: DEFAULT_CONFIG.timeZone,
-    dateRange: isRolling ? { start: from, end: to } : null,
+    dateRange,
   })
 
   const topRepos = withRepoPlaceholders(
@@ -185,7 +197,6 @@ async function main() {
     issuesCount,
     prCount,
     topRepos,
-    topLanguages,
     topLanguages,
     aiSummary,
     isRolling,

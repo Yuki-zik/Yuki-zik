@@ -419,7 +419,8 @@ function renderChartPlot(card, values, labels) {
   const maxValue = Math.max(...values, 1)
   const ticks = chartTicks(maxValue)
   const count = values.length
-  const barWidth = count === 12 ? 38 : 72
+  const defaultBarWidth = count === 7 ? 72 : 38
+  const barWidth = Math.max(16, Math.min(defaultBarWidth, Math.floor(geometry.plotW / Math.max(count * 1.35, 1))))
   const gap = count > 1 ? (geometry.plotW - barWidth * count) / (count - 1) : 0
 
   const guides = ticks.map((tick) => {
@@ -675,13 +676,16 @@ export function renderReportHtml(model) {
   const streakRangeText = formatDateRangeCN(stats.longestStreakStartDate, stats.longestStreakEndDate)
   const gapRangeText = formatDateRangeCN(stats.longestGapStartDate, stats.longestGapEndDate)
 
-  const monthlyValues = ensure(stats.monthlyContributions, 12)
+  const monthlyLabels = Array.isArray(stats.monthlyLabels) && stats.monthlyLabels.length > 0
+    ? stats.monthlyLabels
+    : MONTH_LABELS
+  const monthlyValues = ensure(stats.monthlyContributions, monthlyLabels.length)
   const weeklyValues = ensure(stats.weekdayContributions, 7)
   const busiestWeekday = WEEKDAY_LABELS[stats.busiestWeekday] || "--"
   const busiestValue = weeklyValues[stats.busiestWeekday] || 0
   const peakMonth = stats.maxContributionsMonth ? `${Number(stats.maxContributionsMonth.slice(5, 7))} ${L.month}` : "--"
 
-  const monthlyPlot = renderChartPlot(layout.chart.left, monthlyValues, MONTH_LABELS)
+  const monthlyPlot = renderChartPlot(layout.chart.left, monthlyValues, monthlyLabels)
   const weeklyPlot = renderChartPlot(layout.chart.right, weeklyValues, WEEKDAY_LABELS)
 
   const topLeftContent = `<div class="top-left-wrap"><span class="mockup-bg"></span><div class="mockup-wrap"><div class="mockup"><div class="safari-head"><div class="lights"><span class="light red"></span><span class="light yellow"></span><span class="light green"></span></div><div class="nav-btns">${svgIcon("chevronLeft", 16)}${svgIcon("chevronRight", 16)}</div><div class="url"><span>${svgIcon("lock", 13)}</span><span>github.com/${escapeXml(profile.login)}</span><span>${svgIcon("rotateCw", 13)}</span></div><div class="safari-actions">${svgIcon("share", 15)}${svgIcon("plus", 15)}${svgIcon("copy", 15)}</div></div><div class="profile-row"><div class="avatar">${profile.avatarUrl ? `<img src="${escapeXml(profile.avatarUrl)}" alt="${escapeXml(profile.login)} avatar"/>` : `<span class="avatar-fallback">${escapeXml(String(profile.login || "Y").slice(0, 1).toUpperCase())}</span>`}</div><div class="profile-meta"><h2>${escapeXml(profile.name || profile.login)}</h2><p class="profile-account"><span class="mini">${svgIcon("atSign", 13)}</span><span>@${escapeXml(profile.login)}</span><span class="dot">${L.dot}</span><span class="mini">${svgIcon("user", 14)}</span><span>${formatNumber(profile.followers)} ${L.followers}</span><span class="dot">${L.dot}</span><span>${formatNumber(profile.following)} ${L.following}</span></p><p class="profile-bio">${escapeXml(truncate(profile.bio || "Building useful software with stable cadence.", 120))}</p></div><div class="profile-total"><span class="mark">${githubIcon(34)}</span><p>${L.total} ${formatNumber(stats.totalContributions)} ${L.contributions}</p><p class="sub">${L.only} ${yearText}</p></div></div><div class="heatmap-shell">${renderHeatmap(stats)}</div></div></div></div>`

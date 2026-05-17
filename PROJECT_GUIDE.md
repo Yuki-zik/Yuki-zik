@@ -47,15 +47,17 @@ assets/                                   # 生成产物目录
 ### 4.1 参数与时间逻辑
 
 - CLI 参数：`--year`、`--dry-run`、`--no-ai`。
-- 未指定 `--year` 时，按 `REPORT_TZ` 时区的当前年份计算。
-- 当前年份统计会自动忽略“未来日期”，避免把尚未发生的日期计入空窗或贡献。
+- 未指定 `--year` 时，按 `REPORT_TZ` 时区的今天作为结束日，统计包含今天在内的过去 365 个本地日期。
+- 指定 `--year` 时，按 `REPORT_TZ` 时区的自然年边界转换为 GitHub GraphQL 查询时间。
+- 所有贡献日历过滤、Issue/PR 搜索与 GraphQL 查询共用同一组本地日期边界。
 
 ### 4.2 数据获取策略
 
 - 使用 GitHub GraphQL API：`https://api.github.com/graphql`。
 - `commitContributionsByRepository(maxRepositories: 100)` 用于仓库排行榜。
-- 每个仓库读取前 20 个语言体积用于语言占比统计。
-- Issue 数量通过 `search(type: ISSUE)` + `involves:<user> created:<year-range>` 聚合。
+- 每个仓库读取前 20 个语言体积用于语言占比统计，因此语言分布表示“贡献过的仓库语言体积”，不是逐行代码变更语言。
+- Issue 数量通过 `search(type: ISSUE)` + `involves:<user> updated:<date-range>` 聚合。
+- PR 数量通过 `search(type: ISSUE)` + `involves:<user> is:pr updated:<date-range>` 聚合。
 
 ### 4.3 统计策略
 
@@ -66,7 +68,7 @@ assets/                                   # 生成产物目录
 3. 最长连续贡献区间（streak）。
 4. 最长无贡献区间（gap）。
 5. 单日峰值与对应日期。
-6. 月度贡献数组（12 项）与周内贡献数组（7 项）。
+6. 月度贡献数组与周内贡献数组（自然年为 12 项；滚动统计按跨越的年月拆桶，避免合并不同年份的同月）。
 7. 年热力图矩阵（53 周 x 7 天）。
 
 ### 4.4 摘要生成策略
@@ -94,7 +96,7 @@ assets/                                   # 生成产物目录
 |---|---|---|---|
 | `GH_STATS_TOKEN` | 是 | 无 | GitHub Token（用于 GraphQL 拉取） |
 | `GH_USERNAME` | 否 | `Yuki-zik` | 目标用户名 |
-| `REPORT_TZ` | 否 | `Asia/Shanghai` | 年份与“今天”的时区基准 |
+| `REPORT_TZ` | 否 | `Asia/Shanghai` | 年份、“今天”和查询日期边界的时区基准 |
 | `OPENAI_API_KEY` | 否 | 无 | AI 摘要密钥，不填则自动降级 |
 | `OPENAI_BASE_URL` | 否 | `https://api.openai.com/v1` | OpenAI 兼容接口根地址 |
 | `OPENAI_MODEL` | 否 | `gpt-4o-mini` | 摘要模型 |
