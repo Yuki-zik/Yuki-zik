@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-11T06:08:47.667Z",
+  "generatedAt": "2026-05-18T06:34:07.225Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -15,12 +15,12 @@
   "aiReason": null,
   "rateLimit": {
     "remaining": 4997,
-    "resetAt": "2026-05-11T07:08:39Z"
+    "resetAt": "2026-05-18T07:33:58Z"
   },
   "stats": {
-    "totalContributions": 203,
+    "totalContributions": 209,
     "totalDaysConsidered": 365,
-    "activeDays": 45,
+    "activeDays": 47,
     "averageContributionsPerDay": 0.6,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
@@ -34,31 +34,47 @@
     "maxMonthlyContributions": 81,
     "monthlyContributions": [
       0,
-      81,
-      55,
-      17,
-      2,
       1,
       3,
       1,
       0,
       0,
       6,
-      37
+      37,
+      0,
+      81,
+      55,
+      17,
+      8
+    ],
+    "monthlyLabels": [
+      "25/5月",
+      "25/6月",
+      "25/7月",
+      "25/8月",
+      "25/9月",
+      "25/10月",
+      "25/11月",
+      "25/12月",
+      "26/1月",
+      "26/2月",
+      "26/3月",
+      "26/4月",
+      "26/5月"
     ],
     "weekdayContributions": [
-      25,
+      28,
       26,
       9,
       15,
-      54,
+      57,
       26,
       48
     ],
     "busiestWeekday": 4
   },
-  "issuesCount": 7,
-  "prCount": 45,
+  "issuesCount": 8,
+  "prCount": 50,
   "topRepos": [
     {
       "nameWithOwner": "Yuki-zik/myblog",
@@ -74,7 +90,7 @@
       "description": "Config files for my GitHub profile.",
       "stars": 0,
       "forks": 0,
-      "commits": 38
+      "commits": 41
     },
     {
       "nameWithOwner": "Yuki-zik/taskvision",
@@ -88,45 +104,45 @@
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 759304,
-      "ratio": 0.3888588157511317
+      "bytes": 764441,
+      "ratio": 0.39000420390146545
     },
     {
       "language": "TypeScript",
       "bytes": 488390,
-      "ratio": 0.25011689260782927
+      "ratio": 0.2491678928045941
     },
     {
       "language": "CSS",
       "bytes": 270032,
-      "ratio": 0.13829022859738602
+      "ratio": 0.13776552433467137
     },
     {
       "language": "Python",
       "bytes": 211948,
-      "ratio": 0.1085439406098491
+      "ratio": 0.10813210046100065
     },
     {
       "language": "Astro",
       "bytes": 156979,
-      "ratio": 0.0803929230424137
+      "ratio": 0.08008789419228972
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik 在过去365天内的GitHub贡献摘要。",
+    "intro": "Yuki-zik在过去365天内共计贡献209次，日均贡献0.6次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "在过去365天内，Yuki-zik 共完成203项贡献，日均贡献0.6项，并提交了7个issue。贡献峰值出现在2026年2月，其中2026年2月19日单日贡献达29项。"
+        "content": "过去365天内，Yuki-zik的总贡献为209次，日均0.6次。2026年2月是贡献最活跃的月份，单日最高贡献发生在2026年2月19日，达到29次。期间共创建或处理了8个issues。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "最长连续贡献天数为8天，最长贡献间隔为117天。"
+        "content": "最长连续贡献天数为8天，而最长贡献间隔达117天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为JavaScript、TypeScript和CSS。贡献最多的仓库是Yuki-zik/myblog（55项）、Yuki-zik/Yuki-zik（38项）和Yuki-zik/taskvision（27项）。"
+        "content": "贡献使用的主要语言包括JavaScript、TypeScript和CSS。贡献最集中的三个仓库是Yuki-zik/myblog（55次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（27次）。"
       }
     ]
   },
