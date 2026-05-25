@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T06:34:07.225Z",
+  "generatedAt": "2026-05-25T06:47:15.584Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -8,14 +8,14 @@
     "login": "Yuki-zik",
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
-    "followers": 2,
+    "followers": 3,
     "following": 5
   },
-  "aiMode": "ai",
-  "aiReason": null,
+  "aiMode": "fallback",
+  "aiReason": "OpenAI request failed (503): [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]",
   "rateLimit": {
-    "remaining": 4997,
-    "resetAt": "2026-05-18T07:33:58Z"
+    "remaining": 4988,
+    "resetAt": "2026-05-25T07:43:58Z"
   },
   "stats": {
     "totalContributions": 209,
@@ -129,22 +129,23 @@
     }
   ],
   "aiSummary": {
-    "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献209次，日均贡献0.6次。",
+    "mode": "fallback",
+    "intro": "你在 过去一年 保持了稳定的 GitHub 活跃度，全年贡献 209 次，日均 0.6 次。",
     "sections": [
       {
-        "heading": "贡献概览",
-        "content": "过去365天内，Yuki-zik的总贡献为209次，日均0.6次。2026年2月是贡献最活跃的月份，单日最高贡献发生在2026年2月19日，达到29次。期间共创建或处理了8个issues。"
+        "heading": "活跃节奏",
+        "content": "贡献峰值集中在 2月，最长连续打卡 8 天。"
       },
       {
-        "heading": "节奏与稳定性",
-        "content": "最长连续贡献天数为8天，而最长贡献间隔达117天。"
+        "heading": "高光时刻",
+        "content": "2 月 19 日 达到 29 次贡献"
       },
       {
-        "heading": "技术与项目",
-        "content": "贡献使用的主要语言包括JavaScript、TypeScript和CSS。贡献最集中的三个仓库是Yuki-zik/myblog（55次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（27次）。"
+        "heading": "协作信号",
+        "content": "你在 过去一年 共参与 8 个 Issues，最长休息间隔 117 天（8 月 3 日 - 11 月 27 日）。"
       }
-    ]
+    ],
+    "reason": "OpenAI request failed (503): [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]"
   },
   "render": {
     "mode": "playwright",
