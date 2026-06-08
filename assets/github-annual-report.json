@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-01T07:23:55.471Z",
+  "generatedAt": "2026-06-08T07:04:15.367Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -14,13 +14,13 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4992,
-    "resetAt": "2026-06-01T07:42:20Z"
+    "remaining": 4986,
+    "resetAt": "2026-06-08T07:17:14Z"
   },
   "stats": {
-    "totalContributions": 209,
+    "totalContributions": 208,
     "totalDaysConsidered": 365,
-    "activeDays": 47,
+    "activeDays": 46,
     "averageContributionsPerDay": 0.6,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
@@ -33,7 +33,7 @@
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 81,
     "monthlyContributions": [
-      1,
+      0,
       3,
       1,
       0,
@@ -64,7 +64,7 @@
     ],
     "weekdayContributions": [
       28,
-      26,
+      25,
       9,
       15,
       57,
@@ -74,7 +74,7 @@
     "busiestWeekday": 4
   },
   "issuesCount": 8,
-  "prCount": 50,
+  "prCount": 51,
   "topRepos": [
     {
       "nameWithOwner": "Yuki-zik/myblog",
@@ -130,19 +130,19 @@
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik 在过去 365 天内共完成 209 项贡献，日均贡献 0.6 项。",
+    "intro": "Yuki-zik在过去365天内共计贡献208次，日均0.6次，期间处理了8个issues。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik 在过去 365 天内共计贡献 209 项，日均贡献 0.6 项。其中，提交了 8 个 issue。贡献峰值出现在 2026 年 2 月，单日最高贡献为 29 项，发生于 2026 年 2 月 19 日。"
+        "content": "Yuki-zik在过去365天内共计贡献208次，平均每日0.6次。期间共处理了8个issues。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "在贡献节奏方面，Yuki-zik 保持了最长 8 天的连续贡献。最长贡献间隔为 117 天。"
+        "content": "贡献活动在2026年2月最为活跃，单日最高贡献29次发生在2026年2月19日。最长连续贡献天数为8天，最长间隔天数为117天。"
       },
       {
         "heading": "技术与项目",
-        "content": "Yuki-zik 的主要技术栈包括 JavaScript、TypeScript 和 CSS。贡献最活跃的仓库是 Yuki-zik/myblog (55 项贡献)、Yuki-zik/Yuki-zik (41 项贡献) 和 Yuki-zik/taskvision (27 项贡献)。"
+        "content": "Yuki-zik的主要贡献语言为JavaScript、TypeScript和CSS。贡献最集中的三个仓库是Yuki-zik/myblog（55次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（27次）。"
       }
     ]
   },
