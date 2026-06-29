@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T07:42:03.150Z",
+  "generatedAt": "2026-06-29T07:04:30.494Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -14,8 +14,8 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4996,
-    "resetAt": "2026-06-22T08:29:09Z"
+    "remaining": 4995,
+    "resetAt": "2026-06-29T07:37:18Z"
   },
   "stats": {
     "totalContributions": 208,
@@ -96,7 +96,7 @@
       "nameWithOwner": "Yuki-zik/taskvision",
       "url": "https://github.com/Yuki-zik/taskvision",
       "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
-      "stars": 20,
+      "stars": 23,
       "forks": 1,
       "commits": 27
     }
@@ -134,15 +134,15 @@
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内共完成208次贡献，日均0.6次，并创建了8个issue。2026年2月是其最活跃月份，其中2026年2月19日达到单日峰值29次贡献。"
+        "content": "Yuki-zik在过去365天内完成了208次贡献，日均贡献0.6次。2026年2月是贡献最活跃的月份，其中2026年2月19日达到单日峰值29次贡献。期间共提交了8个issue。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "Yuki-zik的最长连续贡献天数为8天。最长贡献间隔为117天。"
+        "content": "最长连续贡献天数为8天。最长贡献间隔为117天。"
       },
       {
         "heading": "技术与项目",
-        "content": "Yuki-zik的主要开发语言为JavaScript、TypeScript和CSS。贡献最多的仓库包括Yuki-zik/myblog（55次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（27次）。"
+        "content": "主要贡献语言为JavaScript、TypeScript和CSS。贡献最活跃的三个仓库是Yuki-zik/myblog（55次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（27次）。"
       }
     ]
   },
