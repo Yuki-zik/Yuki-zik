@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T07:04:30.494Z",
+  "generatedAt": "2026-07-06T06:48:13.114Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -8,17 +8,17 @@
     "login": "Yuki-zik",
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
-    "followers": 3,
+    "followers": 4,
     "following": 5
   },
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
     "remaining": 4995,
-    "resetAt": "2026-06-29T07:37:18Z"
+    "resetAt": "2026-07-06T07:42:00Z"
   },
   "stats": {
-    "totalContributions": 208,
+    "totalContributions": 210,
     "totalDaysConsidered": 365,
     "activeDays": 46,
     "averageContributionsPerDay": 0.6,
@@ -33,8 +33,7 @@
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 81,
     "monthlyContributions": [
-      0,
-      3,
+      2,
       1,
       0,
       0,
@@ -45,10 +44,10 @@
       55,
       17,
       8,
+      3,
       0
     ],
     "monthlyLabels": [
-      "25/6月",
       "25/7月",
       "25/8月",
       "25/9月",
@@ -60,21 +59,22 @@
       "26/3月",
       "26/4月",
       "26/5月",
-      "26/6月"
+      "26/6月",
+      "26/7月"
     ],
     "weekdayContributions": [
       28,
       25,
-      9,
+      12,
       15,
-      57,
+      56,
       26,
       48
     ],
     "busiestWeekday": 4
   },
   "issuesCount": 8,
-  "prCount": 56,
+  "prCount": 58,
   "topRepos": [
     {
       "nameWithOwner": "Yuki-zik/myblog",
@@ -96,7 +96,7 @@
       "nameWithOwner": "Yuki-zik/taskvision",
       "url": "https://github.com/Yuki-zik/taskvision",
       "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
-      "stars": 23,
+      "stars": 24,
       "forks": 1,
       "commits": 27
     }
@@ -104,45 +104,45 @@
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 764441,
-      "ratio": 0.39000420390146545
+      "bytes": 786768,
+      "ratio": 0.38864678434561134
     },
     {
       "language": "TypeScript",
       "bytes": 488390,
-      "ratio": 0.2491678928045941
+      "ratio": 0.24125435071908508
     },
     {
       "language": "CSS",
       "bytes": 270032,
-      "ratio": 0.13776552433467137
+      "ratio": 0.13339010797390605
     },
     {
       "language": "Python",
-      "bytes": 211948,
-      "ratio": 0.10813210046100065
+      "bytes": 253915,
+      "ratio": 0.12542865018292038
     },
     {
       "language": "Astro",
       "bytes": 156979,
-      "ratio": 0.08008789419228972
+      "ratio": 0.07754431237644353
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献208次，日均贡献0.6次。",
+    "intro": "Yuki-zik在过去365天内共计贡献210次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内完成了208次贡献，日均贡献0.6次。2026年2月是贡献最活跃的月份，其中2026年2月19日达到单日峰值29次贡献。期间共提交了8个issue。"
+        "content": "Yuki-zik在过去365天内共计贡献210次，日均0.6次，并处理了8个issue。贡献峰值出现在2026年2月19日，单日贡献29次，2026年2月是其最活跃的月份。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "最长连续贡献天数为8天。最长贡献间隔为117天。"
+        "content": "Yuki-zik的最长连续贡献记录为8天。同时，最长贡献间隔为117天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为JavaScript、TypeScript和CSS。贡献最活跃的三个仓库是Yuki-zik/myblog（55次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（27次）。"
+        "content": "Yuki-zik的主要技术栈为JavaScript、TypeScript和CSS。贡献主要集中在Yuki-zik/myblog（55次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（27次）等仓库。"
       }
     ]
   },
