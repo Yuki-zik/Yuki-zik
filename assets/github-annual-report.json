@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T06:00:39.040Z",
+  "generatedAt": "2026-08-03T05:52:45.614Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -11,30 +11,29 @@
     "followers": 5,
     "following": 5
   },
-  "aiMode": "fallback",
-  "aiReason": "OpenAI request failed (503): [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]",
+  "aiMode": "ai",
+  "aiReason": null,
   "rateLimit": {
-    "remaining": 4998,
-    "resetAt": "2026-07-27T07:00:36Z"
+    "remaining": 4997,
+    "resetAt": "2026-08-03T06:52:38Z"
   },
   "stats": {
-    "totalContributions": 224,
+    "totalContributions": 236,
     "totalDaysConsidered": 365,
-    "activeDays": 49,
+    "activeDays": 51,
     "averageContributionsPerDay": 0.6,
     "maxContributionsInADay": 29,
     "maxContributionsDate": "2026-02-19",
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
-    "longestGap": 117,
-    "longestGapStartDate": "2025-08-03",
+    "longestGap": 116,
+    "longestGapStartDate": "2025-08-04",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 81,
     "monthlyContributions": [
-      2,
-      1,
+      0,
       0,
       0,
       6,
@@ -45,10 +44,10 @@
       17,
       8,
       4,
-      13
+      28,
+      0
     ],
     "monthlyLabels": [
-      "25/7月",
       "25/8月",
       "25/9月",
       "25/10月",
@@ -60,16 +59,17 @@
       "26/4月",
       "26/5月",
       "26/6月",
-      "26/7月"
+      "26/7月",
+      "26/8月"
     ],
     "weekdayContributions": [
-      28,
-      25,
-      12,
+      32,
       27,
-      57,
+      17,
+      31,
+      55,
       26,
-      49
+      48
     ],
     "busiestWeekday": 4
   },
@@ -82,7 +82,7 @@
       "description": "Theme-first Astro blog with paragraph-level comments powered by Supabase RLS and anonymous auth.",
       "stars": 0,
       "forks": 0,
-      "commits": 55
+      "commits": 70
     },
     {
       "nameWithOwner": "Yuki-zik/Yuki-zik",
@@ -104,48 +104,47 @@
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 752033,
-      "ratio": 0.3779738375175848
+      "bytes": 750609,
+      "ratio": 0.40851381343562204
     },
     {
       "language": "TypeScript",
-      "bytes": 488390,
-      "ratio": 0.2454661464393361
+      "bytes": 558509,
+      "ratio": 0.3039647025656711
     },
     {
       "language": "CSS",
-      "bytes": 270032,
-      "ratio": 0.13571881990889823
-    },
-    {
-      "language": "Python",
-      "bytes": 253915,
-      "ratio": 0.12761837173804547
+      "bytes": 243918,
+      "ratio": 0.13275070289004
     },
     {
       "language": "Astro",
-      "bytes": 156979,
-      "ratio": 0.07889807367452352
+      "bytes": 174717,
+      "ratio": 0.0950885320346966
+    },
+    {
+      "language": "Python",
+      "bytes": 46259,
+      "ratio": 0.02517614429845424
     }
   ],
   "aiSummary": {
-    "mode": "fallback",
-    "intro": "你在 过去一年 保持了稳定的 GitHub 活跃度，全年贡献 224 次，日均 0.6 次。",
+    "mode": "ai",
+    "intro": "Yuki-zik在过去365天内共计贡献236次，日均贡献0.6次。",
     "sections": [
       {
-        "heading": "活跃节奏",
-        "content": "贡献峰值集中在 2月，最长连续打卡 8 天。"
+        "heading": "贡献概览",
+        "content": "Yuki-zik在过去365天内完成了236次贡献，其中创建了9个issue。2026年2月是贡献最活跃的月份，单日最高贡献29次发生在2026年2月19日。"
       },
       {
-        "heading": "高光时刻",
-        "content": "2 月 19 日 达到 29 次贡献"
+        "heading": "节奏与稳定性",
+        "content": "最长连续贡献天数为8天，显示出阶段性活跃。最长贡献间隔为116天，表明存在较长的非活跃期。"
       },
       {
-        "heading": "协作信号",
-        "content": "你在 过去一年 共参与 9 个 Issues，最长休息间隔 117 天（8 月 3 日 - 11 月 27 日）。"
+        "heading": "技术与项目",
+        "content": "主要贡献集中在JavaScript、TypeScript和CSS项目。贡献最多的仓库是Yuki-zik/myblog（70次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（34次）。"
       }
-    ],
-    "reason": "OpenAI request failed (503): [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]"
+    ]
   },
   "render": {
     "mode": "playwright",
