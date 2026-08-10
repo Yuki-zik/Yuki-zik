@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T05:52:45.614Z",
+  "generatedAt": "2026-08-10T04:07:48.832Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -8,14 +8,14 @@
     "login": "Yuki-zik",
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
-    "followers": 5,
+    "followers": 4,
     "following": 5
   },
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4997,
-    "resetAt": "2026-08-03T06:52:38Z"
+    "remaining": 4998,
+    "resetAt": "2026-08-10T05:07:41Z"
   },
   "stats": {
     "totalContributions": 236,
@@ -27,8 +27,8 @@
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
-    "longestGap": 116,
-    "longestGapStartDate": "2025-08-04",
+    "longestGap": 109,
+    "longestGapStartDate": "2025-08-11",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 81,
@@ -130,19 +130,19 @@
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献236次，日均贡献0.6次。",
+    "intro": "Yuki-zik在过去365天内共计贡献236次，日均贡献0.6次，并在2026年2月19日达到单日贡献峰值29次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内完成了236次贡献，其中创建了9个issue。2026年2月是贡献最活跃的月份，单日最高贡献29次发生在2026年2月19日。"
+        "content": "Yuki-zik在过去365天内完成了236次贡献，日均贡献0.6次。其中，创建了9个issue。2026年2月是贡献最活跃的月份，单日最高贡献发生在2026年2月19日，达到29次。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "最长连续贡献天数为8天，显示出阶段性活跃。最长贡献间隔为116天，表明存在较长的非活跃期。"
+        "content": "Yuki-zik的最长连续贡献天数为8天，最长贡献间隔为109天。这表明贡献存在一定周期性波动。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献集中在JavaScript、TypeScript和CSS项目。贡献最多的仓库是Yuki-zik/myblog（70次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（34次）。"
+        "content": "Yuki-zik主要使用JavaScript、TypeScript和CSS进行开发。贡献最活跃的三个仓库是Yuki-zik/myblog（70次）、Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（34次）。"
       }
     ]
   },
