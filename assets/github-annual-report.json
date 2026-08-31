@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T03:17:03.846Z",
+  "generatedAt": "2026-08-31T08:40:23.372Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
@@ -14,33 +14,32 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4998,
-    "resetAt": "2026-08-24T04:16:57Z"
+    "remaining": 4996,
+    "resetAt": "2026-08-31T09:15:10Z"
   },
   "stats": {
-    "totalContributions": 236,
+    "totalContributions": 239,
     "totalDaysConsidered": 365,
     "activeDays": 51,
-    "averageContributionsPerDay": 0.6,
-    "maxContributionsInADay": 29,
+    "averageContributionsPerDay": 0.7,
+    "maxContributionsInADay": 30,
     "maxContributionsDate": "2026-02-19",
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
-    "longestGap": 95,
-    "longestGapStartDate": "2025-08-25",
+    "longestGap": 88,
+    "longestGapStartDate": "2025-09-01",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
-    "maxMonthlyContributions": 81,
+    "maxMonthlyContributions": 82,
     "monthlyContributions": [
-      0,
       0,
       0,
       6,
       37,
       0,
-      81,
-      55,
+      82,
+      57,
       17,
       8,
       4,
@@ -48,7 +47,6 @@
       0
     ],
     "monthlyLabels": [
-      "25/8月",
       "25/9月",
       "25/10月",
       "25/11月",
@@ -67,7 +65,7 @@
       27,
       17,
       31,
-      55,
+      58,
       26,
       48
     ],
@@ -82,7 +80,7 @@
       "description": "Theme-first Astro blog with paragraph-level comments powered by Supabase RLS and anonymous auth.",
       "stars": 0,
       "forks": 0,
-      "commits": 70
+      "commits": 71
     },
     {
       "nameWithOwner": "Yuki-zik/Yuki-zik",
@@ -90,7 +88,7 @@
       "description": "Config files for my GitHub profile.",
       "stars": 0,
       "forks": 0,
-      "commits": 41
+      "commits": 42
     },
     {
       "nameWithOwner": "Yuki-zik/taskvision",
@@ -130,19 +128,19 @@
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献236次。",
+    "intro": "Yuki-zik在过去365天内共计贡献239次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内共计贡献236次，日均贡献0.6次，并创建了9个issue。贡献峰值出现在2026年2月，其中2026年2月19日单日贡献达29次。"
+        "content": "Yuki-zik在过去365天内共完成239次贡献，日均贡献0.7次，其中包含9个issue。2026年2月是贡献最活跃的月份，峰值发生在2026年2月19日，单日贡献达30次。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "最长连续贡献记录为8天，显示出阶段性活跃。同时，最长贡献间隔为95天，表明存在较长的非活跃期。"
+        "content": "最长连续贡献天数为8天。最长贡献间隔为88天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为JavaScript、TypeScript和CSS。贡献最多的项目是Yuki-zik/myblog（70次），其次是Yuki-zik/Yuki-zik（41次）和Yuki-zik/taskvision（34次）。"
+        "content": "主要贡献语言为JavaScript、TypeScript和CSS。贡献最多的三个仓库是Yuki-zik/myblog（71次）、Yuki-zik/Yuki-zik（42次）和Yuki-zik/taskvision（34次）。"
       }
     ]
   },
