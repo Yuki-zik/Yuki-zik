@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-31T08:40:23.372Z",
+  "generatedAt": "2026-09-07T07:20:39.045Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
   "profile": {
-    "name": "A-Znk",
+    "name": "maqianli",
     "login": "Yuki-zik",
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
@@ -14,21 +14,21 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4996,
-    "resetAt": "2026-08-31T09:15:10Z"
+    "remaining": 4991,
+    "resetAt": "2026-09-07T07:35:40Z"
   },
   "stats": {
-    "totalContributions": 239,
+    "totalContributions": 255,
     "totalDaysConsidered": 365,
-    "activeDays": 51,
+    "activeDays": 55,
     "averageContributionsPerDay": 0.7,
     "maxContributionsInADay": 30,
     "maxContributionsDate": "2026-02-19",
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
-    "longestGap": 88,
-    "longestGapStartDate": "2025-09-01",
+    "longestGap": 81,
+    "longestGapStartDate": "2025-09-08",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 82,
@@ -42,9 +42,10 @@
       57,
       17,
       8,
-      4,
-      28,
-      0
+      5,
+      29,
+      3,
+      11
     ],
     "monthlyLabels": [
       "25/9月",
@@ -58,16 +59,17 @@
       "26/5月",
       "26/6月",
       "26/7月",
-      "26/8月"
+      "26/8月",
+      "26/9月"
     ],
     "weekdayContributions": [
-      32,
+      38,
       27,
       17,
-      31,
-      58,
+      32,
+      62,
       26,
-      48
+      53
     ],
     "busiestWeekday": 4
   },
@@ -80,7 +82,7 @@
       "description": "Theme-first Astro blog with paragraph-level comments powered by Supabase RLS and anonymous auth.",
       "stars": 0,
       "forks": 0,
-      "commits": 71
+      "commits": 82
     },
     {
       "nameWithOwner": "Yuki-zik/Yuki-zik",
@@ -102,45 +104,45 @@
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 750609,
-      "ratio": 0.40851381343562204
+      "bytes": 781156,
+      "ratio": 0.3614245890830856
     },
     {
       "language": "TypeScript",
-      "bytes": 558509,
-      "ratio": 0.3039647025656711
+      "bytes": 649829,
+      "ratio": 0.3006623251940361
     },
     {
       "language": "CSS",
-      "bytes": 243918,
-      "ratio": 0.13275070289004
+      "bytes": 271313,
+      "ratio": 0.12553086648236614
     },
     {
       "language": "Astro",
-      "bytes": 174717,
-      "ratio": 0.0950885320346966
+      "bytes": 199125,
+      "ratio": 0.09213098446554775
     },
     {
       "language": "Python",
-      "bytes": 46259,
-      "ratio": 0.02517614429845424
+      "bytes": 194130,
+      "ratio": 0.08981990214336114
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献239次。",
+    "intro": "Yuki-zik在过去365天内共计贡献255次，平均每日0.7次，主要活跃于JavaScript、TypeScript和CSS项目。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内共完成239次贡献，日均贡献0.7次，其中包含9个issue。2026年2月是贡献最活跃的月份，峰值发生在2026年2月19日，单日贡献达30次。"
+        "content": "Yuki-zik在过去365天内共完成255次贡献，其中包含9个issue。主要贡献集中在Yuki-zik/myblog仓库（82次），其次是Yuki-zik/Yuki-zik（42次）和Yuki-zik/taskvision（34次）。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "最长连续贡献天数为8天。最长贡献间隔为88天。"
+        "content": "贡献节奏显示，最活跃月份为2026年2月，单日最高贡献达30次，发生在2026年2月19日。最长连续贡献天数为8天，而最长贡献间隔为81天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为JavaScript、TypeScript和CSS。贡献最多的三个仓库是Yuki-zik/myblog（71次）、Yuki-zik/Yuki-zik（42次）和Yuki-zik/taskvision（34次）。"
+        "content": "Yuki-zik的主要技术栈为JavaScript（排名第一），其次是TypeScript（排名第二）和CSS（排名第三）。这些语言支撑了其在myblog、Yuki-zik和taskvision等项目中的开发活动。"
       }
     ]
   },
