@@ -2,32 +2,42 @@ name: GitHub-Profile-Summary-Cards
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '23 0 * * *'
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/profile-summary-cards.yml'
+      - 'scripts/profile/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-main-writes
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: generate-github-profile-summary-cards
-    permissions:
-      contents: write
-      
     steps:
       - uses: actions/checkout@v4
-      
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           USERNAME: ${{ github.repository_owner }}
-          # OPTIONS: default, 2077, algolia, atomic, aurora, dracula, for-the-badge, github, gruvbox, material, monokai, nord, onedark, radical, solarized, tokyo-night
           THEME: buefy
-
-      - name: Remove Background and Borders
-        run: |
-          sed -i -E 's/<rect x="1" y="1" rx="5" ry="5"[^>]*>(<\/rect>)?/<rect x="1" y="1" rx="5" ry="5" height="100%" width="100%" fill="none" stroke="none"\/>/g' profile-summary-card-output/buefy/*.svg || true
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add profile-summary-card-output/buefy/*.svg
-          git commit -m "style: remove backgrounds from summary cards" || echo "No changes to commit"
-          git push
+          UTC_OFFSET: 8
+          AUTO_PUSH: false
+      # Keep the theme's background: transparent dark text disappears in dark mode.
+      # Validate before committing, and never swallow generation or XML errors.
+      - name: Validate all five cards
+        run: python3 scripts/profile/validate-assets.py cards
+      - name: Commit verified cards
+        run: bash scripts/profile/commit-assets.sh profile-summary-card-output/buefy

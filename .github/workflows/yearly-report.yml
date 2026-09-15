@@ -1,12 +1,20 @@
-﻿name: yearly report
+name: yearly report
 
 on:
   schedule:
     - cron: "15 2 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/yearly-report.yml'
+      - 'scripts/year-report/**'
+      - 'scripts/profile/**'
+      - 'package.json'
+      - 'package-lock.json'
   workflow_dispatch:
     inputs:
       year:
-        description: "Override report year (YYYY)"
+        description: "Calendar year override (YYYY); empty means the last 365 days"
         required: false
         type: string
       no_ai:
@@ -14,73 +22,64 @@ on:
         required: false
         default: "false"
         type: choice
-        options:
-          - "false"
-          - "true"
+        options: ["false", "true"]
 
 permissions:
   contents: write
 
+# Both workflows write main; serialize them rather than racing git push.
+concurrency:
+  group: profile-main-writes
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 20
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
         with:
           node-version: "22"
-
-      - name: Install Playwright Chromium
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Run tests
         run: |
-          set -euo pipefail
-          npm install --no-save --package-lock=false playwright@1.60.0
+          npm run test:all
+          node --test scripts/year-report/__tests__/reliability.node.mjs
+      - name: Install browser and Chinese fonts
+        run: |
           npx playwright install --with-deps chromium
-
-      - name: Generate yearly report assets
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Generate report
         env:
-          GH_USERNAME: Yuki-zik
-          GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+          GH_USERNAME: ${{ github.repository_owner }}
+          GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN || github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           REPORT_TZ: Asia/Shanghai
-          REPORT_YEAR_MODE: current
           REPORT_YEAR_INPUT: ${{ github.event.inputs.year || '' }}
           REPORT_NO_AI_INPUT: ${{ github.event.inputs.no_ai || 'false' }}
+        shell: bash
         run: |
           set -euo pipefail
           args=()
-
           if [ -n "$REPORT_YEAR_INPUT" ]; then
-            if [[ ! "$REPORT_YEAR_INPUT" =~ ^[0-9]{4}$ ]]; then
-              echo "Invalid year input: $REPORT_YEAR_INPUT" >&2
-              exit 1
-            fi
+            [[ "$REPORT_YEAR_INPUT" =~ ^[0-9]{4}$ ]] || { echo 'Year must be YYYY' >&2; exit 1; }
             args+=(--year "$REPORT_YEAR_INPUT")
           fi
-
-          if [ "$REPORT_NO_AI_INPUT" = "true" ]; then
-            args+=(--no-ai)
-          fi
-
+          if [ "$REPORT_NO_AI_INPUT" = true ]; then args+=(--no-ai); fi
           node scripts/year-report/generate-report.mjs "${args[@]}"
-
-      - name: Commit and push if changed
-        run: |
-          set -euo pipefail
-
-          if git diff --quiet -- assets/github-annual-report.png assets/github-annual-report.svg assets/github-annual-report.json README.md; then
-            echo "No report changes."
-            exit 0
-          fi
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add assets/github-annual-report.png assets/github-annual-report.svg assets/github-annual-report.json README.md
-          git commit -m "chore: refresh github annual report"
-          git push
+      - name: Validate generated assets
+        run: python3 scripts/profile/validate-assets.py report
+      - name: Commit verified assets
+        run: bash scripts/profile/commit-assets.sh assets/github-annual-report.png assets/github-annual-report.svg assets/github-annual-report.json assets/github-activity-summary.svg README.md
+      - name: Explain failure
+        if: failure()
+        run: echo 'Report refresh failed. No fallback image was published; the previous successful report remains on the profile. Check the failing step above.' >> "$GITHUB_STEP_SUMMARY"

@@ -1,287 +1,110 @@
 import path from "node:path"
 import process from "node:process"
 import { fileURLToPath } from "node:url"
-import { mkdir, readFile, writeFile } from "node:fs/promises"
-
+import { mkdir, mkdtemp, readFile, writeFile, rename, rm } from "node:fs/promises"
 import { GitHubClient } from "./github-client.mjs"
-import {
-  deriveTopLanguages,
-  deriveTopRepositories,
-  deriveYearlyStatistics,
-} from "./stats.mjs"
+import { deriveTopLanguages, deriveTopRepositories, deriveYearlyStatistics } from "./stats.mjs"
 import { generateAiSummary } from "./ai-summary.mjs"
 import { renderYearlyReportSvg } from "./svg-renderer.mjs"
 import { renderReportHtml } from "./report-html.mjs"
 import { renderReportPng } from "./png-renderer.mjs"
+import { renderActivitySummary, updateReadmeStatus } from "./profile-assets.mjs"
 import { REPORT_DIMENSIONS } from "./design-spec.mjs"
-import {
-  addDaysToIsoDate,
-  getDatePartsInTimeZone,
-  getTimeZoneDateRangeIso,
-  parseCliArgs,
-} from "./utils.mjs"
+import { addDaysToIsoDate, getDatePartsInTimeZone, getTimeZoneDateRangeIso, parseCliArgs } from "./utils.mjs"
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const repoRoot = path.resolve(__dirname, "..", "..")
-
-const DEFAULT_CONFIG = {
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..")
+const config = {
   username: process.env.GH_USERNAME || "Yuki-zik",
   timeZone: process.env.REPORT_TZ || "Asia/Shanghai",
   openAiBaseUrl: process.env.OPENAI_BASE_URL || "https://api.openai.com/v1",
   openAiModel: process.env.OPENAI_MODEL || "gpt-4o-mini",
-  reportYearMode: process.env.REPORT_YEAR_MODE || "current",
 }
 
-function validateYear(value) {
-  if (!Number.isInteger(value) || value < 2008 || value > 2100) {
-    throw new Error(`Invalid year: ${value}`)
+function resolveDateRange(argYear) {
+  const today = getDatePartsInTimeZone(new Date(), config.timeZone)
+  if (argYear != null && (!Number.isInteger(argYear) || argYear < 2008 || argYear > today.year)) {
+    throw new Error(`Invalid or future report year: ${argYear}`)
   }
-}
-
-function resolveDateRange({ argYear, timeZone }) {
-  if (argYear) {
-    validateYear(argYear)
-    const startDate = `${argYear}-01-01`
-    const endDate = `${argYear}-12-31`
-    const { from, to } = getTimeZoneDateRangeIso({ startDate, endDate, timeZone })
-
-    return {
-      year: argYear,
-      from,
-      to,
-      searchRange: `${startDate}..${endDate}`,
-      dateRange: { start: startDate, end: endDate },
-      isRolling: false,
-    }
-  }
-
-  const now = new Date()
-  const { year, isoDate: endDate } = getDatePartsInTimeZone(now, timeZone)
-  const startDate = addDaysToIsoDate(endDate, -364)
-  const { from, to } = getTimeZoneDateRangeIso({ startDate, endDate, timeZone })
-
+  const isRolling = !argYear
+  const start = isRolling ? addDaysToIsoDate(today.isoDate, -364) : `${argYear}-01-01`
+  const end = isRolling || argYear === today.year ? today.isoDate : `${argYear}-12-31`
   return {
-    year,
-    from,
-    to,
-    searchRange: `${startDate}..${endDate}`,
-    dateRange: { start: startDate, end: endDate },
-    isRolling: true,
+    year: argYear || today.year,
+    ...getTimeZoneDateRangeIso({ startDate: start, endDate: end, timeZone: config.timeZone }),
+    searchRange: `${start}..${end}`,
+    dateRange: { start, end },
+    isRolling,
   }
 }
-
-function withRepoPlaceholders(repos) {
-  if (repos.length >= 3) {
-    return repos.slice(0, 3)
-  }
-
-  const result = [...repos]
-
-  while (result.length < 3) {
-    result.push({
-      nameWithOwner: "\u6682\u65e0\u4ed3\u5e93\u6570\u636e",
-      url: "",
-      description: "\u672c\u5e74\u5ea6\u6682\u65e0\u53ef\u5c55\u793a\u7684\u63d0\u4ea4\u4ed3\u5e93\u3002",
-      stars: 0,
-      forks: 0,
-      commits: 0,
-    })
-  }
-
-  return result
-}
-
-function withLanguagePlaceholders(languages) {
-  if (languages.length >= 5) {
-    return languages.slice(0, 5)
-  }
-
-  const result = [...languages]
-
-  while (result.length < 5) {
-    result.push({
-      language: "N/A",
-      bytes: 0,
-      ratio: 0,
-    })
-  }
-
-  return result
+function pad(items, count, placeholder) {
+  return [...items, ...Array.from({ length: Math.max(0, count - items.length) }, () => ({ ...placeholder }))].slice(0, count)
 }
 
 async function main() {
   const cli = parseCliArgs(process.argv.slice(2))
-
-  if (DEFAULT_CONFIG.reportYearMode !== "current") {
-    console.warn(`REPORT_YEAR_MODE=${DEFAULT_CONFIG.reportYearMode} is ignored. Only 'current' mode is supported.`)
-  }
-
-  const { year, from, to, searchRange, dateRange, isRolling } = resolveDateRange({
-    argYear: cli.year,
-    timeZone: DEFAULT_CONFIG.timeZone,
-  })
-  const token = process.env.GH_STATS_TOKEN
-
-  if (!token) {
-    throw new Error("GH_STATS_TOKEN is required")
-  }
-
+  const { year, from, to, searchRange, dateRange, isRolling } = resolveDateRange(cli.year)
+  const token = process.env.GH_STATS_TOKEN || process.env.GITHUB_TOKEN
+  if (!token) throw new Error("Set GH_STATS_TOKEN or GITHUB_TOKEN; GitHub Actions supplies the latter automatically")
   const client = new GitHubClient({ token })
-
   const [profileData, issuesCount, prCount] = await Promise.all([
-    client.fetchYearlyProfileData({ username: DEFAULT_CONFIG.username, year, from, to }),
-    client.fetchIssueCount({
-      username: DEFAULT_CONFIG.username,
-      activityRange: searchRange,
-    }),
-    client.fetchPrCount({
-      username: DEFAULT_CONFIG.username,
-      activityRange: searchRange,
-    }),
+    client.fetchYearlyProfileData({ username: config.username, year, from, to }),
+    client.fetchIssueCount({ username: config.username, activityRange: searchRange }),
+    client.fetchPrCount({ username: config.username, activityRange: searchRange }),
   ])
-
   const user = profileData.user
-  const calendar = user.contributionsCollection.contributionCalendar
-  const commitContributionsByRepository =
-    user.contributionsCollection.commitContributionsByRepository ?? []
-
-  const stats = deriveYearlyStatistics(calendar, {
-    year,
-    timeZone: DEFAULT_CONFIG.timeZone,
-    dateRange,
-  })
-
-  const topRepos = withRepoPlaceholders(
-    deriveTopRepositories(commitContributionsByRepository, 3),
-  )
-
-  const topLanguages = withLanguagePlaceholders(
-    deriveTopLanguages(commitContributionsByRepository, 5),
-  )
-
-  const aiSummary = await generateAiSummary({
-    enabled: !cli.noAi,
-    apiKey: process.env.OPENAI_API_KEY,
-    baseUrl: DEFAULT_CONFIG.openAiBaseUrl,
-    model: DEFAULT_CONFIG.openAiModel,
-    username: user.login,
-    profile: {
-      name: user.name || user.login,
-      login: user.login,
-      bio: user.bio || "",
-      avatarUrl: user.avatarUrl,
-      followers: user.followers?.totalCount ?? 0,
-      following: user.following?.totalCount ?? 0,
-    },
-    year,
-    stats,
-    issuesCount,
-    prCount,
-    topLanguages,
-    topRepos,
-    isRolling,
-  })
-
-  const reportModel = {
-    profile: {
-      name: user.name || user.login,
-      login: user.login,
-      bio: user.bio || "",
-      avatarUrl: user.avatarUrl,
-      followers: user.followers?.totalCount ?? 0,
-      following: user.following?.totalCount ?? 0,
-    },
-    year,
-    stats,
-    issuesCount,
-    prCount,
-    topRepos,
-    topLanguages,
-    aiSummary,
-    isRolling,
-    dateRangeLabel: isRolling ? "过去一年" : null,
-  }
-
+  const collection = user.contributionsCollection
+  const stats = deriveYearlyStatistics(collection.contributionCalendar, { year, timeZone: config.timeZone, dateRange })
+  const repositories = collection.commitContributionsByRepository || []
+  const topRepos = pad(deriveTopRepositories(repositories, 3), 3, { nameWithOwner: "暂无公开仓库数据", url: "", description: "当前统计区间暂无可展示的公开提交仓库。", stars: 0, forks: 0, commits: 0 })
+  const topLanguages = pad(deriveTopLanguages(repositories, 5), 5, { language: "N/A", bytes: 0, ratio: 0 })
+  const profile = { name: user.name || user.login, login: user.login, bio: user.bio || "", avatarUrl: user.avatarUrl, followers: user.followers?.totalCount || 0, following: user.following?.totalCount || 0 }
+  const aiSummary = await generateAiSummary({ enabled: !cli.noAi, apiKey: process.env.OPENAI_API_KEY, baseUrl: config.openAiBaseUrl, model: config.openAiModel, username: user.login, profile, year, stats, issuesCount, prCount, topLanguages, topRepos, isRolling })
+  const model = { profile, year, stats, issuesCount, prCount, topRepos, topLanguages, aiSummary, isRolling, dateRangeLabel: isRolling ? "过去一年" : null }
+  const { heatmapWeeks, ...snapshotStats } = stats
   const snapshot = {
-    generatedAt: new Date().toISOString(),
-    year,
-    timezone: DEFAULT_CONFIG.timeZone,
-    username: user.login,
-    profile: reportModel.profile,
-    aiMode: aiSummary.mode,
-    aiReason: aiSummary.reason || null,
-    rateLimit: profileData.rateLimit,
-    stats: (() => { const { heatmapWeeks, ...rest } = stats; return rest })(),
-    issuesCount,
-    prCount,
-    topRepos,
-    topLanguages,
-    aiSummary,
-    render: {
-      mode: "pending",
-      reason: null,
+    generatedAt: new Date().toISOString(), year, timezone: config.timeZone, username: user.login,
+    dateRange, isRolling, profile, aiMode: aiSummary.mode, aiReason: aiSummary.reason || null,
+    rateLimit: profileData.rateLimit, stats: snapshotStats, issuesCount, prCount, topRepos, topLanguages, aiSummary,
+    dataScope: {
+      contributions: "GitHub contribution calendar visible to the configured token; not all commits or all private activity",
+      restrictedContributions: collection.restrictedContributionsCount || 0,
+      repositoryDetails: "public repositories only; at most 100 repositories returned by GitHub",
+      issuesAndPrs: "public issues and pull requests authored by this user and created during the report date range",
+      languages: "current code bytes in the public contributed repositories; not lines personally written",
     },
+    render: { mode: "pending", reason: null },
   }
-
   if (cli.dryRun) {
-    const summary = {
-      generatedAt: snapshot.generatedAt,
-      username: user.login,
-      year,
-      totalContributions: stats.totalContributions,
-      averageContributionsPerDay: stats.averageContributionsPerDay,
-      maxContributionsMonth: stats.maxContributionsMonth,
-      aiMode: aiSummary.mode,
-      issuesCount,
-      prCount,
-    }
-
-    console.log(JSON.stringify(summary, null, 2))
+    console.log(JSON.stringify({ generatedAt: snapshot.generatedAt, username: user.login, year, dateRange, totalContributions: stats.totalContributions, averageContributionsPerDay: stats.averageContributionsPerDay, maxContributionsMonth: stats.maxContributionsMonth, aiMode: aiSummary.mode, issuesCount, prCount }, null, 2))
     return
   }
-
   const assetsDir = path.join(repoRoot, "assets")
-  const pngPath = path.join(assetsDir, "github-annual-report.png")
-  const svgPath = path.join(assetsDir, "github-annual-report.svg")
-  const jsonPath = path.join(assetsDir, "github-annual-report.json")
-
   await mkdir(assetsDir, { recursive: true })
-
-  const html = renderReportHtml(reportModel)
-  const pngResult = await renderReportPng({
-    html,
-    outputPath: pngPath,
-    dimensions: REPORT_DIMENSIONS,
-  })
-
-  snapshot.render.mode = pngResult.mode
-  snapshot.render.reason = pngResult.reason
-
-  if (!pngResult.ok && pngResult.reason) {
-    console.warn(`PNG renderer fallback: ${pngResult.reason}`)
+  const stagingDir = await mkdtemp(path.join(assetsDir, ".report-"))
+  try {
+    const pngPath = path.join(stagingDir, "github-annual-report.png")
+    snapshot.render = await renderReportPng({ html: renderReportHtml(model), outputPath: pngPath, dimensions: REPORT_DIMENSIONS })
+    const svg = renderYearlyReportSvg({ pngBuffer: await readFile(pngPath), width: REPORT_DIMENSIONS.width, height: REPORT_DIMENSIONS.height, title: `${user.login} GitHub Activity Report`, description: `${dateRange.start} to ${dateRange.end}; generated ${snapshot.generatedAt}.` })
+    await Promise.all([
+      writeFile(path.join(stagingDir, "github-annual-report.svg"), svg, "utf8"),
+      writeFile(path.join(stagingDir, "github-annual-report.json"), `${JSON.stringify(snapshot, null, 2)}\n`, "utf8"),
+      writeFile(path.join(stagingDir, "github-activity-summary.svg"), renderActivitySummary(snapshot), "utf8"),
+    ])
+    // Publish only after fetching, rendering and serialization have all succeeded.
+    for (const file of ["github-annual-report.png", "github-annual-report.svg", "github-annual-report.json", "github-activity-summary.svg"]) {
+      await rename(path.join(stagingDir, file), path.join(assetsDir, file))
+    }
+    await updateReadmeStatus(path.join(repoRoot, "README.md"), snapshot)
+    console.log(`Report generated successfully: ${dateRange.start} to ${dateRange.end}; AI=${snapshot.aiMode}`)
+    if (process.env.GITHUB_STEP_SUMMARY) {
+      await writeFile(process.env.GITHUB_STEP_SUMMARY, `## Profile report\n\nPeriod: ${dateRange.start} → ${dateRange.end}\n\nContributions: ${stats.totalContributions}; active days: ${stats.activeDays}; authored public issues/PRs: ${issuesCount}/${prCount}.\n\nAI summary: ${snapshot.aiMode}; renderer: ${snapshot.render.mode}.\n`, { flag: "a" })
+    }
+  } finally {
+    await rm(stagingDir, { recursive: true, force: true })
   }
-
-  const pngBuffer = await readFile(pngPath)
-  const svg = renderYearlyReportSvg({
-    pngBuffer,
-    width: REPORT_DIMENSIONS.width,
-    height: REPORT_DIMENSIONS.height,
-    title: `${user.login} ${year} GitHub Annual Report`,
-    description: `Generated by scripts/year-report/generate-report.mjs; PNG renderer mode=${pngResult.mode}.`,
-  })
-
-  await Promise.all([
-    writeFile(svgPath, svg, "utf8"),
-    writeFile(jsonPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8"),
-  ])
-
-  console.log(`Updated report PNG: ${pngPath}`)
-  console.log(`Updated report SVG: ${svgPath}`)
-  console.log(`Updated snapshot: ${jsonPath}`)
 }
-
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error)
+main().catch(error => {
+  console.error(error.message)
+  if (error.cause) console.error(error.cause.message)
   process.exitCode = 1
 })
