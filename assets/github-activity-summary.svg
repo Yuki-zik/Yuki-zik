@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="200" viewBox="0 0 420 200" role="img" aria-labelledby="title desc">
 <title id="title">Yuki-zik activity</title>
-<desc id="desc">GitHub contribution snapshot. Updated 2026-09-14 UTC. 255 contributions; 55 active days; longest streak 8 days.</desc>
+<desc id="desc">2025-09-16 – 2026-09-15. Updated 2026-09-15 UTC. 257 contributions; 57 active days; longest streak 8 days.</desc>
 <style>text{font-family:system-ui,-apple-system,Segoe UI,sans-serif;fill:#363636}.heading{fill:#7957d5;font-size:20px;font-weight:600}.muted{fill:#666;font-size:11px}.metric{fill:#7957d5;font-size:23px;font-weight:600}</style>
 <rect x="1" y="1" width="418" height="198" rx="8" fill="#fff" stroke="#e4e2e2"/>
 <text class="heading" x="22" y="34">Activity summary</text>
-<text class="muted" x="22" y="56">GitHub contribution snapshot</text>
-<text class="metric" x="22" y="105">255</text><text x="22" y="127" font-size="12">Contributions</text>
-<text class="metric" x="156" y="105">55</text><text x="156" y="127" font-size="12">Active days</text>
+<text class="muted" x="22" y="56">2025-09-16 – 2026-09-15</text>
+<text class="metric" x="22" y="105">257</text><text x="22" y="127" font-size="12">Contributions</text>
+<text class="metric" x="156" y="105">57</text><text x="156" y="127" font-size="12">Active days</text>
 <text class="metric" x="290" y="105">8 days</text><text x="290" y="127" font-size="12">Longest streak</text>
-<text class="muted" x="22" y="165">Updated 2026-09-14 UTC · API-visible contributions</text>
+<text class="muted" x="22" y="165">Updated 2026-09-15 UTC · API-visible contributions</text>
 <text class="muted" x="22" y="183">Generated in this repository; no live widget dependency</text>
 </svg>

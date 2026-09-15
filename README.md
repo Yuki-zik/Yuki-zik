@@ -31,7 +31,7 @@ A rolling 365-day report, refreshed weekly. Click the image to open the full-siz
 </p>
 
 <!-- REPORT_STATUS:START -->
-Last successful refresh in the existing snapshot: **2026-09-14 07:54:55 UTC**. The repaired workflow will write its next successful refresh here.
+Last successful refresh: **2026-09-15 07:43:33 UTC** · Period: **2025-09-16 → 2026-09-15** · AI summary: **ai**.
 <!-- REPORT_STATUS:END -->
 
 [Report workflow](https://github.com/Yuki-zik/Yuki-zik/actions/workflows/yearly-report.yml) · [Data snapshot](./assets/github-annual-report.json) · [Automation configuration](./PROFILE_AUTOMATION.md)

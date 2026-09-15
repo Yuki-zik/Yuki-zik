@@ -1,8 +1,13 @@
 {
-  "generatedAt": "2026-09-14T07:54:55.297Z",
+  "generatedAt": "2026-09-15T07:43:33.750Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
+  "dateRange": {
+    "start": "2025-09-16",
+    "end": "2026-09-15"
+  },
+  "isRolling": true,
   "profile": {
     "name": "maqianli",
     "login": "Yuki-zik",
@@ -14,21 +19,21 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4984,
-    "resetAt": "2026-09-14T08:48:58Z"
+    "remaining": 4989,
+    "resetAt": "2026-09-15T08:35:31Z"
   },
   "stats": {
-    "totalContributions": 255,
+    "totalContributions": 257,
     "totalDaysConsidered": 365,
-    "activeDays": 55,
+    "activeDays": 57,
     "averageContributionsPerDay": 0.7,
     "maxContributionsInADay": 30,
     "maxContributionsDate": "2026-02-19",
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
-    "longestGap": 74,
-    "longestGapStartDate": "2025-09-15",
+    "longestGap": 73,
+    "longestGapStartDate": "2025-09-16",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 82,
@@ -45,7 +50,7 @@
       5,
       29,
       3,
-      11
+      13
     ],
     "monthlyLabels": [
       "25/9月",
@@ -64,8 +69,8 @@
     ],
     "weekdayContributions": [
       38,
-      27,
-      17,
+      28,
+      18,
       32,
       62,
       26,
@@ -73,8 +78,8 @@
     ],
     "busiestWeekday": 4
   },
-  "issuesCount": 9,
-  "prCount": 71,
+  "issuesCount": 6,
+  "prCount": 47,
   "topRepos": [
     {
       "nameWithOwner": "Yuki-zik/myblog",
@@ -90,7 +95,7 @@
       "description": "Config files for my GitHub profile.",
       "stars": 0,
       "forks": 0,
-      "commits": 42
+      "commits": 43
     },
     {
       "nameWithOwner": "Yuki-zik/taskvision",
@@ -104,50 +109,58 @@
   "topLanguages": [
     {
       "language": "JavaScript",
-      "bytes": 781156,
-      "ratio": 0.3614245890830856
+      "bytes": 791340,
+      "ratio": 0.36405525925837323
     },
     {
       "language": "TypeScript",
       "bytes": 649829,
-      "ratio": 0.3006623251940361
+      "ratio": 0.2989532502699338
     },
     {
       "language": "CSS",
       "bytes": 271313,
-      "ratio": 0.12553086648236614
+      "ratio": 0.1248173029989221
     },
     {
       "language": "Astro",
       "bytes": 199125,
-      "ratio": 0.09213098446554775
+      "ratio": 0.09160727816087089
     },
     {
       "language": "Python",
-      "bytes": 194130,
-      "ratio": 0.08981990214336114
+      "bytes": 195620,
+      "ratio": 0.0899948060455973
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献255次，日均贡献0.7次。",
+    "intro": "Yuki-zik 在过去365天内共计贡献257次，日均贡献0.7次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内共完成255次贡献，其中2026年2月是贡献最活跃的月份。单日峰值贡献为30次，发生在2026年2月19日，期间共创建9个Issue。"
+        "content": "Yuki-zik在过去365天内共完成257次贡献，其中包括6个issues。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "Yuki-zik的最长连续贡献天数为8天，最长贡献间隔为74天。"
+        "content": "2026年2月是贡献最活跃的月份，其中2月19日达到单日峰值30次贡献。最长连续贡献天数为8天，最长间隔为73天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为JavaScript、TypeScript和CSS。贡献最活跃的三个仓库是Yuki-zik/myblog（82次）、Yuki-zik/Yuki-zik（42次）和Yuki-zik/taskvision（34次）。"
+        "content": "贡献主要使用JavaScript、TypeScript和CSS语言。Top 3仓库为Yuki-zik/myblog（82次）、Yuki-zik/Yuki-zik（43次）和Yuki-zik/taskvision（34次）。"
       }
     ]
   },
+  "dataScope": {
+    "contributions": "GitHub contribution calendar visible to the configured token; not all commits or all private activity",
+    "restrictedContributions": 0,
+    "repositoryDetails": "public repositories only; at most 100 repositories returned by GitHub",
+    "issuesAndPrs": "public issues and pull requests authored by this user and created during the report date range",
+    "languages": "current code bytes in the public contributed repositories; not lines personally written"
+  },
   "render": {
     "mode": "playwright",
+    "ok": true,
     "reason": null
   }
 }
