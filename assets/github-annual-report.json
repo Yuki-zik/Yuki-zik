@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-15T07:43:33.750Z",
+  "generatedAt": "2026-09-21T07:58:48.710Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
   "dateRange": {
-    "start": "2025-09-16",
-    "end": "2026-09-15"
+    "start": "2025-09-22",
+    "end": "2026-09-21"
   },
   "isRolling": true,
   "profile": {
@@ -19,21 +19,21 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4989,
-    "resetAt": "2026-09-15T08:35:31Z"
+    "remaining": 4963,
+    "resetAt": "2026-09-21T08:07:26Z"
   },
   "stats": {
-    "totalContributions": 257,
+    "totalContributions": 262,
     "totalDaysConsidered": 365,
-    "activeDays": 57,
+    "activeDays": 59,
     "averageContributionsPerDay": 0.7,
     "maxContributionsInADay": 30,
     "maxContributionsDate": "2026-02-19",
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
-    "longestGap": 73,
-    "longestGapStartDate": "2025-09-16",
+    "longestGap": 67,
+    "longestGapStartDate": "2025-09-22",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 82,
@@ -50,7 +50,7 @@
       5,
       29,
       3,
-      13
+      18
     ],
     "monthlyLabels": [
       "25/9月",
@@ -68,18 +68,18 @@
       "26/9月"
     ],
     "weekdayContributions": [
-      38,
+      40,
       28,
       18,
       32,
-      62,
+      65,
       26,
       53
     ],
     "busiestWeekday": 4
   },
-  "issuesCount": 6,
-  "prCount": 47,
+  "issuesCount": 7,
+  "prCount": 48,
   "topRepos": [
     {
       "nameWithOwner": "Yuki-zik/myblog",
@@ -108,46 +108,46 @@
   ],
   "topLanguages": [
     {
+      "language": "Python",
+      "bytes": 1203417,
+      "ratio": 0.37264229817403516
+    },
+    {
       "language": "JavaScript",
       "bytes": 791340,
-      "ratio": 0.36405525925837323
+      "ratio": 0.2450412086891252
     },
     {
       "language": "TypeScript",
       "bytes": 649829,
-      "ratio": 0.2989532502699338
+      "ratio": 0.20122183082018544
     },
     {
       "language": "CSS",
       "bytes": 271313,
-      "ratio": 0.1248173029989221
+      "ratio": 0.08401302278802111
     },
     {
       "language": "Astro",
       "bytes": 199125,
-      "ratio": 0.09160727816087089
-    },
-    {
-      "language": "Python",
-      "bytes": 195620,
-      "ratio": 0.0899948060455973
+      "ratio": 0.06165975520032105
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik 在过去365天内共计贡献257次，日均贡献0.7次。",
+    "intro": "基于过去365天滚动统计，Yuki-zik在2026年度共完成262项贡献，日均贡献0.7项，并在2月19日达到单日峰值30项。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内共完成257次贡献，其中包括6个issues。"
+        "content": "Yuki-zik在过去365天内总计贡献262项，平均每日贡献0.7项，并提交了7个issues。2026年2月是其最活跃的月份，单日最高贡献记录为2月19日的30项。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "2026年2月是贡献最活跃的月份，其中2月19日达到单日峰值30次贡献。最长连续贡献天数为8天，最长间隔为73天。"
+        "content": "贡献活动的最长连续天数为8天。同时，最长贡献间隔为67天。"
       },
       {
         "heading": "技术与项目",
-        "content": "贡献主要使用JavaScript、TypeScript和CSS语言。Top 3仓库为Yuki-zik/myblog（82次）、Yuki-zik/Yuki-zik（43次）和Yuki-zik/taskvision（34次）。"
+        "content": "主要贡献语言为Python、JavaScript和TypeScript。贡献最活跃的三个仓库是Yuki-zik/myblog（82项）、Yuki-zik/Yuki-zik（43项）和Yuki-zik/taskvision（34项）。"
       }
     ]
   },
