@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-21T07:58:48.710Z",
+  "generatedAt": "2026-09-28T08:42:53.590Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
   "dateRange": {
-    "start": "2025-09-22",
-    "end": "2026-09-21"
+    "start": "2025-09-29",
+    "end": "2026-09-28"
   },
   "isRolling": true,
   "profile": {
@@ -19,8 +19,8 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4963,
-    "resetAt": "2026-09-21T08:07:26Z"
+    "remaining": 4998,
+    "resetAt": "2026-09-28T09:42:45Z"
   },
   "stats": {
     "totalContributions": 262,
@@ -32,8 +32,8 @@
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
-    "longestGap": 67,
-    "longestGapStartDate": "2025-09-22",
+    "longestGap": 60,
+    "longestGapStartDate": "2025-09-29",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 82,
@@ -135,19 +135,19 @@
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "基于过去365天滚动统计，Yuki-zik在2026年度共完成262项贡献，日均贡献0.7项，并在2月19日达到单日峰值30项。",
+    "intro": "Yuki-zik在过去365天内共计贡献262次，平均每日贡献0.7次，并在2026年2月19日达到单日贡献峰值30次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内总计贡献262项，平均每日贡献0.7项，并提交了7个issues。2026年2月是其最活跃的月份，单日最高贡献记录为2月19日的30项。"
+        "content": "Yuki-zik在过去365天内总计贡献262次，日均贡献0.7次，其中包含7个issue。2026年2月是其最活跃的月份，单日最高贡献发生在2026年2月19日，达到30次。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "贡献活动的最长连续天数为8天。同时，最长贡献间隔为67天。"
+        "content": "Yuki-zik的最长连续贡献天数为8天，最长贡献间隔为60天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为Python、JavaScript和TypeScript。贡献最活跃的三个仓库是Yuki-zik/myblog（82项）、Yuki-zik/Yuki-zik（43项）和Yuki-zik/taskvision（34项）。"
+        "content": "Yuki-zik的主要贡献语言为Python、JavaScript和TypeScript。贡献最多的仓库是Yuki-zik/myblog（82次）、Yuki-zik/Yuki-zik（43次）和Yuki-zik/taskvision（34次）。"
       }
     ]
   },
