@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-28T08:42:53.590Z",
+  "generatedAt": "2026-10-05T09:06:16.763Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
   "dateRange": {
-    "start": "2025-09-29",
-    "end": "2026-09-28"
+    "start": "2025-10-06",
+    "end": "2026-10-05"
   },
   "isRolling": true,
   "profile": {
@@ -13,14 +13,14 @@
     "login": "Yuki-zik",
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
-    "followers": 4,
+    "followers": 5,
     "following": 5
   },
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4998,
-    "resetAt": "2026-09-28T09:42:45Z"
+    "remaining": 4999,
+    "resetAt": "2026-10-05T10:06:09Z"
   },
   "stats": {
     "totalContributions": 262,
@@ -32,13 +32,12 @@
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
-    "longestGap": 60,
-    "longestGapStartDate": "2025-09-29",
+    "longestGap": 53,
+    "longestGapStartDate": "2025-10-06",
     "longestGapEndDate": "2025-11-27",
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 82,
     "monthlyContributions": [
-      0,
       0,
       6,
       37,
@@ -50,10 +49,10 @@
       5,
       29,
       3,
-      18
+      18,
+      0
     ],
     "monthlyLabels": [
-      "25/9月",
       "25/10月",
       "25/11月",
       "25/12月",
@@ -65,7 +64,8 @@
       "26/6月",
       "26/7月",
       "26/8月",
-      "26/9月"
+      "26/9月",
+      "26/10月"
     ],
     "weekdayContributions": [
       40,
@@ -135,19 +135,19 @@
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献262次，平均每日贡献0.7次，并在2026年2月19日达到单日贡献峰值30次。",
+    "intro": "Yuki-zik在过去365天内共计贡献262次，日均贡献0.7次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内总计贡献262次，日均贡献0.7次，其中包含7个issue。2026年2月是其最活跃的月份，单日最高贡献发生在2026年2月19日，达到30次。"
+        "content": "Yuki-zik的贡献主要集中在2026年2月，并在该月达到峰值。总贡献262次，日均0.7次。2026年2月是其最活跃月份，单日最高贡献30次，发生于2026年2月19日。期间共提交7个issue。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "Yuki-zik的最长连续贡献天数为8天，最长贡献间隔为60天。"
+        "content": "Yuki-zik的贡献节奏显示出一定的连续性，但存在较长间隔。最长连续贡献天数为8天，而最长贡献间隔为53天。"
       },
       {
         "heading": "技术与项目",
-        "content": "Yuki-zik的主要贡献语言为Python、JavaScript和TypeScript。贡献最多的仓库是Yuki-zik/myblog（82次）、Yuki-zik/Yuki-zik（43次）和Yuki-zik/taskvision（34次）。"
+        "content": "Yuki-zik主要活跃于Python、JavaScript和TypeScript项目，核心贡献集中在个人博客及工具类仓库。贡献最多的语言依次是Python、JavaScript和TypeScript。主要贡献仓库包括Yuki-zik/myblog（82次）、Yuki-zik/Yuki-zik（43次）和Yuki-zik/taskvision（34次）。"
       }
     ]
   },
