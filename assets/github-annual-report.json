@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-05T09:06:16.763Z",
+  "generatedAt": "2026-10-12T09:14:27.271Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
   "dateRange": {
-    "start": "2025-10-06",
-    "end": "2026-10-05"
+    "start": "2025-10-13",
+    "end": "2026-10-12"
   },
   "isRolling": true,
   "profile": {
@@ -19,8 +19,8 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4999,
-    "resetAt": "2026-10-05T10:06:09Z"
+    "remaining": 4987,
+    "resetAt": "2026-10-12T09:56:16Z"
   },
   "stats": {
     "totalContributions": 262,
@@ -32,9 +32,9 @@
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
-    "longestGap": 53,
-    "longestGapStartDate": "2025-10-06",
-    "longestGapEndDate": "2025-11-27",
+    "longestGap": 51,
+    "longestGapStartDate": "2025-12-23",
+    "longestGapEndDate": "2026-02-11",
     "maxContributionsMonth": "2026-02",
     "maxMonthlyContributions": 82,
     "monthlyContributions": [
@@ -101,7 +101,7 @@
       "nameWithOwner": "Yuki-zik/taskvision",
       "url": "https://github.com/Yuki-zik/taskvision",
       "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
-      "stars": 25,
+      "stars": 26,
       "forks": 1,
       "commits": 34
     }
@@ -135,19 +135,19 @@
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik在过去365天内共计贡献262次，日均贡献0.7次。",
+    "intro": "Yuki-zik 在过去 365 天内共完成 262 次贡献，日均贡献 0.7 次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik的贡献主要集中在2026年2月，并在该月达到峰值。总贡献262次，日均0.7次。2026年2月是其最活跃月份，单日最高贡献30次，发生于2026年2月19日。期间共提交7个issue。"
+        "content": "Yuki-zik 在过去 365 天内共计贡献 262 次，平均每日贡献 0.7 次。期间共创建 7 个 issue。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "Yuki-zik的贡献节奏显示出一定的连续性，但存在较长间隔。最长连续贡献天数为8天，而最长贡献间隔为53天。"
+        "content": "2026 年 2 月是贡献最活跃的月份，峰值出现在 2026 年 2 月 19 日，单日贡献达 30 次。最长连续贡献天数为 8 天，最长间隔为 51 天。"
       },
       {
         "heading": "技术与项目",
-        "content": "Yuki-zik主要活跃于Python、JavaScript和TypeScript项目，核心贡献集中在个人博客及工具类仓库。贡献最多的语言依次是Python、JavaScript和TypeScript。主要贡献仓库包括Yuki-zik/myblog（82次）、Yuki-zik/Yuki-zik（43次）和Yuki-zik/taskvision（34次）。"
+        "content": "主要贡献语言为 Python、JavaScript 和 TypeScript。贡献最多的仓库是 Yuki-zik/myblog (82 次)、Yuki-zik/Yuki-zik (43 次) 和 Yuki-zik/taskvision (34 次)。"
       }
     ]
   },

@@ -31,7 +31,7 @@ A rolling 365-day report, refreshed weekly. Click the image to open the full-siz
 </p>
 
 <!-- REPORT_STATUS:START -->
-Last successful refresh: **2026-10-05 09:06:16 UTC** · Period: **2025-10-06 → 2026-10-05** · AI summary: **ai**.
+Last successful refresh: **2026-10-12 09:14:27 UTC** · Period: **2025-10-13 → 2026-10-12** · AI summary: **ai**.
 <!-- REPORT_STATUS:END -->
 
 [Report workflow](https://github.com/Yuki-zik/Yuki-zik/actions/workflows/yearly-report.yml) · [Data snapshot](./assets/github-annual-report.json) · [Automation configuration](./PROFILE_AUTOMATION.md)
