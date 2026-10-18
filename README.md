@@ -7,6 +7,13 @@
   </p>
 </div>
 
+### Notes & research
+
+I publish technical notes and research at [A-Znk的blog](https://a-znk-blog.vercel.app/).
+
+- [AI Coding exam retrospective](https://a-znk-blog.vercel.app/posts/ant-ai-coding-review): preparation, execution, and lessons from a timed coding assessment (Chinese).
+- [Publications](https://a-znk-blog.vercel.app/papers): paper metadata, summaries, and available resources.
+
 <table align="center">
   <tr><td align="center" colspan="6"><img src="./profile-summary-card-output/buefy/0-profile-details.svg" width="100%" alt="Profile details" /></td></tr>
   <tr>
