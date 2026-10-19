@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-12T09:14:27.271Z",
+  "generatedAt": "2026-10-19T07:47:46.203Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
   "dateRange": {
-    "start": "2025-10-13",
-    "end": "2026-10-12"
+    "start": "2025-10-20",
+    "end": "2026-10-19"
   },
   "isRolling": true,
   "profile": {
@@ -19,24 +19,24 @@
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
-    "remaining": 4987,
-    "resetAt": "2026-10-12T09:56:16Z"
+    "remaining": 4986,
+    "resetAt": "2026-10-19T08:44:57Z"
   },
   "stats": {
-    "totalContributions": 262,
+    "totalContributions": 358,
     "totalDaysConsidered": 365,
-    "activeDays": 59,
-    "averageContributionsPerDay": 0.7,
-    "maxContributionsInADay": 30,
-    "maxContributionsDate": "2026-02-19",
+    "activeDays": 64,
+    "averageContributionsPerDay": 1,
+    "maxContributionsInADay": 40,
+    "maxContributionsDate": "2026-10-18",
     "longestStreak": 8,
     "longestStreakStartDate": "2026-03-18",
     "longestStreakEndDate": "2026-03-25",
     "longestGap": 51,
     "longestGapStartDate": "2025-12-23",
     "longestGapEndDate": "2026-02-11",
-    "maxContributionsMonth": "2026-02",
-    "maxMonthlyContributions": 82,
+    "maxContributionsMonth": "2026-10",
+    "maxMonthlyContributions": 95,
     "monthlyContributions": [
       0,
       6,
@@ -49,8 +49,8 @@
       5,
       29,
       3,
-      18,
-      0
+      19,
+      95
     ],
     "monthlyLabels": [
       "25/10月",
@@ -68,26 +68,26 @@
       "26/10月"
     ],
     "weekdayContributions": [
-      40,
-      28,
+      81,
+      42,
       18,
       32,
-      65,
-      26,
-      53
+      77,
+      43,
+      65
     ],
-    "busiestWeekday": 4
+    "busiestWeekday": 0
   },
   "issuesCount": 7,
-  "prCount": 48,
+  "prCount": 77,
   "topRepos": [
     {
       "nameWithOwner": "Yuki-zik/myblog",
       "url": "https://github.com/Yuki-zik/myblog",
-      "description": "Theme-first Astro blog with paragraph-level comments powered by Supabase RLS and anonymous auth.",
+      "description": "A-Znk的blog：记录大模型系统、模型安全、Agent 工程与 AI Coding 实践，分享技术笔记与研究论文。",
       "stars": 0,
       "forks": 0,
-      "commits": 82
+      "commits": 145
     },
     {
       "nameWithOwner": "Yuki-zik/Yuki-zik",
@@ -95,7 +95,7 @@
       "description": "Config files for my GitHub profile.",
       "stars": 0,
       "forks": 0,
-      "commits": 43
+      "commits": 44
     },
     {
       "nameWithOwner": "Yuki-zik/taskvision",
@@ -110,44 +110,44 @@
     {
       "language": "Python",
       "bytes": 1203417,
-      "ratio": 0.37264229817403516
-    },
-    {
-      "language": "JavaScript",
-      "bytes": 791340,
-      "ratio": 0.2450412086891252
+      "ratio": 0.35211188069679367
     },
     {
       "language": "TypeScript",
-      "bytes": 649829,
-      "ratio": 0.20122183082018544
+      "bytes": 795882,
+      "ratio": 0.23286982636336825
+    },
+    {
+      "language": "JavaScript",
+      "bytes": 791441,
+      "ratio": 0.23157041904057452
     },
     {
       "language": "CSS",
-      "bytes": 271313,
-      "ratio": 0.08401302278802111
+      "bytes": 305674,
+      "ratio": 0.08943819725009011
     },
     {
       "language": "Astro",
-      "bytes": 199125,
-      "ratio": 0.06165975520032105
+      "bytes": 205747,
+      "ratio": 0.060200215816897384
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "Yuki-zik 在过去 365 天内共完成 262 次贡献，日均贡献 0.7 次。",
+    "intro": "过去365天，Yuki-zik在GitHub上共计贡献358次，日均贡献1次。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik 在过去 365 天内共计贡献 262 次，平均每日贡献 0.7 次。期间共创建 7 个 issue。"
+        "content": "Yuki-zik在过去365天内总计贡献358次，日均贡献1次，并创建了7个issue。主要贡献集中在Yuki-zik/myblog（145次）、Yuki-zik/Yuki-zik（44次）和Yuki-zik/taskvision（34次）三个仓库。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "2026 年 2 月是贡献最活跃的月份，峰值出现在 2026 年 2 月 19 日，单日贡献达 30 次。最长连续贡献天数为 8 天，最长间隔为 51 天。"
+        "content": "贡献活跃度在2026年10月达到峰值，其中2026年10月18日单日贡献量最高，达40次。最长连续贡献天数为8天，最长间隔天数为51天。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要贡献语言为 Python、JavaScript 和 TypeScript。贡献最多的仓库是 Yuki-zik/myblog (82 次)、Yuki-zik/Yuki-zik (43 次) 和 Yuki-zik/taskvision (34 次)。"
+        "content": "主要使用的编程语言为Python（排名第一）、TypeScript（排名第二）和JavaScript（排名第三）。核心项目包括Yuki-zik/myblog、Yuki-zik/Yuki-zik和Yuki-zik/taskvision。"
       }
     ]
   },
