@@ -9,10 +9,12 @@
 
 ### Notes & research
 
-I publish technical notes and research at [A-Znk的blog](https://a-znk-blog.vercel.app/).
+I am **Qianli Ma** (马千里 / **A-Znk**), focusing on LLM systems, model security, speech privacy, and agent engineering. I publish bilingual technical notes and research records at **[a-znk.com](https://a-znk.com)** ([English edition](https://a-znk.com/en) · [Author profile](https://a-znk.com/author) · [Google Scholar](https://scholar.google.com/citations?user=NTwrnCIAAAAJ) · [ORCID `0009-0005-2060-4172`](https://orcid.org/0009-0005-2060-4172)).
 
-- [AI Coding exam retrospective](https://a-znk-blog.vercel.app/posts/ant-ai-coding-review): preparation, execution, and lessons from a timed coding assessment (Chinese).
-- [Publications](https://a-znk-blog.vercel.app/papers): paper metadata, summaries, and available resources.
+- **[DUAP: Multilingual Speech Privacy Protection against Whisper (IEEE TIFS 2026)](https://a-znk.com/en/papers/duap-multilingual-speech-privacy)** ([中文档案](https://a-znk.com/papers/duap-multilingual-speech-privacy) · [DOI `10.1109/TIFS.2026.3671687`](https://doi.org/10.1109/TIFS.2026.3671687)): universal adversarial perturbations via Language Feature Disentanglement (LFD).
+- **[Agent Work Observatory](https://a-znk.com/agents)** ([English](https://a-znk.com/en/agents)): verified delivery history, empirical benchmarks, and open telemetry schema.
+- **[AI Coding timed assessment retrospective](https://a-znk.com/en/posts/ant-ai-coding-review)** ([中文原稿](https://a-znk.com/posts/ant-ai-coding-review)): preparation, execution pitfalls, and timeline from a 2-hour AI coding exam.
+- **[All publications & research records](https://a-znk.com/papers)** ([English](https://a-znk.com/en/papers)).
 
 <table align="center">
   <tr><td align="center" colspan="6"><img src="./profile-summary-card-output/buefy/0-profile-details.svg" width="100%" alt="Profile details" /></td></tr>
