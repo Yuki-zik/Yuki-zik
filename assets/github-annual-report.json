@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-19T07:47:46.203Z",
+  "generatedAt": "2026-11-16T12:15:03.420Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
   "dateRange": {
-    "start": "2025-10-20",
-    "end": "2026-10-19"
+    "start": "2025-11-17",
+    "end": "2026-11-16"
   },
   "isRolling": true,
   "profile": {
@@ -13,20 +13,20 @@
     "login": "Yuki-zik",
     "bio": "I hope to have some thoughts on this era of great change.",
     "avatarUrl": "https://avatars.githubusercontent.com/u/145305286?u=b80ad4a3f9712c7331c066e889c4274be90104eb&v=4",
-    "followers": 5,
+    "followers": 3,
     "following": 5
   },
   "aiMode": "ai",
   "aiReason": null,
   "rateLimit": {
     "remaining": 4986,
-    "resetAt": "2026-10-19T08:44:57Z"
+    "resetAt": "2026-11-16T13:02:21Z"
   },
   "stats": {
-    "totalContributions": 358,
+    "totalContributions": 489,
     "totalDaysConsidered": 365,
-    "activeDays": 64,
-    "averageContributionsPerDay": 1,
+    "activeDays": 82,
+    "averageContributionsPerDay": 1.3,
     "maxContributionsInADay": 40,
     "maxContributionsDate": "2026-10-18",
     "longestStreak": 8,
@@ -36,9 +36,8 @@
     "longestGapStartDate": "2025-12-23",
     "longestGapEndDate": "2026-02-11",
     "maxContributionsMonth": "2026-10",
-    "maxMonthlyContributions": 95,
+    "maxMonthlyContributions": 184,
     "monthlyContributions": [
-      0,
       6,
       37,
       0,
@@ -50,10 +49,10 @@
       29,
       3,
       19,
-      95
+      184,
+      42
     ],
     "monthlyLabels": [
-      "25/10月",
       "25/11月",
       "25/12月",
       "26/1月",
@@ -65,21 +64,22 @@
       "26/7月",
       "26/8月",
       "26/9月",
-      "26/10月"
+      "26/10月",
+      "26/11月"
     ],
     "weekdayContributions": [
-      81,
-      42,
-      18,
-      32,
-      77,
-      43,
-      65
+      102,
+      83,
+      29,
+      46,
+      95,
+      56,
+      78
     ],
     "busiestWeekday": 0
   },
-  "issuesCount": 7,
-  "prCount": 77,
+  "issuesCount": 8,
+  "prCount": 115,
   "topRepos": [
     {
       "nameWithOwner": "Yuki-zik/myblog",
@@ -87,7 +87,15 @@
       "description": "A-Znk的blog：记录大模型系统、模型安全、Agent 工程与 AI Coding 实践，分享技术笔记与研究论文。",
       "stars": 0,
       "forks": 0,
-      "commits": 145
+      "commits": 199
+    },
+    {
+      "nameWithOwner": "Yuki-zik/taskvision",
+      "url": "https://github.com/Yuki-zik/taskvision",
+      "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
+      "stars": 24,
+      "forks": 1,
+      "commits": 50
     },
     {
       "nameWithOwner": "Yuki-zik/Yuki-zik",
@@ -95,59 +103,51 @@
       "description": "Config files for my GitHub profile.",
       "stars": 0,
       "forks": 0,
-      "commits": 44
-    },
-    {
-      "nameWithOwner": "Yuki-zik/taskvision",
-      "url": "https://github.com/Yuki-zik/taskvision",
-      "description": "TaskVision is a powerful visual enhancement extension for VS Code to track comments and TODOs",
-      "stars": 26,
-      "forks": 1,
-      "commits": 34
+      "commits": 46
     }
   ],
   "topLanguages": [
     {
-      "language": "Python",
-      "bytes": 1203417,
-      "ratio": 0.35211188069679367
+      "language": "TypeScript",
+      "bytes": 2635508,
+      "ratio": 0.4645837699902183
     },
     {
-      "language": "TypeScript",
-      "bytes": 795882,
-      "ratio": 0.23286982636336825
+      "language": "Python",
+      "bytes": 1252198,
+      "ratio": 0.2207357623707503
     },
     {
       "language": "JavaScript",
-      "bytes": 791441,
-      "ratio": 0.23157041904057452
+      "bytes": 731892,
+      "ratio": 0.1290169275091105
     },
     {
       "language": "CSS",
-      "bytes": 305674,
-      "ratio": 0.08943819725009011
+      "bytes": 627888,
+      "ratio": 0.11068324367507827
     },
     {
       "language": "Astro",
-      "bytes": 205747,
-      "ratio": 0.060200215816897384
+      "bytes": 309320,
+      "ratio": 0.054526509399089026
     }
   ],
   "aiSummary": {
     "mode": "ai",
-    "intro": "过去365天，Yuki-zik在GitHub上共计贡献358次，日均贡献1次。",
+    "intro": "以下是Yuki-zik在过去365天滚动统计模式下的GitHub年报摘要。",
     "sections": [
       {
         "heading": "贡献概览",
-        "content": "Yuki-zik在过去365天内总计贡献358次，日均贡献1次，并创建了7个issue。主要贡献集中在Yuki-zik/myblog（145次）、Yuki-zik/Yuki-zik（44次）和Yuki-zik/taskvision（34次）三个仓库。"
+        "content": "在过去365天内，Yuki-zik共完成了489项贡献，日均贡献1.3项。贡献峰值出现在2026年10月，其中2026年10月18日单日贡献最高，达到40项。期间共创建或参与了8个issues。"
       },
       {
         "heading": "节奏与稳定性",
-        "content": "贡献活跃度在2026年10月达到峰值，其中2026年10月18日单日贡献量最高，达40次。最长连续贡献天数为8天，最长间隔天数为51天。"
+        "content": "贡献活跃度方面，最长连续贡献天数为8天。同时，最长贡献间隔为51天，显示出周期性的活跃模式。"
       },
       {
         "heading": "技术与项目",
-        "content": "主要使用的编程语言为Python（排名第一）、TypeScript（排名第二）和JavaScript（排名第三）。核心项目包括Yuki-zik/myblog、Yuki-zik/Yuki-zik和Yuki-zik/taskvision。"
+        "content": "技术栈主要集中在TypeScript、Python和JavaScript。主要贡献项目包括Yuki-zik/myblog（199项贡献）、Yuki-zik/taskvision（50项贡献）和Yuki-zik/Yuki-zik（46项贡献）。"
       }
     ]
   },
