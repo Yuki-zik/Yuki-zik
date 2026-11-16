@@ -34,7 +34,8 @@ concurrency:
 
 jobs:
   generate:
-    runs-on: ubuntu-latest
+    # Pin 24.04 LTS: Playwright 1.60 chromium --with-deps does not yet support ubuntu-26.04.
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
