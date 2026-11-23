@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-16T12:15:03.420Z",
+  "generatedAt": "2026-11-23T10:47:38.563Z",
   "year": 2026,
   "timezone": "Asia/Shanghai",
   "username": "Yuki-zik",
   "dateRange": {
-    "start": "2025-11-17",
-    "end": "2026-11-16"
+    "start": "2025-11-24",
+    "end": "2026-11-23"
   },
   "isRolling": true,
   "profile": {
@@ -16,16 +16,16 @@
     "followers": 3,
     "following": 5
   },
-  "aiMode": "ai",
-  "aiReason": null,
+  "aiMode": "fallback",
+  "aiReason": "OpenAI request failed (503): [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]",
   "rateLimit": {
-    "remaining": 4986,
-    "resetAt": "2026-11-16T13:02:21Z"
+    "remaining": 4999,
+    "resetAt": "2026-11-23T11:47:29Z"
   },
   "stats": {
-    "totalContributions": 489,
+    "totalContributions": 492,
     "totalDaysConsidered": 365,
-    "activeDays": 82,
+    "activeDays": 83,
     "averageContributionsPerDay": 1.3,
     "maxContributionsInADay": 40,
     "maxContributionsDate": "2026-10-18",
@@ -50,7 +50,7 @@
       3,
       19,
       184,
-      42
+      45
     ],
     "monthlyLabels": [
       "25/11月",
@@ -71,7 +71,7 @@
       102,
       83,
       29,
-      46,
+      49,
       95,
       56,
       78
@@ -134,22 +134,23 @@
     }
   ],
   "aiSummary": {
-    "mode": "ai",
-    "intro": "以下是Yuki-zik在过去365天滚动统计模式下的GitHub年报摘要。",
+    "mode": "fallback",
+    "intro": "你在 过去一年 保持了稳定的 GitHub 活跃度，全年贡献 492 次，日均 1.3 次。",
     "sections": [
       {
-        "heading": "贡献概览",
-        "content": "在过去365天内，Yuki-zik共完成了489项贡献，日均贡献1.3项。贡献峰值出现在2026年10月，其中2026年10月18日单日贡献最高，达到40项。期间共创建或参与了8个issues。"
+        "heading": "活跃节奏",
+        "content": "贡献峰值集中在 10月，最长连续打卡 8 天。"
       },
       {
-        "heading": "节奏与稳定性",
-        "content": "贡献活跃度方面，最长连续贡献天数为8天。同时，最长贡献间隔为51天，显示出周期性的活跃模式。"
+        "heading": "高光时刻",
+        "content": "10 月 18 日 达到 40 次贡献"
       },
       {
-        "heading": "技术与项目",
-        "content": "技术栈主要集中在TypeScript、Python和JavaScript。主要贡献项目包括Yuki-zik/myblog（199项贡献）、Yuki-zik/taskvision（50项贡献）和Yuki-zik/Yuki-zik（46项贡献）。"
+        "heading": "协作信号",
+        "content": "你在 过去一年 共参与 8 个 Issues，最长休息间隔 51 天（12 月 23 日 - 2 月 11 日）。"
       }
-    ]
+    ],
+    "reason": "OpenAI request failed (503): [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]"
   },
   "dataScope": {
     "contributions": "GitHub contribution calendar visible to the configured token; not all commits or all private activity",
